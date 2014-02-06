@@ -1,0 +1,69 @@
+// OPTIONS
+@color: @blue;
+@height: 4px;
+@opacity: 0.6;
+@box-shadow: 0 0 1px @color;
+@border-radius: 0;
+
+.progrecss {
+	display:block;
+	position: relative;
+}
+.progrecss[data-progrecss]:after {
+	content: "";
+	display: block;
+	position: absolute;
+	transition: width 1s ease 0s;
+	-webkit-transition: width 1s ease 0s;
+	background-color: @color;
+	box-shadow: @box-shadow;
+	opacity: @opacity;
+	height: @height;
+	border-radius: @border-radius;
+	top: 0;
+}
+.progrecss[data-progrecss].bottom:after {
+	top: 100%;
+}
+.progrecss[data-progrecss].fixed:after {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.progrecss[data-progrecss].fixed.bottom:after {
+	position: fixed;
+	top: 100%;
+}
+.generate-progrecss(@n, @i: 0) when (@i <= @n) {
+	.progrecss[data-progrecss="@{i}"]:after {
+		width: (@i * 1%);
+	}
+	.generate-progrecss(@n, (@i + 1));
+}
+.generate-progrecss(100);
+//  SOME COLORS TO CHOOSE FROM
+@green:#2ECC71;
+@blue:#3498DB;
+@purple:#9B59B6;
+@yellow:#F1C40F;
+@orange:#E67E22;
+@red:#E74C3C;
+
+.progrecss[data-progrecss].green:after{
+	background-color: @green;
+}
+.progrecss[data-progrecss].blue:after{
+	background-color: @blue;
+}
+.progrecss[data-progrecss].purple:after{
+	background-color: @purple;
+}
+.progrecss[data-progrecss].yellow:after{
+	background-color: @yellow;
+}
+.progrecss[data-progrecss].orange:after{
+	background-color: @orange;
+}
+.progrecss[data-progrecss].red:after{
+	background-color: @red;
+}
