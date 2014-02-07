@@ -15,6 +15,23 @@ That's it!
 
 #####NOTE: from what I can gather having a look at caniuse, progre(c)ss should be fully supported from IE10 up. This is purely because of transition, but if I remember rightly this can be shimmed.
 
+#####mocking progre(c)ss
+You can easily mock the progress bar by using keyframe animations as is does in the demo.
+
+	@keyframes progress {
+		0% { width: 0%; }
+		100% { width: 100%; }
+	}
+	// you could also stage this using different percentages etc.
+	
+Then apply the keyframe animation to the after of the progre(c)ss with the amount of time you want it to take.
+
+	.progrecss:after {
+		animation: progress 5s;
+	}
+
+#####helper classes
+
 There are some additional helper classes which can be used to add colors and positioning. Use them in combination.
 
 ####positioning
