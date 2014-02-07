@@ -10,12 +10,17 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-// OPTIONS
-@color: @blue;
-@height: 4px;
-@opacity: 0.6;
-@box-shadow: 0 0 1px @color;
-@border-radius: 0;
+$green:#2ECC71;
+$blue:#3498DB;
+$purple:#9B59B6;
+$yellow:#F1C40F;
+$orange:#E67E22;
+$red:#E74C3C;
+$color: $blue;
+$height: 4px;
+$opacity: 0.6;
+$box-shadow: 0 0 1px $color;
+$border-radius: 0;
 
 .progrecss {
 	display:block;
@@ -27,11 +32,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	position: absolute;
 	transition: width 1s ease 0s;
 	-webkit-transition: width 1s ease 0s;
-	background-color: @color;
-	box-shadow: @box-shadow;
-	opacity: @opacity;
-	height: @height;
-	border-radius: @border-radius;
+	background-color: $color;
+	box-shadow: $box-shadow;
+	opacity: $opacity;
+	height: $height;
+	border-radius: $border-radius;
 	top: 0;
 }
 .progrecss[data-progrecss].bottom:after {
@@ -46,36 +51,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	position: fixed;
 	top: 100%;
 }
-.generate-progrecss(@n, @i: 0) when (@i <= @n) {
-	.progrecss[data-progrecss="@{i}"]:after {
-		width: (@i * 1%);
-	}
-	.generate-progrecss(@n, (@i + 1));
+
+@for $i from 0 through 100 {
+	.progrecss[data-progrecss="#{$i}"]:after { width: ($i * 1%); }
 }
-.generate-progrecss(100);
-//  SOME COLORS TO CHOOSE FROM
-@green:#2ECC71;
-@blue:#3498DB;
-@purple:#9B59B6;
-@yellow:#F1C40F;
-@orange:#E67E22;
-@red:#E74C3C;
 
 .progrecss[data-progrecss].green:after{
-	background-color: @green;
+	background-color: $green;
 }
 .progrecss[data-progrecss].blue:after{
-	background-color: @blue;
+	background-color: $blue;
 }
 .progrecss[data-progrecss].purple:after{
-	background-color: @purple;
+	background-color: $purple;
 }
 .progrecss[data-progrecss].yellow:after{
-	background-color: @yellow;
+	background-color: $yellow;
 }
 .progrecss[data-progrecss].orange:after{
-	background-color: @orange;
+	background-color: $orange;
 }
 .progrecss[data-progrecss].red:after{
-	background-color: @red;
+	background-color: $red;
 }
