@@ -1,4 +1,4 @@
-proge(c)ss
+progre(c)ss
 ===
 ##pure CSS progress bars with minimal effort
 
