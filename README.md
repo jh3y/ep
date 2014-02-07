@@ -8,28 +8,28 @@ progre(c)ss
 3. add a data attribute `data-progrecss` defining the percent complete.
 
 That's it!
-
+```html
 	<div class="progrecss" data-progrecss="77">
 		My first progre(c)ss!
 	</div>
-
+```
 #####NOTE: from what I can gather having a look at caniuse, progre(c)ss should be fully supported from IE10 up. This is purely because of transition, but if I remember rightly this can be shimmed.
 
 #####mocking progre(c)ss
 You can easily mock the progress bar by using keyframe animations as is does in the demo.
-
+```css
 	@keyframes progress {
 		0% { width: 0%; }
 		100% { width: 100%; }
 	}
 	// you could also stage this using different percentages etc.
-	
+```	
 Then apply the keyframe animation to the after of the progre(c)ss with the amount of time you want it to take.
-
+```css
 	.progrecss:after {
 		animation: progress 5s;
 	}
-
+```
 See issue [#2](https://github.com/jh3y/progre-c-ss/issues/2), this is due to be out of the box as standard.
 
 
