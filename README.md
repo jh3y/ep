@@ -24,15 +24,26 @@ Positions the progrecss bar at the bottom of the element.
 Gives a fixed position of `0,0` relative to the container of the element.
 
 ####colors
-#####green(default)
-#####blue
-#####red
-#####purple
-#####orange
-#####yellow
+#####`green`(default)
+#####`blue`
+#####`red`
+#####`purple`
+#####`orange`
+#####`yellow`
 
 ###development
 __progre(c)ss__ is developed with __less__ making the actual amount of code written minimal in order to generate the stylesheet.
+
+When using the __less__ file there are already some variables in place so you can roll out a new theme easily.
+
+Those variables are;
+
+* color
+* height
+* box-shadow
+* opacity
+* border-radius
+* transition(-webkit-transition)
 
 ###contributing
 any suggestions, improvements or issues are welcome :)
