@@ -1,6 +1,6 @@
 proge(c)ss
 ===
-##custom CSS progress bars with minimal effort
+##pure CSS progress bars with minimal effort
 
 ###usage
 1. include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/progrecss.css)
