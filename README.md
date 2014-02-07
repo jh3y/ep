@@ -65,9 +65,9 @@ Gives a fixed position of `0,0` relative to the container of the element.
 
 ### Development
 
-__progre(c)ss__ is developed with __less__ making the actual amount of code written minimal in order to generate the stylesheet.
+__progre(c)ss__ is developed with __less__/__sass__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
 
-When using the __less__ file there are already some variables in place so you can roll out a new theme easily.
+When using the __less__/__sass__ file there are already some variables in place so you can roll out a new theme easily.
 
 Those variables are:
 
@@ -88,7 +88,7 @@ Any suggestions, improvements or issues are welcome. :)
 
 The MIT License (MIT)
 
-Copyright (c) <2014> <@jh3y>
+Copyright (c) 2014 [@jh3y](https://github.com/jh3y)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
