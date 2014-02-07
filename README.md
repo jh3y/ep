@@ -30,6 +30,9 @@ Then apply the keyframe animation to the after of the progre(c)ss with the amoun
 		animation: progress 5s;
 	}
 
+See issue #1, this is due to be out of the box as standard.
+
+
 #####helper classes
 
 There are some additional helper classes which can be used to add colors and positioning. Use them in combination.
