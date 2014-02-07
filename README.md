@@ -13,6 +13,8 @@ That's it!
 		My first progre(c)ss!
 	</div>
 
+#####NOTE: from what I can gather having a look at caniuse, progre(c)ss should be fully supported from IE10 up. This is purely because of transition, but if I remember rightly this can be shimmed.
+
 There are some additional helper classes which can be used to add colors and positioning. Use them in combination.
 
 ####positioning
