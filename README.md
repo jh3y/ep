@@ -7,7 +7,7 @@
 #### Usage
 1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/progrecss.css).
 2. Add the class `progrecss` to your element (any existing element)
-3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional data attributes and classes for your desired behaviour/position/appearance[*](#helpers)
+3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
 4. Update progre(c)ss value if necessary using simple vanilla js or whatever suits you best!
 
 That's it!
