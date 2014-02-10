@@ -6,8 +6,9 @@
 
 #### Usage
 1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/progrecss.css).
-2. Add the class `progrecss` to your element (any element)
-3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100).
+2. Add the class `progrecss` to your element (any existing element)
+3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional data attributes and classes for your desired behaviour/position/appearance[*](#helpers)
+4. Update progre(c)ss value if necessary using simple vanilla js or whatever suits you best!
 
 That's it!
 
@@ -21,32 +22,15 @@ That's it!
 
 From what I can gather having a look at caniuse, progre(c)ss should be fully supported from IE10 up. This is purely because of transition, but if I remember rightly this can be shimmed.
 
-
 ##### Mocking progre(c)ss
-You can easily mock the progress bar by using keyframe animations as is does in the demo.
-```css
-	@keyframes progress {
-		0% { width: 0%; }
-		100% { width: 100%; }
-	}
-	// you could also stage this using different percentages etc.
-```	
 
-Then apply the keyframe animation to the `:after` of the progre(c)ss with the amount of time you want it to take.
+You can easily mock progress by using the helper attributes and classes. Refer [here](#helpers).
 
-```css
-	.progrecss:after {
-		animation: progress 5s;
-	}
-```
+##### Helpers
 
-See issue [#2](https://github.com/jh3y/progre-c-ss/issues/2), this is due to be out of the box as standard.
+There are some helper classes and attributes you can add to help you out!
 
-##### Helper Classes
-
-There are some additional helper classes which can be used to add colors and positioning. Use them in combination.
-
-######positioning
+######positioning classes
 * `top`(default)
 	The default positioning for a progrecss bar is at the top of an element.
 * `bottom`
@@ -54,7 +38,7 @@ There are some additional helper classes which can be used to add colors and pos
 * `fixed`
 	Gives a fixed position of `0,0` relative to the container of the element.
 
-######colors
+######color classes
 * `green`(default)
 * `blue`
 * `red`
@@ -62,11 +46,18 @@ There are some additional helper classes which can be used to add colors and pos
 * `orange`
 * `yellow`
 
-#### Development
+######mocking attribute
+* `data-progrecss-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
 
-__progre(c)ss__ is developed with __less__/__sass__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
+######mocking classes
+* `mock` - required in order to initiate a mock.
+* `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
-When using the __less__/__sass__ file there are already some variables in place so you can roll out a new theme easily.
+#### Development/Customisation
+
+__progre(c)ss__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
+
+When using the __less__/__sass__/__scss__ file there are already some variables in place so you can roll out a new theme easily.
 
 Those variables are:
 
@@ -76,6 +67,8 @@ Those variables are:
 * opacity
 * border-radius
 * transition(-webkit-transition)
+
+Also to edit things like the way in which a staggered mock progress behaves you can modify the existing keyframes in place.
 
 #### Contributing
 
