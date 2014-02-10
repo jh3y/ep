@@ -26,7 +26,7 @@ $border-radius: 0;
 	display:block;
 	position: relative;
 }
-.progrecss[data-progrecss]:after {
+.progrecss[data-progrecss]:after, .progrecss[data-progrecss-mock]:after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -39,21 +39,70 @@ $border-radius: 0;
 	border-radius: $border-radius;
 	top: 0;
 }
-.progrecss[data-progrecss].bottom:after {
+.progrecss[data-progrecss].bottom:after, .progrecss[data-progrecss-mock].bottom:after {
 	top: 100%;
 }
-.progrecss[data-progrecss].fixed:after {
+.progrecss[data-progrecss].fixed:after, .progrecss[data-progrecss-mock].fixed:after {
 	position: fixed;
 	top: 0;
 	left: 0;
 }
-.progrecss[data-progrecss].fixed.bottom:after {
+.progrecss[data-progrecss].fixed.bottom:after, .progrecss[data-progrecss-mock].fixed.bottom:after {
 	position: fixed;
 	top: 100%;
 }
 
 @for $i from 0 through 100 {
 	.progrecss[data-progrecss="#{$i}"]:after { width: ($i * 1%); }
+}
+
+@keyframes mock {
+	0% {width: 0%;}
+	100% {width: 100%;}
+}
+@-webkit-keyframes mock {
+	0% {width: 0%;}
+	100% {width: 100%;}
+}
+@keyframes staggered-mock {
+	0% {width: 0%;}
+	10% {width: 10%;}
+	20% {width: 10%;}
+	30% {width: 30%;}
+	40% {width: 30%;}
+	50% {width: 30%;}
+	60% {width: 50%;}
+	70% {width: 70%;}
+	80% {width: 70%;}
+	90% {width: 90%;}
+	100% {width: 100%;}
+}
+@-webkit-keyframes staggered-mock {
+	0% {width: 0%;}
+	10% {width: 10%;}
+	20% {width: 10%;}
+	30% {width: 30%;}
+	40% {width: 30%;}
+	50% {width: 30%;}
+	60% {width: 50%;}
+	70% {width: 70%;}
+	80% {width: 70%;}
+	90% {width: 90%;}
+	100% {width: 100%;}
+}
+
+@for $i from 0 through 120 {
+	.progrecss[data-progrecss-mock="#{$i}"].mock:after {
+		animation: mock ($i * 1s);
+		-webkit-animation: mock ($i * 1s);
+	}
+}
+
+@for $i from 0 through 120 {
+	.progrecss[data-progrecss-mock="#{$i}"].staggered.mock:after {
+		animation: staggered-mock ($i * 1s);
+		-webkit-animation: staggered-mock ($i * 1s);
+	}
 }
 
 .progrecss[data-progrecss].green:after{
