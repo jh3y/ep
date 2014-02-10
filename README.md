@@ -53,6 +53,15 @@ There are some helper classes and attributes you can add to help you out!
 * `mock` - required in order to initiate a mock.
 * `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
+#### How does this work?
+Not surprisingly it's real simple! :)
+
+__progre(c)ss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
+
+making use of pseudo elements means that we can add progre(c)ss bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
+
+preprocessing tools such as __less__ and __sass__ mean we can write minimal code making use of looping in order to sit back and reap the benefits and drink a coffee!
+
 #### Development/Customisation
 
 __progre(c)ss__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
