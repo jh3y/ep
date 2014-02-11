@@ -39,8 +39,8 @@ There are some helper classes and attributes you can add to help you out!
 	Gives a fixed position of `0,0` relative to the container of the element.
 
 ######color classes
-* `green`(default)
-* `blue`
+* `blue`(default)
+* `green`
 * `red`
 * `purple`
 * `orange`
