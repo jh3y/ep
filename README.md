@@ -62,7 +62,7 @@ There are some helper classes and attributes you can add to help you out!
 #### How does this work?
 Not surprisingly it's real simple! :)
 
-__progre(c)ss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
+progre(c)ss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
 
 making use of pseudo elements means that we can add progre(c)ss bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
 
