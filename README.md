@@ -26,6 +26,10 @@ From what I can gather having a look at caniuse, progre(c)ss should be fully sup
 
 You can easily mock progress by using the helper attributes and classes. Refer [here](#helpers).
 
+##### Hooking into AJAX requests with progre(c)ss
+
+A first attempt at hooking progre(c)ss into a simple AJAX request has been made and you can read about it [here](http://jh3y.github.io/thoughts/posts/2014/02/10/using-progrecss-with-jquery-ajax.html) and see it [here](http://jh3y.github.io/demos/using-progrecss-with-jquery-ajax/). Any help with this feature of progre(c)ss would be really appreciated.
+
 ##### Helpers
 
 There are some helper classes and attributes you can add to help you out!
