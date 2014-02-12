@@ -30,6 +30,8 @@ You can easily mock progress by using the helper attributes and classes. Refer [
 
 A first attempt at hooking progre(c)ss into a simple AJAX request has been made and you can read about it [here](http://jh3y.github.io/thoughts/posts/2014/02/10/using-progrecss-with-jquery-ajax.html) and see it [here](http://jh3y.github.io/demos/using-progrecss-with-jquery-ajax/). Any help with this feature of progre(c)ss would be really appreciated.
 
+__Update__: I came across [this](https://www.codersgrid.com/2014/02/11/progrecss-css-fancy-progress-bars-in-minimal-css/) article on codersgrid.com which shows also a way of hooking into AJAX requests.
+
 ##### Helpers
 
 There are some helper classes and attributes you can add to help you out!
