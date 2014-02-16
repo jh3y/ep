@@ -59,6 +59,39 @@ There are some helper classes and attributes you can add to help you out!
 * `mock` - required in order to initiate a mock.
 * `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
+######javascript helper
+At the request of some people I have added a small javascript helper to the repo.
+
+It's real simple to use. Here is an example piece of code for using it.
+
+```javascript
+var myProgrecss = new progrecss (document.body, {
+	color: 'red',
+	percent: 0,
+	position: 'fixed',
+	mock: {
+		staggered: true,
+		startMockOnCreate: false,
+		mockDuration: 5
+	}
+})
+```
+
+The following options are available;
+
+* `color` - _string_ - 'green', 'red', 'blue', 'purple', 'orange', 'yellow'.
+* `percent` - _number_ - 0 to 100.
+* `position` - _string_ - 'fixed', 'top', 'bottom'.
+* `mock` - _object consisting of mock, mockDuration, and staggered_
+* `staggered` - _string_ - defines whether the mock will stagger.
+* `mockDuration` - _number_ - defines how long the mock will take in seconds.
+* `startMockOnCreate` - _bool_ - defines whether the progre(c)ss bar will mock straight away.
+
+And the following methods;
+
+* `setProgrecss(number percent)` - sets percentage that progre(c)ss is complete.
+* `startMock()` - will initiate a progre(c)ss bar mock based on the options passed in.
+
 #### How does this work?
 Not surprisingly it's real simple! :)
 
