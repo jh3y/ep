@@ -3,6 +3,7 @@
 
 ###Pure CSS progress bars with minimal effort
 
+![alt tag](https://raw.github.com/jh3y/progre-c-ss/master/images/progrecss.gif)
 
 #### Usage
 1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/progrecss.css).
