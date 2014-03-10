@@ -19,6 +19,8 @@ That's it!
 	</div>
 ```
 
+_progre(c)ss is also compatible with npm component_
+
 ##### Browser Support
 
 From what I can gather having a look at caniuse, progre(c)ss should be fully supported from IE10 up. This is purely because of transition, but if I remember rightly this can be shimmed.
