@@ -62,6 +62,12 @@ There are some helper classes and attributes you can add to help you out!
 * `mock` - required in order to initiate a mock.
 * `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
+######timer attribute
+* `data-progrecss-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
+
+######timer classes
+* `timer` - required in order to initiate a timer.
+
 ######javascript helper
 At the request of some people I have added a small javascript helper to the repo.
 

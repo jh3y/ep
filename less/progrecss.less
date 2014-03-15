@@ -95,6 +95,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	90% {width: 90%;}
 	100% {width: 100%;}
 }
+@keyframes timer {
+	0% {width: 100%;}
+	100% {width: 0%;}
+}
+@-webkit-keyframes timer {
+	0% {width: 100%;}
+	100% {width: 0%;}
+}
 .generate-progrecss-mock(@n, @i:0) when (@i <= @n) {
 	.progrecss[data-progrecss-mock="@{i}"].mock:after {
 		animation: mock (@i * 1s);
@@ -112,6 +120,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	.generate-progrecss-staggered-mock(@n, (@i + 1));
 }
 .generate-progrecss-staggered-mock(120);
+
+.generate-progrecss-timer(@n, @i:0) when (@i <= @n) {
+	.progrecss[data-progrecss-timer="@{i}"].timer:after {
+		animation: timer (@i * 1s);
+		-webkit-animation: timer (@i * 1s);
+	}
+	.generate-progrecss-timer(@n, (@i + 1));
+}
+.generate-progrecss-timer(120);
 
 //  SOME COLORS TO CHOOSE FROM
 

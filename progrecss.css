@@ -432,6 +432,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 100%;
   }
 }
+@keyframes timer {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes timer {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
 .progrecss[data-progrecss-mock="0"].mock:after {
   animation: mock 0s;
   -webkit-animation: mock 0s;
@@ -1399,6 +1415,490 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .progrecss[data-progrecss-mock="120"].staggered.mock:after {
   animation: staggered-mock 120s;
   -webkit-animation: staggered-mock 120s;
+}
+.progrecss[data-progrecss-timer="0"].timer:after {
+  animation: timer 0s;
+  -webkit-animation: timer 0s;
+}
+.progrecss[data-progrecss-timer="1"].timer:after {
+  animation: timer 1s;
+  -webkit-animation: timer 1s;
+}
+.progrecss[data-progrecss-timer="2"].timer:after {
+  animation: timer 2s;
+  -webkit-animation: timer 2s;
+}
+.progrecss[data-progrecss-timer="3"].timer:after {
+  animation: timer 3s;
+  -webkit-animation: timer 3s;
+}
+.progrecss[data-progrecss-timer="4"].timer:after {
+  animation: timer 4s;
+  -webkit-animation: timer 4s;
+}
+.progrecss[data-progrecss-timer="5"].timer:after {
+  animation: timer 5s;
+  -webkit-animation: timer 5s;
+}
+.progrecss[data-progrecss-timer="6"].timer:after {
+  animation: timer 6s;
+  -webkit-animation: timer 6s;
+}
+.progrecss[data-progrecss-timer="7"].timer:after {
+  animation: timer 7s;
+  -webkit-animation: timer 7s;
+}
+.progrecss[data-progrecss-timer="8"].timer:after {
+  animation: timer 8s;
+  -webkit-animation: timer 8s;
+}
+.progrecss[data-progrecss-timer="9"].timer:after {
+  animation: timer 9s;
+  -webkit-animation: timer 9s;
+}
+.progrecss[data-progrecss-timer="10"].timer:after {
+  animation: timer 10s;
+  -webkit-animation: timer 10s;
+}
+.progrecss[data-progrecss-timer="11"].timer:after {
+  animation: timer 11s;
+  -webkit-animation: timer 11s;
+}
+.progrecss[data-progrecss-timer="12"].timer:after {
+  animation: timer 12s;
+  -webkit-animation: timer 12s;
+}
+.progrecss[data-progrecss-timer="13"].timer:after {
+  animation: timer 13s;
+  -webkit-animation: timer 13s;
+}
+.progrecss[data-progrecss-timer="14"].timer:after {
+  animation: timer 14s;
+  -webkit-animation: timer 14s;
+}
+.progrecss[data-progrecss-timer="15"].timer:after {
+  animation: timer 15s;
+  -webkit-animation: timer 15s;
+}
+.progrecss[data-progrecss-timer="16"].timer:after {
+  animation: timer 16s;
+  -webkit-animation: timer 16s;
+}
+.progrecss[data-progrecss-timer="17"].timer:after {
+  animation: timer 17s;
+  -webkit-animation: timer 17s;
+}
+.progrecss[data-progrecss-timer="18"].timer:after {
+  animation: timer 18s;
+  -webkit-animation: timer 18s;
+}
+.progrecss[data-progrecss-timer="19"].timer:after {
+  animation: timer 19s;
+  -webkit-animation: timer 19s;
+}
+.progrecss[data-progrecss-timer="20"].timer:after {
+  animation: timer 20s;
+  -webkit-animation: timer 20s;
+}
+.progrecss[data-progrecss-timer="21"].timer:after {
+  animation: timer 21s;
+  -webkit-animation: timer 21s;
+}
+.progrecss[data-progrecss-timer="22"].timer:after {
+  animation: timer 22s;
+  -webkit-animation: timer 22s;
+}
+.progrecss[data-progrecss-timer="23"].timer:after {
+  animation: timer 23s;
+  -webkit-animation: timer 23s;
+}
+.progrecss[data-progrecss-timer="24"].timer:after {
+  animation: timer 24s;
+  -webkit-animation: timer 24s;
+}
+.progrecss[data-progrecss-timer="25"].timer:after {
+  animation: timer 25s;
+  -webkit-animation: timer 25s;
+}
+.progrecss[data-progrecss-timer="26"].timer:after {
+  animation: timer 26s;
+  -webkit-animation: timer 26s;
+}
+.progrecss[data-progrecss-timer="27"].timer:after {
+  animation: timer 27s;
+  -webkit-animation: timer 27s;
+}
+.progrecss[data-progrecss-timer="28"].timer:after {
+  animation: timer 28s;
+  -webkit-animation: timer 28s;
+}
+.progrecss[data-progrecss-timer="29"].timer:after {
+  animation: timer 29s;
+  -webkit-animation: timer 29s;
+}
+.progrecss[data-progrecss-timer="30"].timer:after {
+  animation: timer 30s;
+  -webkit-animation: timer 30s;
+}
+.progrecss[data-progrecss-timer="31"].timer:after {
+  animation: timer 31s;
+  -webkit-animation: timer 31s;
+}
+.progrecss[data-progrecss-timer="32"].timer:after {
+  animation: timer 32s;
+  -webkit-animation: timer 32s;
+}
+.progrecss[data-progrecss-timer="33"].timer:after {
+  animation: timer 33s;
+  -webkit-animation: timer 33s;
+}
+.progrecss[data-progrecss-timer="34"].timer:after {
+  animation: timer 34s;
+  -webkit-animation: timer 34s;
+}
+.progrecss[data-progrecss-timer="35"].timer:after {
+  animation: timer 35s;
+  -webkit-animation: timer 35s;
+}
+.progrecss[data-progrecss-timer="36"].timer:after {
+  animation: timer 36s;
+  -webkit-animation: timer 36s;
+}
+.progrecss[data-progrecss-timer="37"].timer:after {
+  animation: timer 37s;
+  -webkit-animation: timer 37s;
+}
+.progrecss[data-progrecss-timer="38"].timer:after {
+  animation: timer 38s;
+  -webkit-animation: timer 38s;
+}
+.progrecss[data-progrecss-timer="39"].timer:after {
+  animation: timer 39s;
+  -webkit-animation: timer 39s;
+}
+.progrecss[data-progrecss-timer="40"].timer:after {
+  animation: timer 40s;
+  -webkit-animation: timer 40s;
+}
+.progrecss[data-progrecss-timer="41"].timer:after {
+  animation: timer 41s;
+  -webkit-animation: timer 41s;
+}
+.progrecss[data-progrecss-timer="42"].timer:after {
+  animation: timer 42s;
+  -webkit-animation: timer 42s;
+}
+.progrecss[data-progrecss-timer="43"].timer:after {
+  animation: timer 43s;
+  -webkit-animation: timer 43s;
+}
+.progrecss[data-progrecss-timer="44"].timer:after {
+  animation: timer 44s;
+  -webkit-animation: timer 44s;
+}
+.progrecss[data-progrecss-timer="45"].timer:after {
+  animation: timer 45s;
+  -webkit-animation: timer 45s;
+}
+.progrecss[data-progrecss-timer="46"].timer:after {
+  animation: timer 46s;
+  -webkit-animation: timer 46s;
+}
+.progrecss[data-progrecss-timer="47"].timer:after {
+  animation: timer 47s;
+  -webkit-animation: timer 47s;
+}
+.progrecss[data-progrecss-timer="48"].timer:after {
+  animation: timer 48s;
+  -webkit-animation: timer 48s;
+}
+.progrecss[data-progrecss-timer="49"].timer:after {
+  animation: timer 49s;
+  -webkit-animation: timer 49s;
+}
+.progrecss[data-progrecss-timer="50"].timer:after {
+  animation: timer 50s;
+  -webkit-animation: timer 50s;
+}
+.progrecss[data-progrecss-timer="51"].timer:after {
+  animation: timer 51s;
+  -webkit-animation: timer 51s;
+}
+.progrecss[data-progrecss-timer="52"].timer:after {
+  animation: timer 52s;
+  -webkit-animation: timer 52s;
+}
+.progrecss[data-progrecss-timer="53"].timer:after {
+  animation: timer 53s;
+  -webkit-animation: timer 53s;
+}
+.progrecss[data-progrecss-timer="54"].timer:after {
+  animation: timer 54s;
+  -webkit-animation: timer 54s;
+}
+.progrecss[data-progrecss-timer="55"].timer:after {
+  animation: timer 55s;
+  -webkit-animation: timer 55s;
+}
+.progrecss[data-progrecss-timer="56"].timer:after {
+  animation: timer 56s;
+  -webkit-animation: timer 56s;
+}
+.progrecss[data-progrecss-timer="57"].timer:after {
+  animation: timer 57s;
+  -webkit-animation: timer 57s;
+}
+.progrecss[data-progrecss-timer="58"].timer:after {
+  animation: timer 58s;
+  -webkit-animation: timer 58s;
+}
+.progrecss[data-progrecss-timer="59"].timer:after {
+  animation: timer 59s;
+  -webkit-animation: timer 59s;
+}
+.progrecss[data-progrecss-timer="60"].timer:after {
+  animation: timer 60s;
+  -webkit-animation: timer 60s;
+}
+.progrecss[data-progrecss-timer="61"].timer:after {
+  animation: timer 61s;
+  -webkit-animation: timer 61s;
+}
+.progrecss[data-progrecss-timer="62"].timer:after {
+  animation: timer 62s;
+  -webkit-animation: timer 62s;
+}
+.progrecss[data-progrecss-timer="63"].timer:after {
+  animation: timer 63s;
+  -webkit-animation: timer 63s;
+}
+.progrecss[data-progrecss-timer="64"].timer:after {
+  animation: timer 64s;
+  -webkit-animation: timer 64s;
+}
+.progrecss[data-progrecss-timer="65"].timer:after {
+  animation: timer 65s;
+  -webkit-animation: timer 65s;
+}
+.progrecss[data-progrecss-timer="66"].timer:after {
+  animation: timer 66s;
+  -webkit-animation: timer 66s;
+}
+.progrecss[data-progrecss-timer="67"].timer:after {
+  animation: timer 67s;
+  -webkit-animation: timer 67s;
+}
+.progrecss[data-progrecss-timer="68"].timer:after {
+  animation: timer 68s;
+  -webkit-animation: timer 68s;
+}
+.progrecss[data-progrecss-timer="69"].timer:after {
+  animation: timer 69s;
+  -webkit-animation: timer 69s;
+}
+.progrecss[data-progrecss-timer="70"].timer:after {
+  animation: timer 70s;
+  -webkit-animation: timer 70s;
+}
+.progrecss[data-progrecss-timer="71"].timer:after {
+  animation: timer 71s;
+  -webkit-animation: timer 71s;
+}
+.progrecss[data-progrecss-timer="72"].timer:after {
+  animation: timer 72s;
+  -webkit-animation: timer 72s;
+}
+.progrecss[data-progrecss-timer="73"].timer:after {
+  animation: timer 73s;
+  -webkit-animation: timer 73s;
+}
+.progrecss[data-progrecss-timer="74"].timer:after {
+  animation: timer 74s;
+  -webkit-animation: timer 74s;
+}
+.progrecss[data-progrecss-timer="75"].timer:after {
+  animation: timer 75s;
+  -webkit-animation: timer 75s;
+}
+.progrecss[data-progrecss-timer="76"].timer:after {
+  animation: timer 76s;
+  -webkit-animation: timer 76s;
+}
+.progrecss[data-progrecss-timer="77"].timer:after {
+  animation: timer 77s;
+  -webkit-animation: timer 77s;
+}
+.progrecss[data-progrecss-timer="78"].timer:after {
+  animation: timer 78s;
+  -webkit-animation: timer 78s;
+}
+.progrecss[data-progrecss-timer="79"].timer:after {
+  animation: timer 79s;
+  -webkit-animation: timer 79s;
+}
+.progrecss[data-progrecss-timer="80"].timer:after {
+  animation: timer 80s;
+  -webkit-animation: timer 80s;
+}
+.progrecss[data-progrecss-timer="81"].timer:after {
+  animation: timer 81s;
+  -webkit-animation: timer 81s;
+}
+.progrecss[data-progrecss-timer="82"].timer:after {
+  animation: timer 82s;
+  -webkit-animation: timer 82s;
+}
+.progrecss[data-progrecss-timer="83"].timer:after {
+  animation: timer 83s;
+  -webkit-animation: timer 83s;
+}
+.progrecss[data-progrecss-timer="84"].timer:after {
+  animation: timer 84s;
+  -webkit-animation: timer 84s;
+}
+.progrecss[data-progrecss-timer="85"].timer:after {
+  animation: timer 85s;
+  -webkit-animation: timer 85s;
+}
+.progrecss[data-progrecss-timer="86"].timer:after {
+  animation: timer 86s;
+  -webkit-animation: timer 86s;
+}
+.progrecss[data-progrecss-timer="87"].timer:after {
+  animation: timer 87s;
+  -webkit-animation: timer 87s;
+}
+.progrecss[data-progrecss-timer="88"].timer:after {
+  animation: timer 88s;
+  -webkit-animation: timer 88s;
+}
+.progrecss[data-progrecss-timer="89"].timer:after {
+  animation: timer 89s;
+  -webkit-animation: timer 89s;
+}
+.progrecss[data-progrecss-timer="90"].timer:after {
+  animation: timer 90s;
+  -webkit-animation: timer 90s;
+}
+.progrecss[data-progrecss-timer="91"].timer:after {
+  animation: timer 91s;
+  -webkit-animation: timer 91s;
+}
+.progrecss[data-progrecss-timer="92"].timer:after {
+  animation: timer 92s;
+  -webkit-animation: timer 92s;
+}
+.progrecss[data-progrecss-timer="93"].timer:after {
+  animation: timer 93s;
+  -webkit-animation: timer 93s;
+}
+.progrecss[data-progrecss-timer="94"].timer:after {
+  animation: timer 94s;
+  -webkit-animation: timer 94s;
+}
+.progrecss[data-progrecss-timer="95"].timer:after {
+  animation: timer 95s;
+  -webkit-animation: timer 95s;
+}
+.progrecss[data-progrecss-timer="96"].timer:after {
+  animation: timer 96s;
+  -webkit-animation: timer 96s;
+}
+.progrecss[data-progrecss-timer="97"].timer:after {
+  animation: timer 97s;
+  -webkit-animation: timer 97s;
+}
+.progrecss[data-progrecss-timer="98"].timer:after {
+  animation: timer 98s;
+  -webkit-animation: timer 98s;
+}
+.progrecss[data-progrecss-timer="99"].timer:after {
+  animation: timer 99s;
+  -webkit-animation: timer 99s;
+}
+.progrecss[data-progrecss-timer="100"].timer:after {
+  animation: timer 100s;
+  -webkit-animation: timer 100s;
+}
+.progrecss[data-progrecss-timer="101"].timer:after {
+  animation: timer 101s;
+  -webkit-animation: timer 101s;
+}
+.progrecss[data-progrecss-timer="102"].timer:after {
+  animation: timer 102s;
+  -webkit-animation: timer 102s;
+}
+.progrecss[data-progrecss-timer="103"].timer:after {
+  animation: timer 103s;
+  -webkit-animation: timer 103s;
+}
+.progrecss[data-progrecss-timer="104"].timer:after {
+  animation: timer 104s;
+  -webkit-animation: timer 104s;
+}
+.progrecss[data-progrecss-timer="105"].timer:after {
+  animation: timer 105s;
+  -webkit-animation: timer 105s;
+}
+.progrecss[data-progrecss-timer="106"].timer:after {
+  animation: timer 106s;
+  -webkit-animation: timer 106s;
+}
+.progrecss[data-progrecss-timer="107"].timer:after {
+  animation: timer 107s;
+  -webkit-animation: timer 107s;
+}
+.progrecss[data-progrecss-timer="108"].timer:after {
+  animation: timer 108s;
+  -webkit-animation: timer 108s;
+}
+.progrecss[data-progrecss-timer="109"].timer:after {
+  animation: timer 109s;
+  -webkit-animation: timer 109s;
+}
+.progrecss[data-progrecss-timer="110"].timer:after {
+  animation: timer 110s;
+  -webkit-animation: timer 110s;
+}
+.progrecss[data-progrecss-timer="111"].timer:after {
+  animation: timer 111s;
+  -webkit-animation: timer 111s;
+}
+.progrecss[data-progrecss-timer="112"].timer:after {
+  animation: timer 112s;
+  -webkit-animation: timer 112s;
+}
+.progrecss[data-progrecss-timer="113"].timer:after {
+  animation: timer 113s;
+  -webkit-animation: timer 113s;
+}
+.progrecss[data-progrecss-timer="114"].timer:after {
+  animation: timer 114s;
+  -webkit-animation: timer 114s;
+}
+.progrecss[data-progrecss-timer="115"].timer:after {
+  animation: timer 115s;
+  -webkit-animation: timer 115s;
+}
+.progrecss[data-progrecss-timer="116"].timer:after {
+  animation: timer 116s;
+  -webkit-animation: timer 116s;
+}
+.progrecss[data-progrecss-timer="117"].timer:after {
+  animation: timer 117s;
+  -webkit-animation: timer 117s;
+}
+.progrecss[data-progrecss-timer="118"].timer:after {
+  animation: timer 118s;
+  -webkit-animation: timer 118s;
+}
+.progrecss[data-progrecss-timer="119"].timer:after {
+  animation: timer 119s;
+  -webkit-animation: timer 119s;
+}
+.progrecss[data-progrecss-timer="120"].timer:after {
+  animation: timer 120s;
+  -webkit-animation: timer 120s;
 }
 .progrecss[data-progrecss].green:after {
   background-color: #2ecc71;

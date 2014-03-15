@@ -67,6 +67,18 @@ $border-radius: 0
 	100%
 		width: 100%
 
+@keyframes timer
+	0%
+		width: 100%
+	100%
+		width: 0%
+
+@-webkit-keyframes timer
+	0%
+		width: 100%
+	100%
+		width: 0%
+
 @keyframes staggered-mock
 	0%
 		width: 0%
@@ -124,6 +136,11 @@ $border-radius: 0
 	.progrecss[data-progrecss-mock="#{$i}"].staggered.mock:after
 		animation: staggered-mock ($i * 1s)
 		-webkit-animation: staggered-mock ($i * 1s)
+
+@for $i from 0 through 120
+	.progrecss[data-progrecss-timer="#{$i}"].timer:after
+		animation: timer ($i * 1s)
+		-webkit-animation: timer ($i * 1s)
 
 .progrecss[data-progrecss].green:after
 	background-color: $green
