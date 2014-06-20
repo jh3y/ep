@@ -1,0 +1,37 @@
+{
+  "name": "progre-c-ss",
+  "version": "1.5.0",
+  "description": "Pure CSS progress bars with minimal effort!",
+  "main": "build/progrecss.css",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.1",
+    "gulp-uglify": "^0.3.1",
+    "gulp-watch": "^0.6.7",
+    "gulp-coffee": "^2.0.1",
+    "gulp-less": "^1.2.3",
+    "gulp-sass": "^0.7.2",
+    "gulp-jade": "^0.6.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-autoprefixer": "0.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jh3y/progre-c-ss.git"
+  },
+  "keywords": [
+    "progrecss",
+    "progress",
+    "css",
+    "less"
+  ],
+  "author": "jh3y",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jh3y/progre-c-ss/issues"
+  },
+  "homepage": "http://jh3y.github.io/progre-c-ss"
+}

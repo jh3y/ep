@@ -1,0 +1,20 @@
+doctype
+head
+  title progrecss workbench
+  link(rel="stylesheet", href="build/progrecss.min.css")
+body
+  h1 let's make progrecss
+  script(src="build/progrecss.min.js")
+  script.
+    (function(){
+      var myProgrecss = new progrecss (document.body, {
+        color: 'red',
+        percent: 0,
+        position: 'fixed',
+        mock: {
+            staggered: true,
+            startMockOnCreate: true,
+            mockDuration: 5
+        }
+      });
+    })();
