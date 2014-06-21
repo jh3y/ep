@@ -1,6 +1,6 @@
 {
   "name": "progre-c-ss",
-  "version": "1.5.0",
+  "version": "1.3.0",
   "description": "Pure CSS progress bars with minimal effort!",
   "main": "build/progrecss.css",
   "dependencies": {},
