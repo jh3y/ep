@@ -6,7 +6,7 @@
 ![alt tag](https://raw.github.com/jh3y/screenshots/master/progrecss/progrecss.gif)
 
 #### Usage
-1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/progrecss.css).
+1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/build/progrecss.css).
 2. Add the class `progrecss` to your element (any existing element)
 3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
 4. Update progre(c)ss value if necessary using simple vanilla js or whatever suits you best!
@@ -31,7 +31,7 @@ You can easily mock progress by using the helper attributes and classes. Refer [
 
 ##### Hooking into AJAX requests with progre(c)ss
 
-A first attempt at hooking progre(c)ss into a simple AJAX request has been made and you can read about it [here](http://jh3y.github.io/thoughts/posts/2014/02/10/using-progrecss-with-jquery-ajax.html) and see it [here](http://jh3y.github.io/demos/using-progrecss-with-jquery-ajax/). Any help with this feature of progre(c)ss would be really appreciated.
+A first attempt at hooking progre(c)ss into a simple AJAX request has been made and you can see it [here](http://jh3y.github.io/demos/using-progrecss-with-jquery-ajax/). Any help with this feature of progre(c)ss would be really appreciated.
 
 __Update__: I came across [this](https://www.codersgrid.com/2014/02/11/progrecss-css-fancy-progress-bars-in-minimal-css/) article on codersgrid.com which shows also a way of hooking into AJAX requests.
 
