@@ -83,6 +83,7 @@ var myProgrecss = new progrecss (document.body, {
 	color: 'red',
 	percent: 0,
 	position: 'fixed',
+  reverse: true,
 	mock: {
 		staggered: true,
 		startMockOnCreate: false,
@@ -100,11 +101,15 @@ The following options are available;
 * `staggered` - _string_ - defines whether the mock will stagger.
 * `mockDuration` - _number_ - defines how long the mock will take in seconds.
 * `startMockOnCreate` - _bool_ - defines whether the progre(c)ss bar will mock straight away.
+* `reverse` - will reverse the direction of keyframe based progre(c)ss bars.
 
 And the following methods;
 
 * `setProgrecss(number percent)` - sets percentage that progre(c)ss is complete.
 * `startMock()` - will initiate a progre(c)ss bar mock based on the options passed in.
+* `togglePause()` - will toggle the play state of a keyframe based progre(c)ss bar.
+* `pause()` - will pause a keyframe based progre(c)ss bar.
+* `play()` - will play a keyframe based progre(c)ss bar.
 
 #### How does this work?
 progre(c)ss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.

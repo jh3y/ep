@@ -4,17 +4,23 @@ head
   link(rel="stylesheet", href="css/progrecss.min.css")
 body
   h1 let's make progrecss
-  script(src="js/progrecss.min.js")
+  button#actionButton Play/Pause
+  script(src="js/progrecss.js")
   script.
     (function(){
       var myProgrecss = new progrecss (document.body, {
         color: 'red',
         percent: 0,
         position: 'fixed',
+        reverse: true,
         mock: {
             staggered: true,
             startMockOnCreate: true,
-            mockDuration: 50
+            mockDuration: 100
         }
       });
+      document.getElementById('actionButton')
+        .addEventListener('click', function(e) {
+          myProgrecss.togglePause();
+        });
     })();

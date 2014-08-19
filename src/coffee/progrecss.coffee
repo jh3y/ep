@@ -9,10 +9,13 @@ progrecss = window.progrecss = (element, options) ->
   @_startMockOnCreate = (if (options isnt `undefined` and options.mock.startMockOnCreate isnt `undefined`) then options.mock.startMockOnCreate else true)
   @_staggered = (if (options isnt `undefined` and options.mock.staggered isnt `undefined`) then options.mock.staggered else false)
   @_timer = (if (options isnt `undefined` and options.timer isnt `undefined`) then true else false)
+  @_reverse = (if (options isnt `undefined` and options.reverse isnt `undefined`) then options.reverse else false)
   @_timerDuration = (if (options isnt `undefined` and options.timer isnt `undefined` and options.timer.timerDuration isnt `undefined`) then options.timer.timerDuration else 5)
   @_startTimerOnCreate = (if (options isnt `undefined` and options.timer isnt `undefined` and options.timer.startTimerOnCreate isnt `undefined`) then options.timer.startTimerOnCreate else true)
   @_create()
   return
+
+
 progrecss::_create = ->
   progrecss = this
   progrecss._element = document.createElement("div")  if progrecss._element is `undefined`
@@ -20,11 +23,13 @@ progrecss::_create = ->
   progrecss._element.setAttribute "data-progrecss", progrecss.percent
   if progrecss._mock
     progrecss._element.setAttribute "data-progrecss-mock", progrecss._mockDuration
-    progrecss._element.className += " staggered"  if progrecss._staggered
-    progrecss._element.className += " mock"  if progrecss._startMockOnCreate
+    progrecss._element.className += ' staggered'  if progrecss._staggered
+    progrecss._element.className += ' mock'  if progrecss._startMockOnCreate
+    progrecss._element.className += ' reverse' if progrecss._reverse
   else if progrecss._timer
     progrecss.element.setAttribute "data-progrecss-timer", progrecss._timerDuration
     progrecss.element.className += " timer"  if progrecss._startTimerOnCreate
+    progrecss._element.className += ' reverse' if progrecss._reverse
   return
 
 progrecss::setProgrecss = (percent) ->
@@ -34,6 +39,19 @@ progrecss::setProgrecss = (percent) ->
   else
     throw Error("progrecss: ERROR percent must be a number and between 0 and 100.")
   return
+
+progrecss::pause = ->
+  @_element.className += ' pause'
+
+progrecss::play = ->
+  @_element.className = @_element.className.replace 'pause', ''
+
+
+progrecss::togglePause = ->
+  if @_element.className.indexOf('pause') isnt -1
+    @play()
+  else
+    @pause()
 
 progrecss::startMock = ->
   progrecss = this
