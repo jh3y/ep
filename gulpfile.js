@@ -13,19 +13,22 @@ var gulp = require('gulp'),
   connect = require('gulp-connect'),
   config = require('./progrecss-config.json'),
   processSrc = [],
+  env = 'build/',
   sources = {
     jade: 'src/jade/**/*.jade',
     coreLess: 'src/less/core.less',
     coreSass: 'src/scss/core.scss',
     coffee: 'src/coffee/**/*.coffee',
-    license: 'src/txt/license.txt'
+    license: 'src/txt/license.txt',
+    buildCss: env + 'css/**/*.*',
+    buildJs: env + 'js/**/*.*',
   },
-  env = 'build/',
   destinations = {
     html: env,
     jsBuild: env + 'js/',
     cssBuild: env + 'css/',
-    overwatch: env + '/**/*.*'
+    overwatch: env + '/**/*.*',
+    dist: 'dist/'
   },
   gatherSrc = function (sources, ext) {
       for (var source in sources ) {
@@ -34,12 +37,6 @@ var gulp = require('gulp'),
         }
       }
     };
-
-
-
-
-
-
 gulp.task('serve', function(event) {
   connect.server({
     root: destinations.html,
@@ -120,5 +117,10 @@ gulp.task('sass:compile', function(event) {
 gulp.task('sass:watch', function(event) {
   watch({glob: sources.scss}, ['sass:compile']);
 });
+gulp.task('distribute', ['less:compile'], function(event) {
+  return gulp.src([sources.buildCss, sources.buildJs])
+    .pipe(gulp.dest(destinations.dist));
+});
+
 gulp.task('dev', ['serve', 'coffee:watch', 'less:watch', 'jade:watch']);
 gulp.task('default', ['dev']);
