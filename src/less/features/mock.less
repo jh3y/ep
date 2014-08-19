@@ -6,7 +6,8 @@
 // Generate mocks for up to 120 seconds
 .generate-progrecss-mock(@n, @i:0) when (@i <= @n) {
   .progrecss[data-progrecss-mock="@{i}"].mock:after {
-    animation: mock (@i * 1s);
+    animation-name: mock;
+    animation-duration: (@i * 1s);
   }
   .generate-progrecss-mock(@n, (@i + 1));
 }

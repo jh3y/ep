@@ -53,6 +53,10 @@ There are some helper classes and attributes you can add to help you out!
 * `orange`
 * `yellow`
 
+######Behavioural classes
+* `reverse` - will reverse the direction of a keyframe based progre(c)ss bar (mock/timer).
+* `pause` - will pause a keyframe based progre(c)ss bar (mock/timer).
+
 ######Mocking attribute
 * `data-progrecss-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
 

@@ -12,6 +12,12 @@ $iterations: 120;
 .progrecss:after {
   z-index: 2;
 }
+.progrecss.reverse:after {
+  animation-direction: reverse;
+}
+.progrecss.pause:after {
+  animation-play-state: paused;
+}
 .progrecss[data-progrecss]:after,
 .progrecss[data-progrecss-mock]:after,
 .progrecss[data-progrecss-timer]:after {

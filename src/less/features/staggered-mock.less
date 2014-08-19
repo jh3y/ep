@@ -15,7 +15,8 @@
 // Generate staggered mocks for up to 120 seconds
 .generate-progrecss-staggered-mock(@n, @i:0) when (@i <= @n) {
   .progrecss[data-progrecss-mock="@{i}"].staggered.mock:after {
-    animation: staggered-mock (@i * 1s);
+    animation-name: staggered-mock;
+    animation-duration: (@i * 1s);
   }
   .generate-progrecss-staggered-mock(@n, (@i + 1));
 }

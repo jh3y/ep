@@ -5,6 +5,7 @@
 
 @for $i from 0 through $iterations {
   .progrecss[data-progrecss-timer="#{$i}"].timer:after {
-    animation: timer ($i * 1s);
+    animation-name: timer;
+    animation-duration: ($i * 1s);
   }
 }

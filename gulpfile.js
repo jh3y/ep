@@ -16,8 +16,10 @@ var gulp = require('gulp'),
   env = 'build/',
   sources = {
     jade: 'src/jade/**/*.jade',
+    less: 'src/less/**/*.less',
     coreLess: 'src/less/core.less',
-    coreSass: 'src/scss/core.scss',
+    scss: 'src/sass/**/*.scss',
+    coreScss: 'src/scss/core.scss',
     coffee: 'src/coffee/**/*.coffee',
     license: 'src/txt/license.txt',
     buildCss: env + 'css/**/*.*',
@@ -93,7 +95,7 @@ gulp.task('less:watch', function(event) {
   watch({glob: sources.less}, ['less:compile']);
 });
 gulp.task('sass:compile', function(event) {
-  processSrc = [sources.license, sources.coreSass];
+  processSrc = [sources.license, sources.coreScss];
   gatherSrc(config.features, 'scss');
   return gulp.src(processSrc)
     .pipe(plumber())
