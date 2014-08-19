@@ -1,0 +1,49 @@
+// Options concerned with colors and standard dimensions and aesthetics.
+@color: #3498DB;
+@height: 4px;
+@opacity: 0.6;
+@box-shadow: 0 0 1px @color;
+@border-radius: 0;
+@transition: 1s ease 0s;
+@iterations: 100;
+.progrecss {
+  display:block;
+  position: relative;
+}
+.progrecss:after {
+  z-index: 2;
+}
+.progrecss[data-progrecss]:after,
+.progrecss[data-progrecss-mock]:after,
+.progrecss[data-progrecss-timer]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: width @transition;
+  background-color: @color;
+  box-shadow: @box-shadow;
+  opacity: @opacity;
+  height: @height;
+  border-radius: @border-radius;
+  top: 0;
+}
+.progrecss[data-progrecss].bottom:after, .progrecss[data-progrecss-mock].bottom:after, .progrecss[data-progrecss-timer].bottom:after {
+  top: 100%;
+}
+.progrecss[data-progrecss].fixed:after, .progrecss[data-progrecss-mock].fixed:after, .progrecss[data-progrecss-timer].fixed:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.progrecss[data-progrecss].fixed.bottom:after, .progrecss[data-progrecss-mock].fixed.bottom:after, .progrecss[data-progrecss-timer].fixed.bottom:after {
+  position: fixed;
+  top: 100%;
+}
+// Loop for generating standard progrecss increments
+.generate-progrecss(@n, @i: 0) when (@i <= @n) {
+  .progrecss[data-progrecss="@{i}"]:after {
+    width: (@i * 1%);
+  }
+  .generate-progrecss(@n, (@i + 1));
+}
+.generate-progrecss(100);

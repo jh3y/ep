@@ -1,0 +1,25 @@
+$green: #2ECC71;
+$blue: #3498DB;
+$purple: #9B59B6;
+$yellow: #F1C40F;
+$orange: #E67E22;
+$red: #E74C3C;
+
+.progrecss[data-progrecss].green:after, .progrecss[data-progrecss-mock].green:after, .progrecss[data-progrecss-timer].green:after{
+  background-color: $green;
+}
+.progrecss[data-progrecss].blue:after, .progrecss[data-progrecss-mock].blue:after, .progrecss[data-progrecss-timer].blue:after{
+  background-color: $blue;
+}
+.progrecss[data-progrecss].purple:after, .progrecss[data-progrecss-mock].purple:after, .progrecss[data-progrecss-timer].purple:after{
+  background-color: $purple;
+}
+.progrecss[data-progrecss].yellow:after, .progrecss[data-progrecss-mock].yellow:after, .progrecss[data-progrecss-timer].yellow:after{
+  background-color: $yellow;
+}
+.progrecss[data-progrecss].orange:after, .progrecss[data-progrecss-mock].orange:after, .progrecss[data-progrecss-timer].orange:after{
+  background-color: $orange;
+}
+.progrecss[data-progrecss].red:after, .progrecss[data-progrecss-mock].red:after, .progrecss[data-progrecss-timer].red:after{
+  background-color: $red;
+}

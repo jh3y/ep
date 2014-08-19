@@ -1,0 +1,6 @@
+// Explicit durations for progrecss.
+@for $i from 0 through $iterations {
+  .progrecss[data-progrecss][data-progrecss-duration="#{$i}"]:after {
+    transition: width ($i * 1s);
+  }
+}

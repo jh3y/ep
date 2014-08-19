@@ -1,0 +1,8 @@
+// Explicit durations for progrecss.
+.generate-progrecss-durations(@n, @i: 0) when (@i <= @n) {
+  .progrecss[data-progrecss][data-progrecss-duration="@{i}"]:after {
+    transition: width (@i * 1s);
+  }
+  .generate-progrecss-durations(@n, (@i + 1));
+}
+.generate-progrecss-durations(@iterations);

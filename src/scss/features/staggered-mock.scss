@@ -1,0 +1,19 @@
+@keyframes staggered-mock {
+  0% {width: 0%;}
+  10% {width: 10%;}
+  20% {width: 10%;}
+  30% {width: 30%;}
+  40% {width: 30%;}
+  50% {width: 30%;}
+  60% {width: 50%;}
+  70% {width: 70%;}
+  80% {width: 70%;}
+  90% {width: 90%;}
+  100% {width: 100%;}
+}
+
+@for $i from 0 through $iterations {
+  .progrecss[data-progrecss-mock="#{$i}"].staggered.mock:after {
+    animation: staggered-mock ($i * 1s);
+  }
+}

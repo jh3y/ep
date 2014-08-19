@@ -1,0 +1,10 @@
+@keyframes mock {
+  0% {width: 0%;}
+  100% {width: 100%;}
+}
+
+@for $i from 0 through $iterations {
+  .progrecss[data-progrecss-mock="#{$i}"].mock:after {
+    animation: mock ($i * 1s);
+  }
+}
