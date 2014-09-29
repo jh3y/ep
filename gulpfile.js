@@ -121,7 +121,8 @@ gulp.task('sass:watch', function(event) {
 });
 gulp.task('distribute', ['less:compile', 'coffee:compile'], function(event) {
   return gulp.src([sources.buildCss, sources.buildJs])
-    .pipe(gulp.dest(destinations.dist));
+    .pipe(gulp.dest(destinations.dist))
+    .pipe(gulp.dest(''));
 });
 
 gulp.task('dev', ['serve', 'coffee:watch', 'less:watch', 'jade:watch']);
