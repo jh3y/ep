@@ -119,7 +119,7 @@ gulp.task('sass:compile', function(event) {
 gulp.task('sass:watch', function(event) {
   watch({glob: sources.scss}, ['sass:compile']);
 });
-gulp.task('distribute', ['less:compile'], function(event) {
+gulp.task('distribute', ['less:compile', 'coffee:compile'], function(event) {
   return gulp.src([sources.buildCss, sources.buildJs])
     .pipe(gulp.dest(destinations.dist));
 });
