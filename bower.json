@@ -1,6 +1,6 @@
 {
   "name": "progression",
-  "main": "build/progression.css",
+  "main": "dist/progression.css",
   "version": "1.0.0",
   "homepage": "http://jh3y.github.io/progression",
   "authors": [
@@ -13,5 +13,13 @@
     "css",
     "less"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ]
 }
