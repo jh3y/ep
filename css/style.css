@@ -20,9 +20,11 @@ h1,
   padding: 0 20px;
 }
 .code-snippet pre {
-  margin: 0 auto;
-  max-width: 430px;
+  margin: 10px auto;
+  max-width: 370px;
   text-align: left;
+  background-color: #474747;
+  color: #fff;
 }
 code > span {
   display: block;
@@ -30,10 +32,16 @@ code > span {
 .lead {
   margin: 20px 0px 10px 0px;
 }
-button {
-  margin: 5px 5px;
+code {
+  color: #9400d3;
 }
-h5.progrecss[data-progrecss-mock="10"].staggered.mock:after {
+button.btn.btn-info {
+  margin: 5px 5px;
+  color: #fff;
+  border-color: #9400d3;
+  background-color: #9400D3;
+}
+h5.progrecss[data-progression-mock="10"].staggered.mock:after {
   animation: staggered-mock 10s infinite;
   -webkit-animation: staggered-mock 10s infinite;
 }
