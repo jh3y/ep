@@ -1,5 +1,5 @@
-progrecss = window.progrecss = (element, options) ->
-  return new progrecss(element, options)  unless this instanceof progrecss
+progression = window.progression = (element, options) ->
+  return new progression(element, options)  unless this instanceof progression
   @_element = element
   @_color = (if (options isnt `undefined` and options.color isnt `undefined`) then options.color else "green")
   @_position = (if (options isnt `undefined` and options.position isnt `undefined`) then options.position else "top")
@@ -16,57 +16,57 @@ progrecss = window.progrecss = (element, options) ->
   return
 
 
-progrecss::_create = ->
-  progrecss = this
-  progrecss._element = document.createElement("div")  if progrecss._element is `undefined`
-  progrecss._element.className = "progrecss " + progrecss._position + " " + progrecss._color
-  progrecss._element.setAttribute "data-progrecss", progrecss.percent
-  if progrecss._mock
-    progrecss._element.setAttribute "data-progrecss-mock", progrecss._mockDuration
-    progrecss._element.className += ' staggered'  if progrecss._staggered
-    progrecss._element.className += ' mock'  if progrecss._startMockOnCreate
-    progrecss._element.className += ' reverse' if progrecss._reverse
-  else if progrecss._timer
-    progrecss.element.setAttribute "data-progrecss-timer", progrecss._timerDuration
-    progrecss.element.className += " timer"  if progrecss._startTimerOnCreate
-    progrecss._element.className += ' reverse' if progrecss._reverse
+progression::_create = ->
+  progression = this
+  progression._element = document.createElement("div")  if progression._element is `undefined`
+  progression._element.className = "progression " + progression._position + " " + progression._color
+  progression._element.setAttribute "data-progression", progression.percent
+  if progression._mock
+    progression._element.setAttribute "data-progression-mock", progression._mockDuration
+    progression._element.className += ' staggered'  if progression._staggered
+    progression._element.className += ' mock'  if progression._startMockOnCreate
+    progression._element.className += ' reverse' if progression._reverse
+  else if progression._timer
+    progression.element.setAttribute "data-progression-timer", progression._timerDuration
+    progression.element.className += " timer"  if progression._startTimerOnCreate
+    progression._element.className += ' reverse' if progression._reverse
   return
 
-progrecss::setProgrecss = (percent) ->
+progression::setprogression = (percent) ->
   if percent isnt `undefined` and typeof (percent) is "number" and percent <= 100 and percent >= 0
-    @_element.setAttribute "data-progrecss", percent
+    @_element.setAttribute "data-progression", percent
     @_percent = percent
   else
-    throw Error("progrecss: ERROR percent must be a number and between 0 and 100.")
+    throw Error("progression: ERROR percent must be a number and between 0 and 100.")
   return
 
-progrecss::pause = ->
+progression::pause = ->
   @_element.className += ' pause'
 
-progrecss::play = ->
+progression::play = ->
   @_element.className = @_element.className.replace 'pause', ''
 
 
-progrecss::togglePause = ->
+progression::togglePause = ->
   if @_element.className.indexOf('pause') isnt -1
     @play()
   else
     @pause()
 
-progrecss::startMock = ->
-  progrecss = this
-  progrecss._element.className += " mock"
+progression::startMock = ->
+  progression = this
+  progression._element.className += " mock"
   setTimeout (->
-    progrecss._element.className = progrecss._element.className.replace(/\bmock\b/, "")
+    progression._element.className = progression._element.className.replace(/\bmock\b/, "")
     return
-  ), progrecss._mockDuration * 1000
+  ), progression._mockDuration * 1000
   return
 
-progrecss::startTimer = ->
-  progrecss = this
-  progrecss._element.className += " timer"
+progression::startTimer = ->
+  progression = this
+  progression._element.className += " timer"
   setTimeout (->
-    progrecss._element.className = progrecss._element.className.replace(/\btimer\b/, "")
+    progression._element.className = progression._element.className.replace(/\btimer\b/, "")
     return
-  ), progrecss._timerDuration * 1000
+  ), progression._timerDuration * 1000
   return

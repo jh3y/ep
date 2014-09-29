@@ -6,22 +6,22 @@
 @border-radius: 0;
 @transition: 1s ease 0s;
 @iterations: 100;
-.progrecss {
+.progression {
   display:block;
   position: relative;
 }
-.progrecss:after {
+.progression:after {
   z-index: 2;
 }
-.progrecss.reverse:after {
+.progression.reverse:after {
   animation-direction: reverse;
 }
-.progrecss.pause:after {
+.progression.pause:after {
   animation-play-state: paused;
 }
-.progrecss[data-progrecss]:after,
-.progrecss[data-progrecss-mock]:after,
-.progrecss[data-progrecss-timer]:after {
+.progression[data-progression]:after,
+.progression[data-progression-mock]:after,
+.progression[data-progression-timer]:after {
   content: "";
   display: block;
   position: absolute;
@@ -33,23 +33,23 @@
   border-radius: @border-radius;
   top: 0;
 }
-.progrecss[data-progrecss].bottom:after, .progrecss[data-progrecss-mock].bottom:after, .progrecss[data-progrecss-timer].bottom:after {
+.progression[data-progression].bottom:after, .progression[data-progression-mock].bottom:after, .progression[data-progression-timer].bottom:after {
   top: 100%;
 }
-.progrecss[data-progrecss].fixed:after, .progrecss[data-progrecss-mock].fixed:after, .progrecss[data-progrecss-timer].fixed:after {
+.progression[data-progression].fixed:after, .progression[data-progression-mock].fixed:after, .progression[data-progression-timer].fixed:after {
   position: fixed;
   top: 0;
   left: 0;
 }
-.progrecss[data-progrecss].fixed.bottom:after, .progrecss[data-progrecss-mock].fixed.bottom:after, .progrecss[data-progrecss-timer].fixed.bottom:after {
+.progression[data-progression].fixed.bottom:after, .progression[data-progression-mock].fixed.bottom:after, .progression[data-progression-timer].fixed.bottom:after {
   position: fixed;
   top: 100%;
 }
-// Loop for generating standard progrecss increments
-.generate-progrecss(@n, @i: 0) when (@i <= @n) {
-  .progrecss[data-progrecss="@{i}"]:after {
+// Loop for generating standard progression increments
+.generate-progression(@n, @i: 0) when (@i <= @n) {
+  .progression[data-progression="@{i}"]:after {
     width: (@i * 1%);
   }
-  .generate-progrecss(@n, (@i + 1));
+  .generate-progression(@n, (@i + 1));
 }
-.generate-progrecss(100);
+.generate-progression(100);

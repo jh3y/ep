@@ -4,7 +4,7 @@
 }
 
 @for $i from 0 through $iterations {
-  .progrecss[data-progrecss-mock="#{$i}"].mock:after {
+  .progression[data-progression-mock="#{$i}"].mock:after {
     animation-name: mock;
     animation-duration: ($i * 1s);
   }

@@ -1,40 +1,31 @@
-#progre(c)ss
+#progression
 
 
 ###Pure CSS progress bars with minimal effort
 
-![alt tag](https://raw.github.com/jh3y/pics/master/progrecss/progrecss.gif)
-
-
-#### 29/09/2014: progre(c)ss is due for an update and as such is being renamed to progre(c)ssion. New update includes better attribute names and custom element support.
+![alt tag](https://raw.github.com/jh3y/pics/master/progression/progression.gif)
 
 #### Usage
-1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/build/progrecss.css) (_available through Bower_).
-2. Add the class `progrecss` to your element (any existing element)
-3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
-4. Update progre(c)ss value if necessary using simple vanilla js or whatever suits you best!
+1. Include the [stylesheet](https://raw2.github.com/jh3y/progression/master/build/progression.css) (_available through Bower_).
+2. Add the class `progression` to your element (any existing element)
+3. Add a data attribute `data-progression` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
+4. Update progression value if necessary using simple vanilla js or whatever suits you best!
 
 That's it!
 
 ```html
-    <div class="progrecss" data-progrecss="77">
-		My first progre(c)ss!
+    <div class="progression" data-progression="77">
+		My first progression!
 	</div>
 ```
 
 ##### Browser Support
 
-From what I can gather having a look at _caniuse_, progre(c)ss should be fully supported from IE10 up. This is purely because of the __transition__ property.
+From what I can gather having a look at _caniuse_, progression should be fully supported from IE10 up. This is purely because of the __transition__ property.
 
-##### Mocking progre(c)ss
+##### Mocking progression
 
 You can easily mock progress by using the helper attributes and classes. Refer [here](#helpers).
-
-##### Hooking into AJAX requests with progre(c)ss
-
-A first attempt at hooking progre(c)ss into a simple AJAX request has been made and you can see it [here](http://jh3y.github.io/demos/using-progrecss-with-jquery-ajax/). Any help with this feature of progre(c)ss would be really appreciated.
-
-__Update__: I came across [this](https://www.codersgrid.com/2014/02/11/progrecss-css-fancy-progress-bars-in-minimal-css/) article on codersgrid.com which shows also a way of hooking into AJAX requests.
 
 ##### Helpers
 
@@ -42,9 +33,9 @@ There are some helper classes and attributes you can add to help you out!
 
 ######Positioning classes
 * `top`(default)
-	The default positioning for a progrecss bar is at the top of an element.
+	The default positioning for a progression bar is at the top of an element.
 * `bottom`
-	Positions the progrecss bar at the bottom of the element.
+	Positions the progression bar at the bottom of the element.
 * `fixed`
 	Gives a fixed position of `0,0` relative to the container of the element.
 
@@ -57,24 +48,24 @@ There are some helper classes and attributes you can add to help you out!
 * `yellow`
 
 ######Behavioural classes
-* `reverse` - will reverse the direction of a keyframe based progre(c)ss bar (mock/timer).
-* `pause` - will pause a keyframe based progre(c)ss bar (mock/timer).
+* `reverse` - will reverse the direction of a keyframe based progression bar (mock/timer).
+* `pause` - will pause a keyframe based progression bar (mock/timer).
 
 ######Mocking attribute
-* `data-progrecss-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
+* `data-progression-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
 
 ######Mocking classes
 * `mock` - required in order to initiate a mock.
 * `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
 ######Timer attribute
-* `data-progrecss-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
+* `data-progression-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
 
 ######Timer classes
 * `timer` - required in order to initiate a timer.
 
 ######Duration attribute
-* `data-progrecss-duration` - takes a number value that defines the duration of progrecss transitions. For example, setting this attribute to 5 would mean that all transitions of progrecss values will take 5s.
+* `data-progression-duration` - takes a number value that defines the duration of progression transitions. For example, setting this attribute to 5 would mean that all transitions of progression values will take 5s.
 
 ######Javascript helper
 At the request of some people I have added a small javascript helper to the repo.
@@ -82,7 +73,7 @@ At the request of some people I have added a small javascript helper to the repo
 It's real simple to use. Here is an example piece of code for using it.
 
 ```javascript
-var myProgrecss = new progrecss (document.body, {
+var myprogression = new progression (document.body, {
 	color: 'red',
 	percent: 0,
 	position: 'fixed',
@@ -103,29 +94,29 @@ The following options are available;
 * `mock` - _object consisting of mock, mockDuration, and staggered_
 * `staggered` - _string_ - defines whether the mock will stagger.
 * `mockDuration` - _number_ - defines how long the mock will take in seconds.
-* `startMockOnCreate` - _bool_ - defines whether the progre(c)ss bar will mock straight away.
-* `reverse` - will reverse the direction of keyframe based progre(c)ss bars.
+* `startMockOnCreate` - _bool_ - defines whether the progression bar will mock straight away.
+* `reverse` - will reverse the direction of keyframe based progression bars.
 
 And the following methods;
 
-* `setProgrecss(number percent)` - sets percentage that progre(c)ss is complete.
-* `startMock()` - will initiate a progre(c)ss bar mock based on the options passed in.
-* `togglePause()` - will toggle the play state of a keyframe based progre(c)ss bar.
-* `pause()` - will pause a keyframe based progre(c)ss bar.
-* `play()` - will play a keyframe based progre(c)ss bar.
+* `setprogression(number percent)` - sets percentage that progression is complete.
+* `startMock()` - will initiate a progression bar mock based on the options passed in.
+* `togglePause()` - will toggle the play state of a keyframe based progression bar.
+* `pause()` - will pause a keyframe based progression bar.
+* `play()` - will play a keyframe based progression bar.
 
 #### How does this work?
-progre(c)ss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
+progression takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
 
-making use of pseudo elements means that we can add progre(c)ss bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
+making use of pseudo elements means that we can add progression bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
 
 preprocessing tools such as __less__ and __sass__ mean we can write minimal code making use of looping in order to sit back and reap the benefits and drink a coffee!
 
 #### Development/Customisation
 ##### Generating custom builds
-You might not need all the features implemented for progre(c)ss. You can customise the build being generated by modifying __progrecss-config.json__ and setting features to _true_ or _false_. Doing this can save some filesize.
+You might not need all the features implemented for progression. You can customise the build being generated by modifying __progression-config.json__ and setting features to _true_ or _false_. Doing this can save some filesize.
 ##### Editing the source
-__progre(c)ss__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
+__progression__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
 
 When using the __less__/__sass__/__scss__ file there are already some variables in place so you can roll out a new theme easily.
 
@@ -151,4 +142,4 @@ Any suggestions, improvements or issues are welcome. :)
 
 MIT
 
-Copyright (c) 2014 [@jh3y](https://github.com/jh3y)
+Copyright 2014 [@jh3y](https://github.com/jh3y)

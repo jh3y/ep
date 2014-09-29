@@ -1,15 +1,15 @@
-// Timer keyframe for descending progrecss bar
+// Timer keyframe for descending progression bar
 @keyframes timer {
   0% {width: 100%;}
   100% {width: 0%;}
 }
 
 // Generate timers for up to 120 seconds
-.generate-progrecss-timer(@n, @i:0) when (@i <= @n) {
-  .progrecss[data-progrecss-timer="@{i}"].timer:after {
+.generate-progression-timer(@n, @i:0) when (@i <= @n) {
+  .progression[data-progression-timer="@{i}"].timer:after {
     animation-name: timer;
     animation-duration: (@i * 1s);
   }
-  .generate-progrecss-timer(@n, (@i + 1));
+  .generate-progression-timer(@n, (@i + 1));
 }
-.generate-progrecss-timer(@iterations);
+.generate-progression-timer(@iterations);

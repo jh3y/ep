@@ -1,6 +1,6 @@
-// Explicit durations for progrecss.
+// Explicit durations for progression.
 @for $i from 0 through $iterations {
-  .progrecss[data-progrecss][data-progrecss-duration="#{$i}"]:after {
+  .progression[data-progression][data-progression-duration="#{$i}"]:after {
     transition: width ($i * 1s);
   }
 }

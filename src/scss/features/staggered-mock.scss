@@ -13,7 +13,7 @@
 }
 
 @for $i from 0 through $iterations {
-  .progrecss[data-progrecss-mock="#{$i}"].staggered.mock:after {
+  .progression[data-progression-mock="#{$i}"].staggered.mock:after {
     animation-name: staggered-mock;
     animation-duration: ($i * 1s);
   }

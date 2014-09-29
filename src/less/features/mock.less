@@ -4,11 +4,11 @@
   100% {width: 100%;}
 }
 // Generate mocks for up to 120 seconds
-.generate-progrecss-mock(@n, @i:0) when (@i <= @n) {
-  .progrecss[data-progrecss-mock="@{i}"].mock:after {
+.generate-progression-mock(@n, @i:0) when (@i <= @n) {
+  .progression[data-progression-mock="@{i}"].mock:after {
     animation-name: mock;
     animation-duration: (@i * 1s);
   }
-  .generate-progrecss-mock(@n, (@i + 1));
+  .generate-progression-mock(@n, (@i + 1));
 }
-.generate-progrecss-mock(@iterations);
+.generate-progression-mock(@iterations);
