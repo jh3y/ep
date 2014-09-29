@@ -5,6 +5,9 @@
 
 ![alt tag](https://raw.github.com/jh3y/pics/master/progrecss/progrecss.gif)
 
+
+#### 29/09/2014: progre(c)ss is due for an update and as such is being renamed to progre(c)ssion. New update includes better attribute names and custom element support.
+
 #### Usage
 1. Include the [stylesheet](https://raw2.github.com/jh3y/progre-c-ss/master/build/progrecss.css) (_available through Bower_).
 2. Add the class `progrecss` to your element (any existing element)
