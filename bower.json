@@ -1,7 +1,7 @@
 {
-  "name": "progre(c)ss",
+  "name": "progrecss",
   "main": "dist/progrecss.css",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "homepage": "http://jh3y.github.io/progre-c-ss",
   "authors": [
     "jh3y"
@@ -9,7 +9,6 @@
   "description": "Pure CSS progress bars with minimal effort!",
   "keywords": [
     "progrecss",
-    "progre(c)ss"
     "progress",
     "css",
     "less"
