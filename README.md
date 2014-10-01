@@ -1,29 +1,29 @@
-#progression
+#progre(c)ss
 
 
 ###Pure CSS progress bars with minimal effort
 
-![alt tag](https://raw.github.com/jh3y/pics/master/progression/progression.gif)
+![alt tag](https://raw.github.com/jh3y/pics/master/progrecss/progrecss.gif)
 
 #### Usage
-1. Include the [stylesheet](https://raw2.github.com/jh3y/progression/master/build/progression.css) (_available through Bower_).
-2. Add the class `progression` to your element (any existing element)
-3. Add a data attribute `data-progression` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
-4. Update progression value if necessary using simple vanilla js or whatever suits you best!
+1. Include the [stylesheet](https://raw2.github.com/jh3y/progrecss/master/build/progrecss.css) (_available through Bower_).
+2. Add the class `progrecss` to your element (any existing element)
+3. Add a data attribute `data-progrecss` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
+4. Update progrecss value if necessary using simple vanilla js or whatever suits you best!
 
 That's it!
 
 ```html
-    <div class="progression" data-progression="77">
-		My first progression!
+    <div class="progrecss" data-progrecss="77">
+		My first progrecss!
 	</div>
 ```
 
 ##### Browser Support
 
-From what I can gather having a look at _caniuse_, progression should be fully supported from IE10 up. This is purely because of the __transition__ property.
+From what I can gather having a look at _caniuse_, progrecss should be fully supported from IE10 up. This is purely because of the __transition__ property.
 
-##### Mocking progression
+##### Mocking progrecss
 
 You can easily mock progress by using the helper attributes and classes. Refer [here](#helpers).
 
@@ -33,9 +33,9 @@ There are some helper classes and attributes you can add to help you out!
 
 ######Positioning classes
 * `top`(default)
-	The default positioning for a progression bar is at the top of an element.
+	The default positioning for a progrecss bar is at the top of an element.
 * `bottom`
-	Positions the progression bar at the bottom of the element.
+	Positions the progrecss bar at the bottom of the element.
 * `fixed`
 	Gives a fixed position of `0,0` relative to the container of the element.
 
@@ -48,24 +48,24 @@ There are some helper classes and attributes you can add to help you out!
 * `yellow`
 
 ######Behavioural classes
-* `reverse` - will reverse the direction of a keyframe based progression bar (mock/timer).
-* `pause` - will pause a keyframe based progression bar (mock/timer).
+* `reverse` - will reverse the direction of a keyframe based progrecss bar (mock/timer).
+* `pause` - will pause a keyframe based progrecss bar (mock/timer).
 
 ######Mocking attribute
-* `data-progression-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
+* `data-progrecss-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
 
 ######Mocking classes
 * `mock` - required in order to initiate a mock.
 * `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
 
 ######Timer attribute
-* `data-progression-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
+* `data-progrecss-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
 
 ######Timer classes
 * `timer` - required in order to initiate a timer.
 
 ######Duration attribute
-* `data-progression-duration` - takes a number value that defines the duration of progression transitions. For example, setting this attribute to 5 would mean that all transitions of progression values will take 5s.
+* `data-progrecss-duration` - takes a number value that defines the duration of progrecss transitions. For example, setting this attribute to 5 would mean that all transitions of progrecss values will take 5s.
 
 ######Javascript helper
 At the request of some people I have added a small javascript helper to the repo.
@@ -73,7 +73,7 @@ At the request of some people I have added a small javascript helper to the repo
 It's real simple to use. Here is an example piece of code for using it.
 
 ```javascript
-var myprogression = new progression (document.body, {
+var myprogrecss = new progrecss (document.body, {
 	color: 'red',
 	percent: 0,
 	position: 'fixed',
@@ -94,29 +94,29 @@ The following options are available;
 * `mock` - _object consisting of mock, mockDuration, and staggered_
 * `staggered` - _string_ - defines whether the mock will stagger.
 * `mockDuration` - _number_ - defines how long the mock will take in seconds.
-* `startMockOnCreate` - _bool_ - defines whether the progression bar will mock straight away.
-* `reverse` - will reverse the direction of keyframe based progression bars.
+* `startMockOnCreate` - _bool_ - defines whether the progrecss bar will mock straight away.
+* `reverse` - will reverse the direction of keyframe based progrecss bars.
 
 And the following methods;
 
-* `setprogression(number percent)` - sets percentage that progression is complete.
-* `startMock()` - will initiate a progression bar mock based on the options passed in.
-* `togglePause()` - will toggle the play state of a keyframe based progression bar.
-* `pause()` - will pause a keyframe based progression bar.
-* `play()` - will play a keyframe based progression bar.
+* `setprogrecss(number percent)` - sets percentage that progrecss is complete.
+* `startMock()` - will initiate a progrecss bar mock based on the options passed in.
+* `togglePause()` - will toggle the play state of a keyframe based progrecss bar.
+* `pause()` - will pause a keyframe based progrecss bar.
+* `play()` - will play a keyframe based progrecss bar.
 
 #### How does this work?
-progression takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
+progrecss takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
 
-making use of pseudo elements means that we can add progression bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
+making use of pseudo elements means that we can add progrecss bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
 
 preprocessing tools such as __less__ and __sass__ mean we can write minimal code making use of looping in order to sit back and reap the benefits and drink a coffee!
 
 #### Development/Customisation
 ##### Generating custom builds
-You might not need all the features implemented for progression. You can customise the build being generated by modifying __progression-config.json__ and setting features to _true_ or _false_. Doing this can save some filesize.
+You might not need all the features implemented for progrecss. You can customise the build being generated by modifying __progrecss-config.json__ and setting features to _true_ or _false_. Doing this can save some filesize.
 ##### Editing the source
-__progression__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
+__progrecss__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
 
 When using the __less__/__sass__/__scss__ file there are already some variables in place so you can roll out a new theme easily.
 

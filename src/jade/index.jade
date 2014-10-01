@@ -1,14 +1,14 @@
 doctype
 head
-  title progression workbench
-  link(rel="stylesheet", href="css/progression.min.css")
+  title progrecss workbench
+  link(rel="stylesheet", href="css/progrecss.min.css")
 body
-  h1 let's make progression
+  h1 let's make progrecss
   button#actionButton Play/Pause
-  script(src="js/progression.js")
+  script(src="js/progrecss.js")
   script.
     (function(){
-      var myprogression = new progression (document.body, {
+      var myprogrecss = new progrecss (document.body, {
         color: 'red',
         percent: 0,
         position: 'fixed',
@@ -16,11 +16,11 @@ body
         mock: {
             staggered: true,
             startMockOnCreate: true,
-            mockDuration: 100
+            mockDuration: 10
         }
       });
       document.getElementById('actionButton')
         .addEventListener('click', function(e) {
-          myprogression.togglePause();
+          myprogrecss.togglePause();
         });
     })();

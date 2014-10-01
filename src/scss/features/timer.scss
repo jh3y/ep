@@ -4,7 +4,7 @@
 }
 
 @for $i from 0 through $iterations {
-  .progression[data-progression-timer="#{$i}"].timer:after {
+  .progrecss[data-progrecss-timer="#{$i}"].timer:after {
     animation-name: timer;
     animation-duration: ($i * 1s);
   }

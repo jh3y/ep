@@ -1,5 +1,5 @@
 /*
-progression.css - http://jh3y.github.io/progression
+progrecss.css - http://jh3y.github.io/progrecss
 Licensed under the MIT license
 
 Jhey Tompkins (c) 2014.

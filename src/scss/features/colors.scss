@@ -5,21 +5,21 @@ $yellow: #F1C40F;
 $orange: #E67E22;
 $red: #E74C3C;
 
-.progression[data-progression].green:after, .progression[data-progression-mock].green:after, .progression[data-progression-timer].green:after{
+.progrecss[data-progrecss].green:after, .progrecss[data-progrecss-mock].green:after, .progrecss[data-progrecss-timer].green:after{
   background-color: $green;
 }
-.progression[data-progression].blue:after, .progression[data-progression-mock].blue:after, .progression[data-progression-timer].blue:after{
+.progrecss[data-progrecss].blue:after, .progrecss[data-progrecss-mock].blue:after, .progrecss[data-progrecss-timer].blue:after{
   background-color: $blue;
 }
-.progression[data-progression].purple:after, .progression[data-progression-mock].purple:after, .progression[data-progression-timer].purple:after{
+.progrecss[data-progrecss].purple:after, .progrecss[data-progrecss-mock].purple:after, .progrecss[data-progrecss-timer].purple:after{
   background-color: $purple;
 }
-.progression[data-progression].yellow:after, .progression[data-progression-mock].yellow:after, .progression[data-progression-timer].yellow:after{
+.progrecss[data-progrecss].yellow:after, .progrecss[data-progrecss-mock].yellow:after, .progrecss[data-progrecss-timer].yellow:after{
   background-color: $yellow;
 }
-.progression[data-progression].orange:after, .progression[data-progression-mock].orange:after, .progression[data-progression-timer].orange:after{
+.progrecss[data-progrecss].orange:after, .progrecss[data-progrecss-mock].orange:after, .progrecss[data-progrecss-timer].orange:after{
   background-color: $orange;
 }
-.progression[data-progression].red:after, .progression[data-progression-mock].red:after, .progression[data-progression-timer].red:after{
+.progrecss[data-progrecss].red:after, .progrecss[data-progrecss-mock].red:after, .progrecss[data-progrecss-timer].red:after{
   background-color: $red;
 }

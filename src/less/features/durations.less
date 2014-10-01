@@ -1,8 +1,8 @@
-// Explicit durations for progression.
-.generate-progression-durations(@n, @i: 0) when (@i <= @n) {
-  .progression[data-progression][data-progression-duration="@{i}"]:after {
+// Explicit durations for progrecss.
+.generate-progrecss-durations(@n, @i: 0) when (@i <= @n) {
+  .progrecss[data-progrecss][data-progrecss-duration="@{i}"]:after {
     transition: width (@i * 1s);
   }
-  .generate-progression-durations(@n, (@i + 1));
+  .generate-progrecss-durations(@n, (@i + 1));
 }
-.generate-progression-durations(@iterations);
+.generate-progrecss-durations(@iterations);

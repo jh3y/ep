@@ -5,22 +5,22 @@ $box-shadow: 0 0 1px $color;
 $border-radius: 0;
 $iterations: 120;
 
-.progression {
+.progrecss {
   display:block;
   position: relative;
 }
-.progression:after {
+.progrecss:after {
   z-index: 2;
 }
-.progression.reverse:after {
+.progrecss.reverse:after {
   animation-direction: reverse;
 }
-.progression.pause:after {
+.progrecss.pause:after {
   animation-play-state: paused;
 }
-.progression[data-progression]:after,
-.progression[data-progression-mock]:after,
-.progression[data-progression-timer]:after {
+.progrecss[data-progrecss]:after,
+.progrecss[data-progrecss-mock]:after,
+.progrecss[data-progrecss-timer]:after {
   content: "";
   display: block;
   position: absolute;
@@ -32,19 +32,19 @@ $iterations: 120;
   border-radius: $border-radius;
   top: 0;
 }
-.progression[data-progression].bottom:after, .progression[data-progression-mock].bottom:after, .progression[data-progression-timer].bottom:after {
+.progrecss[data-progrecss].bottom:after, .progrecss[data-progrecss-mock].bottom:after, .progrecss[data-progrecss-timer].bottom:after {
   top: 100%;
 }
-.progression[data-progression].fixed:after, .progression[data-progression-mock].fixed:after, .progression[data-progression-timer].fixed:after {
+.progrecss[data-progrecss].fixed:after, .progrecss[data-progrecss-mock].fixed:after, .progrecss[data-progrecss-timer].fixed:after {
   position: fixed;
   top: 0;
   left: 0;
 }
-.progression[data-progression].fixed.bottom:after, .progression[data-progression-mock].fixed.bottom:after, .progression[data-progression-timer].fixed.bottom:after {
+.progrecss[data-progrecss].fixed.bottom:after, .progrecss[data-progrecss-mock].fixed.bottom:after, .progrecss[data-progrecss-timer].fixed.bottom:after {
   position: fixed;
   top: 100%;
 }
 
 @for $i from 0 through 100 {
-  .progression[data-progression="#{$i}"]:after { width: ($i * 1%); }
+  .progrecss[data-progrecss="#{$i}"]:after { width: ($i * 1%); }
 }

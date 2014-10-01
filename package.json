@@ -1,8 +1,8 @@
 {
-  "name": "progression",
+  "name": "progrecss",
   "version": "1.0.0",
   "description": "Pure CSS progress bars with minimal effort!",
-  "main": "dist/progression.css",
+  "main": "dist/progrecss.css",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.8.1",
@@ -23,10 +23,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jh3y/progression.git"
+    "url": "https://github.com/jh3y/progre-c-ss.git"
   },
   "keywords": [
-    "progression",
+    "progrecss",
+    "progrecss",
     "progress",
     "css",
     "less"
@@ -34,7 +35,7 @@
   "author": "jh3y",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jh3y/progression/issues"
+    "url": "https://github.com/jh3y/progre-c-ss/issues"
   },
-  "homepage": "http://jh3y.github.io/progression"
+  "homepage": "http://jh3y.github.io/progre-c-ss"
 }
