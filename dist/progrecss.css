@@ -34,8 +34,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-transition: width 1s ease 0s;
   transition: width 1s ease 0s;
   background-color: #3498db;
-  -webkit-box-shadow: 0 0 1px #3498db;
-  box-shadow: 0 0 1px #3498db;
+  -webkit-box-shadow: 0 0 1px $color;
+  box-shadow: 0 0 1px $color;
   opacity: 0.6;
   height: 4px;
   border-radius: 0;
@@ -56,8 +56,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .progrecss[data-progrecss].fixed.bottom:after,
 .progrecss[data-progrecss-mock].fixed.bottom:after,
 .progrecss[data-progrecss-timer].fixed.bottom:after {
-  position: fixed;
   top: 100%;
+  margin-top: -4px;
 }
 .progrecss[data-progrecss="0"]:after {
   width: 0%;
@@ -361,22 +361,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .progrecss[data-progrecss="100"]:after {
   width: 100%;
-}
-@-webkit-keyframes mock {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes mock {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
 }
 .progrecss[data-progrecss-mock="0"].mock:after {
   -webkit-animation-name: mock;
@@ -984,697 +968,851 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-duration: 100s;
   animation-duration: 100s;
 }
-@-webkit-keyframes staggered-mock {
-  0% {
-    width: 0%;
-  }
-  10% {
-    width: 10%;
-  }
-  20% {
-    width: 10%;
-  }
-  30% {
-    width: 30%;
-  }
-  40% {
-    width: 30%;
-  }
-  50% {
-    width: 30%;
-  }
-  60% {
-    width: 50%;
-  }
-  70% {
-    width: 70%;
-  }
-  80% {
-    width: 70%;
-  }
-  90% {
-    width: 90%;
-  }
-  100% {
-    width: 100%;
-  }
+.progrecss[data-progrecss-mock="101"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 101s;
+  animation-duration: 101s;
 }
-@keyframes staggered-mock {
-  0% {
-    width: 0%;
-  }
-  10% {
-    width: 10%;
-  }
-  20% {
-    width: 10%;
-  }
-  30% {
-    width: 30%;
-  }
-  40% {
-    width: 30%;
-  }
-  50% {
-    width: 30%;
-  }
-  60% {
-    width: 50%;
-  }
-  70% {
-    width: 70%;
-  }
-  80% {
-    width: 70%;
-  }
-  90% {
-    width: 90%;
-  }
-  100% {
-    width: 100%;
-  }
+.progrecss[data-progrecss-mock="102"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 102s;
+  animation-duration: 102s;
 }
-.progrecss[data-progrecss-mock="0"].staggered.mock:after {
+.progrecss[data-progrecss-mock="103"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 103s;
+  animation-duration: 103s;
+}
+.progrecss[data-progrecss-mock="104"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 104s;
+  animation-duration: 104s;
+}
+.progrecss[data-progrecss-mock="105"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 105s;
+  animation-duration: 105s;
+}
+.progrecss[data-progrecss-mock="106"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 106s;
+  animation-duration: 106s;
+}
+.progrecss[data-progrecss-mock="107"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 107s;
+  animation-duration: 107s;
+}
+.progrecss[data-progrecss-mock="108"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 108s;
+  animation-duration: 108s;
+}
+.progrecss[data-progrecss-mock="109"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 109s;
+  animation-duration: 109s;
+}
+.progrecss[data-progrecss-mock="110"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 110s;
+  animation-duration: 110s;
+}
+.progrecss[data-progrecss-mock="111"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 111s;
+  animation-duration: 111s;
+}
+.progrecss[data-progrecss-mock="112"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 112s;
+  animation-duration: 112s;
+}
+.progrecss[data-progrecss-mock="113"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 113s;
+  animation-duration: 113s;
+}
+.progrecss[data-progrecss-mock="114"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 114s;
+  animation-duration: 114s;
+}
+.progrecss[data-progrecss-mock="115"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 115s;
+  animation-duration: 115s;
+}
+.progrecss[data-progrecss-mock="116"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 116s;
+  animation-duration: 116s;
+}
+.progrecss[data-progrecss-mock="117"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 117s;
+  animation-duration: 117s;
+}
+.progrecss[data-progrecss-mock="118"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 118s;
+  animation-duration: 118s;
+}
+.progrecss[data-progrecss-mock="119"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 119s;
+  animation-duration: 119s;
+}
+.progrecss[data-progrecss-mock="120"].mock:after {
+  -webkit-animation-name: mock;
+  animation-name: mock;
+  -webkit-animation-duration: 120s;
+  animation-duration: 120s;
+}
+.progrecss[data-progrecss-mock="0"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 0s;
   animation-duration: 0s;
 }
-.progrecss[data-progrecss-mock="1"].staggered.mock:after {
+.progrecss[data-progrecss-mock="1"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
 }
-.progrecss[data-progrecss-mock="2"].staggered.mock:after {
+.progrecss[data-progrecss-mock="2"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
 }
-.progrecss[data-progrecss-mock="3"].staggered.mock:after {
+.progrecss[data-progrecss-mock="3"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
 }
-.progrecss[data-progrecss-mock="4"].staggered.mock:after {
+.progrecss[data-progrecss-mock="4"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 4s;
   animation-duration: 4s;
 }
-.progrecss[data-progrecss-mock="5"].staggered.mock:after {
+.progrecss[data-progrecss-mock="5"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 5s;
   animation-duration: 5s;
 }
-.progrecss[data-progrecss-mock="6"].staggered.mock:after {
+.progrecss[data-progrecss-mock="6"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 6s;
   animation-duration: 6s;
 }
-.progrecss[data-progrecss-mock="7"].staggered.mock:after {
+.progrecss[data-progrecss-mock="7"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 7s;
   animation-duration: 7s;
 }
-.progrecss[data-progrecss-mock="8"].staggered.mock:after {
+.progrecss[data-progrecss-mock="8"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 8s;
   animation-duration: 8s;
 }
-.progrecss[data-progrecss-mock="9"].staggered.mock:after {
+.progrecss[data-progrecss-mock="9"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 9s;
   animation-duration: 9s;
 }
-.progrecss[data-progrecss-mock="10"].staggered.mock:after {
+.progrecss[data-progrecss-mock="10"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 10s;
   animation-duration: 10s;
 }
-.progrecss[data-progrecss-mock="11"].staggered.mock:after {
+.progrecss[data-progrecss-mock="11"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 11s;
   animation-duration: 11s;
 }
-.progrecss[data-progrecss-mock="12"].staggered.mock:after {
+.progrecss[data-progrecss-mock="12"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 12s;
   animation-duration: 12s;
 }
-.progrecss[data-progrecss-mock="13"].staggered.mock:after {
+.progrecss[data-progrecss-mock="13"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 13s;
   animation-duration: 13s;
 }
-.progrecss[data-progrecss-mock="14"].staggered.mock:after {
+.progrecss[data-progrecss-mock="14"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 14s;
   animation-duration: 14s;
 }
-.progrecss[data-progrecss-mock="15"].staggered.mock:after {
+.progrecss[data-progrecss-mock="15"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 15s;
   animation-duration: 15s;
 }
-.progrecss[data-progrecss-mock="16"].staggered.mock:after {
+.progrecss[data-progrecss-mock="16"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 16s;
   animation-duration: 16s;
 }
-.progrecss[data-progrecss-mock="17"].staggered.mock:after {
+.progrecss[data-progrecss-mock="17"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 17s;
   animation-duration: 17s;
 }
-.progrecss[data-progrecss-mock="18"].staggered.mock:after {
+.progrecss[data-progrecss-mock="18"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 18s;
   animation-duration: 18s;
 }
-.progrecss[data-progrecss-mock="19"].staggered.mock:after {
+.progrecss[data-progrecss-mock="19"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 19s;
   animation-duration: 19s;
 }
-.progrecss[data-progrecss-mock="20"].staggered.mock:after {
+.progrecss[data-progrecss-mock="20"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 20s;
   animation-duration: 20s;
 }
-.progrecss[data-progrecss-mock="21"].staggered.mock:after {
+.progrecss[data-progrecss-mock="21"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 21s;
   animation-duration: 21s;
 }
-.progrecss[data-progrecss-mock="22"].staggered.mock:after {
+.progrecss[data-progrecss-mock="22"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 22s;
   animation-duration: 22s;
 }
-.progrecss[data-progrecss-mock="23"].staggered.mock:after {
+.progrecss[data-progrecss-mock="23"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 23s;
   animation-duration: 23s;
 }
-.progrecss[data-progrecss-mock="24"].staggered.mock:after {
+.progrecss[data-progrecss-mock="24"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 24s;
   animation-duration: 24s;
 }
-.progrecss[data-progrecss-mock="25"].staggered.mock:after {
+.progrecss[data-progrecss-mock="25"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 25s;
   animation-duration: 25s;
 }
-.progrecss[data-progrecss-mock="26"].staggered.mock:after {
+.progrecss[data-progrecss-mock="26"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 26s;
   animation-duration: 26s;
 }
-.progrecss[data-progrecss-mock="27"].staggered.mock:after {
+.progrecss[data-progrecss-mock="27"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 27s;
   animation-duration: 27s;
 }
-.progrecss[data-progrecss-mock="28"].staggered.mock:after {
+.progrecss[data-progrecss-mock="28"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 28s;
   animation-duration: 28s;
 }
-.progrecss[data-progrecss-mock="29"].staggered.mock:after {
+.progrecss[data-progrecss-mock="29"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 29s;
   animation-duration: 29s;
 }
-.progrecss[data-progrecss-mock="30"].staggered.mock:after {
+.progrecss[data-progrecss-mock="30"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 30s;
   animation-duration: 30s;
 }
-.progrecss[data-progrecss-mock="31"].staggered.mock:after {
+.progrecss[data-progrecss-mock="31"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 31s;
   animation-duration: 31s;
 }
-.progrecss[data-progrecss-mock="32"].staggered.mock:after {
+.progrecss[data-progrecss-mock="32"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 32s;
   animation-duration: 32s;
 }
-.progrecss[data-progrecss-mock="33"].staggered.mock:after {
+.progrecss[data-progrecss-mock="33"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 33s;
   animation-duration: 33s;
 }
-.progrecss[data-progrecss-mock="34"].staggered.mock:after {
+.progrecss[data-progrecss-mock="34"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 34s;
   animation-duration: 34s;
 }
-.progrecss[data-progrecss-mock="35"].staggered.mock:after {
+.progrecss[data-progrecss-mock="35"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 35s;
   animation-duration: 35s;
 }
-.progrecss[data-progrecss-mock="36"].staggered.mock:after {
+.progrecss[data-progrecss-mock="36"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 36s;
   animation-duration: 36s;
 }
-.progrecss[data-progrecss-mock="37"].staggered.mock:after {
+.progrecss[data-progrecss-mock="37"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 37s;
   animation-duration: 37s;
 }
-.progrecss[data-progrecss-mock="38"].staggered.mock:after {
+.progrecss[data-progrecss-mock="38"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 38s;
   animation-duration: 38s;
 }
-.progrecss[data-progrecss-mock="39"].staggered.mock:after {
+.progrecss[data-progrecss-mock="39"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 39s;
   animation-duration: 39s;
 }
-.progrecss[data-progrecss-mock="40"].staggered.mock:after {
+.progrecss[data-progrecss-mock="40"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 40s;
   animation-duration: 40s;
 }
-.progrecss[data-progrecss-mock="41"].staggered.mock:after {
+.progrecss[data-progrecss-mock="41"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 41s;
   animation-duration: 41s;
 }
-.progrecss[data-progrecss-mock="42"].staggered.mock:after {
+.progrecss[data-progrecss-mock="42"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 42s;
   animation-duration: 42s;
 }
-.progrecss[data-progrecss-mock="43"].staggered.mock:after {
+.progrecss[data-progrecss-mock="43"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 43s;
   animation-duration: 43s;
 }
-.progrecss[data-progrecss-mock="44"].staggered.mock:after {
+.progrecss[data-progrecss-mock="44"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 44s;
   animation-duration: 44s;
 }
-.progrecss[data-progrecss-mock="45"].staggered.mock:after {
+.progrecss[data-progrecss-mock="45"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 45s;
   animation-duration: 45s;
 }
-.progrecss[data-progrecss-mock="46"].staggered.mock:after {
+.progrecss[data-progrecss-mock="46"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 46s;
   animation-duration: 46s;
 }
-.progrecss[data-progrecss-mock="47"].staggered.mock:after {
+.progrecss[data-progrecss-mock="47"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 47s;
   animation-duration: 47s;
 }
-.progrecss[data-progrecss-mock="48"].staggered.mock:after {
+.progrecss[data-progrecss-mock="48"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 48s;
   animation-duration: 48s;
 }
-.progrecss[data-progrecss-mock="49"].staggered.mock:after {
+.progrecss[data-progrecss-mock="49"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 49s;
   animation-duration: 49s;
 }
-.progrecss[data-progrecss-mock="50"].staggered.mock:after {
+.progrecss[data-progrecss-mock="50"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 50s;
   animation-duration: 50s;
 }
-.progrecss[data-progrecss-mock="51"].staggered.mock:after {
+.progrecss[data-progrecss-mock="51"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 51s;
   animation-duration: 51s;
 }
-.progrecss[data-progrecss-mock="52"].staggered.mock:after {
+.progrecss[data-progrecss-mock="52"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 52s;
   animation-duration: 52s;
 }
-.progrecss[data-progrecss-mock="53"].staggered.mock:after {
+.progrecss[data-progrecss-mock="53"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 53s;
   animation-duration: 53s;
 }
-.progrecss[data-progrecss-mock="54"].staggered.mock:after {
+.progrecss[data-progrecss-mock="54"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 54s;
   animation-duration: 54s;
 }
-.progrecss[data-progrecss-mock="55"].staggered.mock:after {
+.progrecss[data-progrecss-mock="55"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 55s;
   animation-duration: 55s;
 }
-.progrecss[data-progrecss-mock="56"].staggered.mock:after {
+.progrecss[data-progrecss-mock="56"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 56s;
   animation-duration: 56s;
 }
-.progrecss[data-progrecss-mock="57"].staggered.mock:after {
+.progrecss[data-progrecss-mock="57"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 57s;
   animation-duration: 57s;
 }
-.progrecss[data-progrecss-mock="58"].staggered.mock:after {
+.progrecss[data-progrecss-mock="58"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 58s;
   animation-duration: 58s;
 }
-.progrecss[data-progrecss-mock="59"].staggered.mock:after {
+.progrecss[data-progrecss-mock="59"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 59s;
   animation-duration: 59s;
 }
-.progrecss[data-progrecss-mock="60"].staggered.mock:after {
+.progrecss[data-progrecss-mock="60"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 60s;
   animation-duration: 60s;
 }
-.progrecss[data-progrecss-mock="61"].staggered.mock:after {
+.progrecss[data-progrecss-mock="61"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 61s;
   animation-duration: 61s;
 }
-.progrecss[data-progrecss-mock="62"].staggered.mock:after {
+.progrecss[data-progrecss-mock="62"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 62s;
   animation-duration: 62s;
 }
-.progrecss[data-progrecss-mock="63"].staggered.mock:after {
+.progrecss[data-progrecss-mock="63"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 63s;
   animation-duration: 63s;
 }
-.progrecss[data-progrecss-mock="64"].staggered.mock:after {
+.progrecss[data-progrecss-mock="64"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 64s;
   animation-duration: 64s;
 }
-.progrecss[data-progrecss-mock="65"].staggered.mock:after {
+.progrecss[data-progrecss-mock="65"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 65s;
   animation-duration: 65s;
 }
-.progrecss[data-progrecss-mock="66"].staggered.mock:after {
+.progrecss[data-progrecss-mock="66"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 66s;
   animation-duration: 66s;
 }
-.progrecss[data-progrecss-mock="67"].staggered.mock:after {
+.progrecss[data-progrecss-mock="67"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 67s;
   animation-duration: 67s;
 }
-.progrecss[data-progrecss-mock="68"].staggered.mock:after {
+.progrecss[data-progrecss-mock="68"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 68s;
   animation-duration: 68s;
 }
-.progrecss[data-progrecss-mock="69"].staggered.mock:after {
+.progrecss[data-progrecss-mock="69"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 69s;
   animation-duration: 69s;
 }
-.progrecss[data-progrecss-mock="70"].staggered.mock:after {
+.progrecss[data-progrecss-mock="70"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 70s;
   animation-duration: 70s;
 }
-.progrecss[data-progrecss-mock="71"].staggered.mock:after {
+.progrecss[data-progrecss-mock="71"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 71s;
   animation-duration: 71s;
 }
-.progrecss[data-progrecss-mock="72"].staggered.mock:after {
+.progrecss[data-progrecss-mock="72"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 72s;
   animation-duration: 72s;
 }
-.progrecss[data-progrecss-mock="73"].staggered.mock:after {
+.progrecss[data-progrecss-mock="73"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 73s;
   animation-duration: 73s;
 }
-.progrecss[data-progrecss-mock="74"].staggered.mock:after {
+.progrecss[data-progrecss-mock="74"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 74s;
   animation-duration: 74s;
 }
-.progrecss[data-progrecss-mock="75"].staggered.mock:after {
+.progrecss[data-progrecss-mock="75"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 75s;
   animation-duration: 75s;
 }
-.progrecss[data-progrecss-mock="76"].staggered.mock:after {
+.progrecss[data-progrecss-mock="76"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 76s;
   animation-duration: 76s;
 }
-.progrecss[data-progrecss-mock="77"].staggered.mock:after {
+.progrecss[data-progrecss-mock="77"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 77s;
   animation-duration: 77s;
 }
-.progrecss[data-progrecss-mock="78"].staggered.mock:after {
+.progrecss[data-progrecss-mock="78"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 78s;
   animation-duration: 78s;
 }
-.progrecss[data-progrecss-mock="79"].staggered.mock:after {
+.progrecss[data-progrecss-mock="79"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 79s;
   animation-duration: 79s;
 }
-.progrecss[data-progrecss-mock="80"].staggered.mock:after {
+.progrecss[data-progrecss-mock="80"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 80s;
   animation-duration: 80s;
 }
-.progrecss[data-progrecss-mock="81"].staggered.mock:after {
+.progrecss[data-progrecss-mock="81"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 81s;
   animation-duration: 81s;
 }
-.progrecss[data-progrecss-mock="82"].staggered.mock:after {
+.progrecss[data-progrecss-mock="82"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 82s;
   animation-duration: 82s;
 }
-.progrecss[data-progrecss-mock="83"].staggered.mock:after {
+.progrecss[data-progrecss-mock="83"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 83s;
   animation-duration: 83s;
 }
-.progrecss[data-progrecss-mock="84"].staggered.mock:after {
+.progrecss[data-progrecss-mock="84"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 84s;
   animation-duration: 84s;
 }
-.progrecss[data-progrecss-mock="85"].staggered.mock:after {
+.progrecss[data-progrecss-mock="85"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 85s;
   animation-duration: 85s;
 }
-.progrecss[data-progrecss-mock="86"].staggered.mock:after {
+.progrecss[data-progrecss-mock="86"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 86s;
   animation-duration: 86s;
 }
-.progrecss[data-progrecss-mock="87"].staggered.mock:after {
+.progrecss[data-progrecss-mock="87"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 87s;
   animation-duration: 87s;
 }
-.progrecss[data-progrecss-mock="88"].staggered.mock:after {
+.progrecss[data-progrecss-mock="88"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 88s;
   animation-duration: 88s;
 }
-.progrecss[data-progrecss-mock="89"].staggered.mock:after {
+.progrecss[data-progrecss-mock="89"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 89s;
   animation-duration: 89s;
 }
-.progrecss[data-progrecss-mock="90"].staggered.mock:after {
+.progrecss[data-progrecss-mock="90"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 90s;
   animation-duration: 90s;
 }
-.progrecss[data-progrecss-mock="91"].staggered.mock:after {
+.progrecss[data-progrecss-mock="91"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 91s;
   animation-duration: 91s;
 }
-.progrecss[data-progrecss-mock="92"].staggered.mock:after {
+.progrecss[data-progrecss-mock="92"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 92s;
   animation-duration: 92s;
 }
-.progrecss[data-progrecss-mock="93"].staggered.mock:after {
+.progrecss[data-progrecss-mock="93"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 93s;
   animation-duration: 93s;
 }
-.progrecss[data-progrecss-mock="94"].staggered.mock:after {
+.progrecss[data-progrecss-mock="94"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 94s;
   animation-duration: 94s;
 }
-.progrecss[data-progrecss-mock="95"].staggered.mock:after {
+.progrecss[data-progrecss-mock="95"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 95s;
   animation-duration: 95s;
 }
-.progrecss[data-progrecss-mock="96"].staggered.mock:after {
+.progrecss[data-progrecss-mock="96"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 96s;
   animation-duration: 96s;
 }
-.progrecss[data-progrecss-mock="97"].staggered.mock:after {
+.progrecss[data-progrecss-mock="97"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 97s;
   animation-duration: 97s;
 }
-.progrecss[data-progrecss-mock="98"].staggered.mock:after {
+.progrecss[data-progrecss-mock="98"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 98s;
   animation-duration: 98s;
 }
-.progrecss[data-progrecss-mock="99"].staggered.mock:after {
+.progrecss[data-progrecss-mock="99"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 99s;
   animation-duration: 99s;
 }
-.progrecss[data-progrecss-mock="100"].staggered.mock:after {
+.progrecss[data-progrecss-mock="100"].staggered:after {
   -webkit-animation-name: staggered-mock;
   animation-name: staggered-mock;
   -webkit-animation-duration: 100s;
   animation-duration: 100s;
 }
-@-webkit-keyframes timer {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+.progrecss[data-progrecss-mock="101"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 101s;
+  animation-duration: 101s;
 }
-@keyframes timer {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+.progrecss[data-progrecss-mock="102"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 102s;
+  animation-duration: 102s;
+}
+.progrecss[data-progrecss-mock="103"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 103s;
+  animation-duration: 103s;
+}
+.progrecss[data-progrecss-mock="104"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 104s;
+  animation-duration: 104s;
+}
+.progrecss[data-progrecss-mock="105"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 105s;
+  animation-duration: 105s;
+}
+.progrecss[data-progrecss-mock="106"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 106s;
+  animation-duration: 106s;
+}
+.progrecss[data-progrecss-mock="107"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 107s;
+  animation-duration: 107s;
+}
+.progrecss[data-progrecss-mock="108"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 108s;
+  animation-duration: 108s;
+}
+.progrecss[data-progrecss-mock="109"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 109s;
+  animation-duration: 109s;
+}
+.progrecss[data-progrecss-mock="110"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 110s;
+  animation-duration: 110s;
+}
+.progrecss[data-progrecss-mock="111"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 111s;
+  animation-duration: 111s;
+}
+.progrecss[data-progrecss-mock="112"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 112s;
+  animation-duration: 112s;
+}
+.progrecss[data-progrecss-mock="113"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 113s;
+  animation-duration: 113s;
+}
+.progrecss[data-progrecss-mock="114"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 114s;
+  animation-duration: 114s;
+}
+.progrecss[data-progrecss-mock="115"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 115s;
+  animation-duration: 115s;
+}
+.progrecss[data-progrecss-mock="116"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 116s;
+  animation-duration: 116s;
+}
+.progrecss[data-progrecss-mock="117"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 117s;
+  animation-duration: 117s;
+}
+.progrecss[data-progrecss-mock="118"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 118s;
+  animation-duration: 118s;
+}
+.progrecss[data-progrecss-mock="119"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 119s;
+  animation-duration: 119s;
+}
+.progrecss[data-progrecss-mock="120"].staggered:after {
+  -webkit-animation-name: staggered-mock;
+  animation-name: staggered-mock;
+  -webkit-animation-duration: 120s;
+  animation-duration: 120s;
 }
 .progrecss[data-progrecss-timer="0"].timer:after {
   -webkit-animation-name: timer;
@@ -2282,6 +2420,126 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-duration: 100s;
   animation-duration: 100s;
 }
+.progrecss[data-progrecss-timer="101"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 101s;
+  animation-duration: 101s;
+}
+.progrecss[data-progrecss-timer="102"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 102s;
+  animation-duration: 102s;
+}
+.progrecss[data-progrecss-timer="103"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 103s;
+  animation-duration: 103s;
+}
+.progrecss[data-progrecss-timer="104"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 104s;
+  animation-duration: 104s;
+}
+.progrecss[data-progrecss-timer="105"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 105s;
+  animation-duration: 105s;
+}
+.progrecss[data-progrecss-timer="106"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 106s;
+  animation-duration: 106s;
+}
+.progrecss[data-progrecss-timer="107"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 107s;
+  animation-duration: 107s;
+}
+.progrecss[data-progrecss-timer="108"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 108s;
+  animation-duration: 108s;
+}
+.progrecss[data-progrecss-timer="109"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 109s;
+  animation-duration: 109s;
+}
+.progrecss[data-progrecss-timer="110"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 110s;
+  animation-duration: 110s;
+}
+.progrecss[data-progrecss-timer="111"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 111s;
+  animation-duration: 111s;
+}
+.progrecss[data-progrecss-timer="112"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 112s;
+  animation-duration: 112s;
+}
+.progrecss[data-progrecss-timer="113"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 113s;
+  animation-duration: 113s;
+}
+.progrecss[data-progrecss-timer="114"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 114s;
+  animation-duration: 114s;
+}
+.progrecss[data-progrecss-timer="115"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 115s;
+  animation-duration: 115s;
+}
+.progrecss[data-progrecss-timer="116"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 116s;
+  animation-duration: 116s;
+}
+.progrecss[data-progrecss-timer="117"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 117s;
+  animation-duration: 117s;
+}
+.progrecss[data-progrecss-timer="118"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 118s;
+  animation-duration: 118s;
+}
+.progrecss[data-progrecss-timer="119"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 119s;
+  animation-duration: 119s;
+}
+.progrecss[data-progrecss-timer="120"].timer:after {
+  -webkit-animation-name: timer;
+  animation-name: timer;
+  -webkit-animation-duration: 120s;
+  animation-duration: 120s;
+}
 .progrecss[data-progrecss].green:after,
 .progrecss[data-progrecss-mock].green:after,
 .progrecss[data-progrecss-timer].green:after {
@@ -2715,4 +2973,186 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .progrecss[data-progrecss][data-progrecss-duration="100"]:after {
   -webkit-transition: width 100s;
   transition: width 100s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="101"]:after {
+  -webkit-transition: width 101s;
+  transition: width 101s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="102"]:after {
+  -webkit-transition: width 102s;
+  transition: width 102s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="103"]:after {
+  -webkit-transition: width 103s;
+  transition: width 103s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="104"]:after {
+  -webkit-transition: width 104s;
+  transition: width 104s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="105"]:after {
+  -webkit-transition: width 105s;
+  transition: width 105s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="106"]:after {
+  -webkit-transition: width 106s;
+  transition: width 106s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="107"]:after {
+  -webkit-transition: width 107s;
+  transition: width 107s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="108"]:after {
+  -webkit-transition: width 108s;
+  transition: width 108s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="109"]:after {
+  -webkit-transition: width 109s;
+  transition: width 109s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="110"]:after {
+  -webkit-transition: width 110s;
+  transition: width 110s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="111"]:after {
+  -webkit-transition: width 111s;
+  transition: width 111s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="112"]:after {
+  -webkit-transition: width 112s;
+  transition: width 112s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="113"]:after {
+  -webkit-transition: width 113s;
+  transition: width 113s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="114"]:after {
+  -webkit-transition: width 114s;
+  transition: width 114s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="115"]:after {
+  -webkit-transition: width 115s;
+  transition: width 115s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="116"]:after {
+  -webkit-transition: width 116s;
+  transition: width 116s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="117"]:after {
+  -webkit-transition: width 117s;
+  transition: width 117s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="118"]:after {
+  -webkit-transition: width 118s;
+  transition: width 118s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="119"]:after {
+  -webkit-transition: width 119s;
+  transition: width 119s;
+}
+.progrecss[data-progrecss][data-progrecss-duration="120"]:after {
+  -webkit-transition: width 120s;
+  transition: width 120s;
+}
+@-webkit-keyframes mock {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes mock {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes staggered-mock {
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 10%;
+  }
+  20% {
+    width: 10%;
+  }
+  30% {
+    width: 30%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 30%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    width: 70%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes staggered-mock {
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 10%;
+  }
+  20% {
+    width: 10%;
+  }
+  30% {
+    width: 30%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 30%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    width: 70%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes timer {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes timer {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }

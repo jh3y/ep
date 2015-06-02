@@ -1,9 +1,9 @@
 {
   "features": {
-    "mock": true,
+    "mock"          : true,
     "staggered-mock": true,
-    "timer": true,
-    "colors": true,
-    "durations": true
+    "timer"         : true,
+    "colors"        : true,
+    "durations"     : true
   }
 }

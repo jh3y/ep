@@ -18,6 +18,7 @@
     this._timerDuration = (options !== undefined && options.timer !== undefined && options.timer.timerDuration !== undefined ? options.timer.timerDuration : 5);
     this._startTimerOnCreate = (options !== undefined && options.timer !== undefined && options.timer.startTimerOnCreate !== undefined ? options.timer.startTimerOnCreate : true);
     this._create();
+    return this;
   };
 
   progrecss.prototype._create = function() {

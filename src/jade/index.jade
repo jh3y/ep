@@ -3,8 +3,13 @@ head
   title progrecss workbench
   link(rel="stylesheet", href="css/progrecss.min.css")
   style.
+    *   {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
     div {
       height: 40px;
+      border: 1px solid black;
     }
     body:after,
     div:after {
@@ -18,6 +23,8 @@ body
   .progrecss.mock.red(data-progrecss-mock="5") red mocked
   .progrecss.mock.staggered.green(data-progrecss-mock="5") staggered mock
   .progrecss.timer.purple(data-progrecss-timer="10") timer
+  .progrecss.fixed.bottom.mock.green.reverse(data-progrecss-mock="10") reverse fixed
+  .progrecss.red.swish(data-progrecss-swish="5") swish
 
   script(src="js/progrecss.js")
   script.

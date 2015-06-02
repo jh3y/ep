@@ -1,0 +1,48 @@
+color         = #3498DB
+height        = 4px
+opacity       = 0.6
+box-shadow    = 0 0 1px $color
+border-radius = 0
+
+.progrecss
+  display   block
+  position  relative
+  &:after
+    z-index 2
+  &.reverse
+    &:after
+      animation-direction  reverse
+  &.pause
+    &:after
+      animation-play-state paused
+
+  &[data-progrecss],
+  &[data-progrecss-mock],
+  &[data-progrecss-timer]
+    &:after
+      content          ""
+      display          block
+      position         absolute
+      transition       width 1s ease 0s
+      background-color color
+      box-shadow       box-shadow
+      opacity          opacity
+      height           height
+      border-radius    border-radius
+      top              0
+    &.bottom
+      &:after
+        top            100%
+    &.fixed
+      &:after
+        position       fixed
+        top            0
+        left           0
+      &.bottom
+        &:after
+          top          100%
+          margin-top   -(height)
+for percent in (0..100)
+  .progrecss[data-progrecss={'"' + percent + '"'}]
+    &:after
+      width (percent * 1%)

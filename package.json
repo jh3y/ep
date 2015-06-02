@@ -1,25 +1,29 @@
 {
   "name": "progrecss",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pure CSS progress bars with minimal effort!",
   "main": "dist/progrecss.css",
   "dependencies": {},
   "devDependencies": {
+    "browser-sync": "^2.7.6",
     "gulp": "^3.8.1",
     "gulp-autoprefixer": "0.0.7",
     "gulp-coffee": "^2.0.1",
-    "gulp-concat": "^2.3.4",
-    "gulp-connect": "^2.0.6",
+    "gulp-concat": "^2.5.2",
     "gulp-jade": "^0.6.0",
     "gulp-less": "^1.2.3",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.1.5",
     "gulp-plumber": "^0.6.4",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^0.7.2",
+    "gulp-size": "^1.2.1",
+    "gulp-stylus": "^2.0.3",
     "gulp-uglify": "^0.3.1",
-    "gulp-watch": "^0.6.7"
+    "gulp-util": "^3.0.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"There are no visual tests currently implemented for progre(c)ss\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,12 +31,10 @@
   },
   "keywords": [
     "progrecss",
-    "progrecss",
     "progress",
-    "css",
-    "less"
+    "css"
   ],
-  "author": "jh3y",
+  "author": "jh3y < http://jh3y.github.io >",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jh3y/progre-c-ss/issues"

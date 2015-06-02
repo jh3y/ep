@@ -1,0 +1,12 @@
+timer-durations = 120
+
+@keyframes timer
+  0%   { width: 100%; }
+  100% { width: 0%;   }
+
+for duration in (0..timer-durations)
+  .progrecss[data-progrecss-timer={'"' + duration + '"'}]
+    &.timer
+      &:after
+        animation-name     timer
+        animation-duration (duration * 1s)

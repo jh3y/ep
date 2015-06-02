@@ -1,0 +1,14 @@
+mock-durations = 120
+
+@keyframes mock
+  from
+    width 0%
+  to
+    width 100%
+
+for duration in (0..mock-durations)
+  .progrecss[data-progrecss-mock={'"' + duration + '"'}]
+    &.mock
+      &:after
+        animation-name      mock
+        animation-duration  (duration * 1s)

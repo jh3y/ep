@@ -1,5 +1,5 @@
 progrecss = window.progrecss = (element, options) ->
-  return new progrecss(element, options)  unless this instanceof progrecss
+  return new progrecss(element, options) unless this instanceof progrecss
   @_element = element
   @_color = (if (options isnt `undefined` and options.color isnt `undefined`) then options.color else "green")
   @_position = (if (options isnt `undefined` and options.position isnt `undefined`) then options.position else "top")
@@ -13,12 +13,12 @@ progrecss = window.progrecss = (element, options) ->
   @_timerDuration = (if (options isnt `undefined` and options.timer isnt `undefined` and options.timer.timerDuration isnt `undefined`) then options.timer.timerDuration else 5)
   @_startTimerOnCreate = (if (options isnt `undefined` and options.timer isnt `undefined` and options.timer.startTimerOnCreate isnt `undefined`) then options.timer.startTimerOnCreate else true)
   @_create()
-  return
+  @
 
 
 progrecss::_create = ->
   progrecss = this
-  progrecss._element = document.createElement("div")  if progrecss._element is `undefined`
+  progrecss._element = document.createElement("div") if progrecss._element is `undefined`
   progrecss._element.className = "progrecss " + progrecss._position + " " + progrecss._color
   progrecss._element.setAttribute "data-progrecss", progrecss.percent
   if progrecss._mock
