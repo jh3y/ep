@@ -2,9 +2,23 @@ doctype
 head
   title progrecss workbench
   link(rel="stylesheet", href="css/progrecss.min.css")
+  style.
+    div {
+      height: 40px;
+    }
+    body:after,
+    div:after {
+      animation-iteration-count        : infinite;
+      -webkit-animation-iteration-count: infinite;
+    }
 body
+  button#actionButton Play/Pause body progrecss
   h1 let's make progrecss
-  button#actionButton Play/Pause
+  .progrecss.blue(data-progrecss="75") blue
+  .progrecss.mock.red(data-progrecss-mock="5") red mocked
+  .progrecss.mock.staggered.green(data-progrecss-mock="5") staggered mock
+  .progrecss.timer.purple(data-progrecss-timer="10") timer
+
   script(src="js/progrecss.js")
   script.
     (function(){
