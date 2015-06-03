@@ -10,6 +10,17 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+/*
+  CONFIGURATION FILE
+
+  This is the configuration for progrecss.
+
+  Define the size and style attributes of progrecss bars.
+
+  In addition, you can define the standard color set and the duration
+  sets for the different mocking styles.
+
+*/
 .progrecss {
   display: block;
   position: relative;
@@ -34,8 +45,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-transition: width 1s ease 0s;
   transition: width 1s ease 0s;
   background-color: #3498db;
-  -webkit-box-shadow: 0 0 1px $color;
-  box-shadow: 0 0 1px $color;
+  -webkit-box-shadow: 0 0 1px #3498db;
+  box-shadow: 0 0 1px #3498db;
   opacity: 0.6;
   height: 4px;
   border-radius: 0;
