@@ -1,0 +1,31 @@
+/*
+  CONFIGURATION FILE
+
+  This is the configuration for progrecss.
+
+  Define the size and style attributes of progrecss bars.
+
+  In addition, you can define the standard color set and the duration
+  sets for the different mocking styles.
+
+*/
+
+configuration = {
+  default_color: #3498DB,
+  height       : 4px,
+  opacity      : 0.6,
+  box-shadow   : 0 0 1px #3498DB,
+  border-radius: 0,
+  color_palette: {
+    green  : #2ECC71,
+    blue   : #3498DB,
+    purple : #9B59B6,
+    yellow : #F1C40F,
+    orange : #E67E22,
+    red    : #E74C3C
+  },
+  durations               : 10,
+  mock_durations          : 10,
+  staggered_mock_durations: 10,
+  timer_durations         : 30
+}

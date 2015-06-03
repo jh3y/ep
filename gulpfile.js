@@ -45,7 +45,7 @@ gulp.task('coffee:watch', function(event) {
 });
 
 gulp.task('stylus:compile', function(e) {
-  processSrc = [sources.license, sources.coreStylus];
+  processSrc = sources.base;
   gatherSrc(config.features, 'stylus');
   return gulp.src(processSrc)
     .pipe(plugins.plumber())

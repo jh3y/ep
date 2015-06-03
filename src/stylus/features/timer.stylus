@@ -1,10 +1,10 @@
-timer-durations = 120
+timer_durations = configuration.timer_durations
 
 @keyframes timer
   0%   { width: 100%; }
   100% { width: 0%;   }
 
-for duration in (0..timer-durations)
+for duration in (0..timer_durations)
   .progrecss[data-progrecss-timer={'"' + duration + '"'}]
     &.timer
       &:after

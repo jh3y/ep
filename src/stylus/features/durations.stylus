@@ -1,4 +1,4 @@
-durations = 120
+durations = configuration.durations
 for duration in (0..durations)
   .progrecss[data-progrecss][data-progrecss-duration={'"' + duration + '"'}]
     &:after

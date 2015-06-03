@@ -40,14 +40,14 @@ module.exports = {
   paths: {
     sources: {
       jade      : 'src/jade/**/*.jade',
-      less      : 'src/less/**/*.less',
-      scss      : 'src/sass/**/*.scss',
       stylus    : 'src/stylus/**/*.stylus',
-      coreLess  : 'src/less/core.less',
       coreStylus: 'src/stylus/core.stylus',
-      coreScss  : 'src/scss/core.scss',
+      base      : [
+        'src/txt/license.txt',
+        'src/stylus/_configuration.stylus',
+        'src/stylus/core.stylus'
+      ],
       coffee    : 'src/coffee/**/*.coffee',
-      license   : 'src/txt/license.txt',
       overwatch : env + '/**/*.*'
     },
     destinations: {

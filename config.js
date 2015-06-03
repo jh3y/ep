@@ -1,11 +1,10 @@
-config = {
+var config = {
   "features": {
     "mock"          : true,
+    "colors"        : true,
     "staggered-mock": true,
     "timer"         : true,
-    "colors"        : true,
     "durations"     : true
   }
 };
-
 module.exports = config;

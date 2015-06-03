@@ -1,4 +1,4 @@
-mock-durations = 120
+mock_durations = configuration.mock_durations
 
 @keyframes mock
   from
@@ -6,7 +6,7 @@ mock-durations = 120
   to
     width 100%
 
-for duration in (0..mock-durations)
+for duration in (0..mock_durations)
   .progrecss[data-progrecss-mock={'"' + duration + '"'}]
     &.mock
       &:after

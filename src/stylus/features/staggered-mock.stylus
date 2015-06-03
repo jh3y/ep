@@ -1,4 +1,4 @@
-staggered-mock-durations = 120
+staggered_mock_durations = configuration.staggered_mock_durations
 
 @keyframes staggered-mock
   0%   { width: 0%;   }
@@ -13,7 +13,7 @@ staggered-mock-durations = 120
   90%  { width: 90%;  }
   100% { width: 100%; }
 
-for duration in (0..staggered-mock-durations)
+for duration in (0..staggered_mock_durations)
   .progrecss[data-progrecss-mock={'"' + duration + '"'}]
     &.staggered
       &:after

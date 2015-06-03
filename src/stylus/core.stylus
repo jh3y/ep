@@ -1,8 +1,8 @@
-color         = #3498DB
-height        = 4px
-opacity       = 0.6
-box-shadow    = 0 0 1px $color
-border-radius = 0
+color         = configuration.default_color
+height        = configuration.height
+opacity       = configuration.opacity
+box-shadow    = configuration.box-shadow
+border-radius = configuration.border-radius
 
 .progrecss
   display   block
@@ -42,6 +42,7 @@ border-radius = 0
         &:after
           top          100%
           margin-top   -(height)
+
 for percent in (0..100)
   .progrecss[data-progrecss={'"' + percent + '"'}]
     &:after
