@@ -37,7 +37,7 @@ gulp.task('coffee:compile', function(event) {
     .pipe(gulp.dest(isDist ? destinations.dist: destinations.js))
     .pipe(plugins.uglify())
     .pipe(plugins.rename(pluginOpts.rename))
-    .pipe(isStat ? plugins.size(pluginOpts.gSize): gUtil.noop())
+    .pipe(isStat ? plugins.size(pluginOpts.gSize): plugins.gUtil.noop())
     .pipe(gulp.dest(isDist ? destinations.dist: destinations.js));
 });
 gulp.task('coffee:watch', function(event) {
@@ -55,7 +55,7 @@ gulp.task('stylus:compile', function(e) {
     .pipe(gulp.dest(isDist ? destinations.dist: destinations.css))
     .pipe(plugins.minify())
     .pipe(plugins.rename(pluginOpts.rename))
-    .pipe(isStat ? plugins.size(pluginOpts.gSize): gUtil.noop())
+    .pipe(isStat ? plugins.size(pluginOpts.gSize): plugins.gUtil.noop())
     .pipe(gulp.dest(isDist ? destinations.dist: destinations.css));
 });
 gulp.task('stylus:watch', function() {

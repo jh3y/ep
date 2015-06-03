@@ -1,4 +1,4 @@
-{
+config = {
   "features": {
     "mock"          : true,
     "staggered-mock": true,
@@ -6,4 +6,6 @@
     "colors"        : true,
     "durations"     : true
   }
-}
+};
+
+module.exports = config;
