@@ -3,5 +3,6 @@ for key, value in color_palette
   .progrecss[data-progrecss].{key},
   .progrecss[data-progrecss-mock].{key},
   .progrecss[data-progrecss-timer].{key}
-    &:after
+    &:after,
+    &:before
       background-color value

@@ -14,7 +14,6 @@ configuration = {
   default_color: #3498DB,
   height       : 4px,
   opacity      : 0.6,
-  box-shadow   : 0 0 1px #3498DB,
   border-radius: 0,
   color_palette: {
     green  : #2ECC71,
@@ -27,5 +26,8 @@ configuration = {
   durations               : 10,
   mock_durations          : 10,
   staggered_mock_durations: 10,
-  timer_durations         : 30
+  timer_durations         : 30,
+  swish_duration          : 2,
+  pendulum_duration       : 2,
+  sidestep_duration       : 2
 }

@@ -1,0 +1,16 @@
+swish_duration = configuration.swish_duration
+
+@keyframes swish
+  0%   { left : -30%; }
+  50%  { width: 50%;  }
+  100%
+    left  130%
+    width 30%
+
+.progrecss.swish
+  overflow: hidden
+  &:after
+    width                     30%
+    animation-iteration-count infinite
+    animation-name            swish
+    animation-duration        (swish_duration * 1s)

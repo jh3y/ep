@@ -1,0 +1,16 @@
+sidestep_duration = configuration.sidestep_duration
+
+@keyframes sidestep
+  0%   { left: 0%;   }
+  25%  { width: 15%; }
+  50%  { left: 70%; width: 30%;}
+  75%  { width: 15% }
+  100% { left: 0%; width: 30%;   }
+
+.progrecss.sidestep
+  overflow: hidden
+  &:after
+    width                     30%
+    animation-iteration-count infinite
+    animation-name            sidestep
+    animation-duration        (sidestep_duration * 1s)

@@ -1,7 +1,6 @@
 color         = configuration.default_color
 height        = configuration.height
 opacity       = configuration.opacity
-box-shadow    = configuration.box-shadow
 border-radius = configuration.border-radius
 
 .progrecss
@@ -15,33 +14,41 @@ border-radius = configuration.border-radius
   &.pause
     &:after
       animation-play-state paused
-
-  &[data-progrecss],
-  &[data-progrecss-mock],
-  &[data-progrecss-timer]
+  &.backdrop
     &:after
+      opacity 1
+    &:before
+      opacity opacity
+
+  &[data-progrecss]
+    &:after,
+    &:before
       content          ""
       display          block
       position         absolute
       transition       width 1s ease 0s
       background-color color
-      box-shadow       box-shadow
       opacity          opacity
       height           height
       border-radius    border-radius
       top              0
+    &.backdrop
+      &:after
+        opacity        1
+      &:before
+        right            0
+        left             0
+
     &.bottom
-      &:after
+      &:after,
+      &:before
         top            100%
+        margin-top     -(height)
     &.fixed
-      &:after
+      &:after,
+      &:before
         position       fixed
-        top            0
         left           0
-      &.bottom
-        &:after
-          top          100%
-          margin-top   -(height)
 
 for percent in (0..100)
   .progrecss[data-progrecss={'"' + percent + '"'}]
