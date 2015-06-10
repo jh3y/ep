@@ -27,5 +27,5 @@ configuration = {
   mock_durations          : 10,
   staggered_mock_durations: 10,
   timer_durations         : 30,
-  swish_duration          : 3
+  swish_duration          : 2
 }

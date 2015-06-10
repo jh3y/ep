@@ -14,11 +14,6 @@ border-radius = configuration.border-radius
   &.pause
     &:after
       animation-play-state paused
-  &.backdrop
-    &:after
-      opacity 1
-    &:before
-      opacity opacity
 
   &[data-progrecss]
     &:after,
@@ -36,6 +31,7 @@ border-radius = configuration.border-radius
       &:after
         opacity        1
       &:before
+        opacity        0.5
         right          0
         left           0
 

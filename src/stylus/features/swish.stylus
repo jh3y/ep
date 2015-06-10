@@ -1,30 +1,44 @@
 swish_duration = configuration.swish_duration
-
+opacity        = configuration.opacity
 @keyframes swish
+  /*
+    Start the first swish
+  */
   0%
+    left -30%
+  58%
+    opacity opacity
+    width   60%
+    left    160%
+  /*
+    We use three states here to reset the bar to the beginning
+
+    Altering the starting point of the states will affect the speed of the
+    first and second swish.
+
+    Using 49, 50 and 51 will result in equal speed
+  */
+  59%
+    left    160%
+    opacity 0
+  60%
     left    -30%
-  20%
-    width   50%
-  50%
-    opacity 1
     width   30%
-    left    130%
-  51%
-    opacity 0
-    left    130%
-  52%
-    opacity 0
+  61%
     left    -30%
-  53%
-    opacity 1
+    opacity opacity
+  /*
+    Run the second swish
+  */
   100%
-    opacity 1
-    left    170%
+    width   20%
+    left    120%
 
 .progrecss.swish
   overflow: hidden
   &:after
     width                     30%
     animation-iteration-count infinite
+    animation-timing-function linear
     animation-name            swish
     animation-duration        (swish_duration * 1s)
