@@ -8,5 +8,5 @@ for duration in (0..timer_durations)
   .progrecss[data-progrecss-timer={'"' + duration + '"'}]
     &.timer
       &:after
-        animation-name     timer
-        animation-duration (duration * 1s)
+        animation-name             timer
+        animation-duration         (duration * 1s)

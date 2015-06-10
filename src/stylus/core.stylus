@@ -36,8 +36,8 @@ border-radius = configuration.border-radius
       &:after
         opacity        1
       &:before
-        right            0
-        left             0
+        right          0
+        left           0
 
     &.bottom
       &:after,

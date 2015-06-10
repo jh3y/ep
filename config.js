@@ -5,9 +5,7 @@ var config = {
     "staggered-mock": true,
     "timer"         : true,
     "durations"     : true,
-    "swish"         : true,
-    "pendulum"      : true,
-    "sidestep"      : true
+    "swish"         : true
   }
 };
 module.exports = config;
