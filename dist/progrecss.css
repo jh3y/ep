@@ -37,38 +37,35 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-play-state: paused;
 }
 .progrecss[data-progrecss]:after,
-.progrecss[data-progrecss-mock]:after,
-.progrecss[data-progrecss-timer]:after {
+.progrecss[data-progrecss]:before {
   content: "";
   display: block;
   position: absolute;
   -webkit-transition: width 1s ease 0s;
   transition: width 1s ease 0s;
   background-color: #3498db;
-  -webkit-box-shadow: 0 0 1px #3498db;
-  box-shadow: 0 0 1px #3498db;
   opacity: 0.6;
   height: 4px;
   border-radius: 0;
   top: 0;
 }
-.progrecss[data-progrecss].bottom:after,
-.progrecss[data-progrecss-mock].bottom:after,
-.progrecss[data-progrecss-timer].bottom:after {
-  top: 100%;
+.progrecss[data-progrecss].backdrop:after {
+  opacity: 1;
 }
-.progrecss[data-progrecss].fixed:after,
-.progrecss[data-progrecss-mock].fixed:after,
-.progrecss[data-progrecss-timer].fixed:after {
-  position: fixed;
-  top: 0;
+.progrecss[data-progrecss].backdrop:before {
+  opacity: 0.5;
+  right: 0;
   left: 0;
 }
-.progrecss[data-progrecss].fixed.bottom:after,
-.progrecss[data-progrecss-mock].fixed.bottom:after,
-.progrecss[data-progrecss-timer].fixed.bottom:after {
+.progrecss[data-progrecss].bottom:after,
+.progrecss[data-progrecss].bottom:before {
   top: 100%;
   margin-top: -4px;
+}
+.progrecss[data-progrecss].fixed:after,
+.progrecss[data-progrecss].fixed:before {
+  position: fixed;
+  left: 0;
 }
 .progrecss[data-progrecss="0"]:after {
   width: 0%;
@@ -441,32 +438,50 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .progrecss[data-progrecss].green:after,
 .progrecss[data-progrecss-mock].green:after,
-.progrecss[data-progrecss-timer].green:after {
+.progrecss[data-progrecss-timer].green:after,
+.progrecss[data-progrecss].green:before,
+.progrecss[data-progrecss-mock].green:before,
+.progrecss[data-progrecss-timer].green:before {
   background-color: #2ecc71;
 }
 .progrecss[data-progrecss].blue:after,
 .progrecss[data-progrecss-mock].blue:after,
-.progrecss[data-progrecss-timer].blue:after {
+.progrecss[data-progrecss-timer].blue:after,
+.progrecss[data-progrecss].blue:before,
+.progrecss[data-progrecss-mock].blue:before,
+.progrecss[data-progrecss-timer].blue:before {
   background-color: #3498db;
 }
 .progrecss[data-progrecss].purple:after,
 .progrecss[data-progrecss-mock].purple:after,
-.progrecss[data-progrecss-timer].purple:after {
+.progrecss[data-progrecss-timer].purple:after,
+.progrecss[data-progrecss].purple:before,
+.progrecss[data-progrecss-mock].purple:before,
+.progrecss[data-progrecss-timer].purple:before {
   background-color: #9b59b6;
 }
 .progrecss[data-progrecss].yellow:after,
 .progrecss[data-progrecss-mock].yellow:after,
-.progrecss[data-progrecss-timer].yellow:after {
+.progrecss[data-progrecss-timer].yellow:after,
+.progrecss[data-progrecss].yellow:before,
+.progrecss[data-progrecss-mock].yellow:before,
+.progrecss[data-progrecss-timer].yellow:before {
   background-color: #f1c40f;
 }
 .progrecss[data-progrecss].orange:after,
 .progrecss[data-progrecss-mock].orange:after,
-.progrecss[data-progrecss-timer].orange:after {
+.progrecss[data-progrecss-timer].orange:after,
+.progrecss[data-progrecss].orange:before,
+.progrecss[data-progrecss-mock].orange:before,
+.progrecss[data-progrecss-timer].orange:before {
   background-color: #e67e22;
 }
 .progrecss[data-progrecss].red:after,
 .progrecss[data-progrecss-mock].red:after,
-.progrecss[data-progrecss-timer].red:after {
+.progrecss[data-progrecss-timer].red:after,
+.progrecss[data-progrecss].red:before,
+.progrecss[data-progrecss-mock].red:before,
+.progrecss[data-progrecss-timer].red:before {
   background-color: #e74c3c;
 }
 .progrecss[data-progrecss-mock="0"].staggered:after {
@@ -765,6 +780,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-transition: width 10s;
   transition: width 10s;
 }
+.progrecss.swish {
+  overflow: hidden;
+}
+.progrecss.swish:after {
+  width: 30%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: swish;
+  animation-name: swish;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
 @-webkit-keyframes mock {
   from {
     width: 0%;
@@ -865,5 +894,57 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
   100% {
     width: 0%;
+  }
+}
+@-webkit-keyframes swish {
+  0% {
+    left: -30%;
+  }
+  58% {
+    opacity: 0.6;
+    width: 60%;
+    left: 160%;
+  }
+  59% {
+    left: 160%;
+    opacity: 0;
+  }
+  60% {
+    left: -30%;
+    width: 30%;
+  }
+  61% {
+    left: -30%;
+    opacity: 0.6;
+  }
+  100% {
+    width: 20%;
+    left: 120%;
+  }
+}
+@keyframes swish {
+  0% {
+    left: -30%;
+  }
+  58% {
+    opacity: 0.6;
+    width: 60%;
+    left: 160%;
+  }
+  59% {
+    left: 160%;
+    opacity: 0;
+  }
+  60% {
+    left: -30%;
+    width: 30%;
+  }
+  61% {
+    left: -30%;
+    opacity: 0.6;
+  }
+  100% {
+    width: 20%;
+    left: 120%;
   }
 }
