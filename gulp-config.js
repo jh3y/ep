@@ -1,26 +1,36 @@
-var env = 'build/';
+var env = 'public/',
+  pkg   = require('./package.json');
 module.exports = {
   pkg: {
-    name: 'progrecss'
+    name: pkg.name
   },
-  plugin_options : {
-    browserSync  : {
+  pluginOpts: {
+    browserSync: {
       port   : 1987,
       server : {
-        baseDir: './' + env
+        baseDir: env
       }
     },
-    jade: {
-      pretty: true
-    },
-    coffee: {
-      bare: true
+    babel: {
+      presets: [ 'es2015' ]
     },
     gSize: {
       showFiles: true
     },
-    rename: {
-      suffix: '.min'
+    pug: {
+      pretty: true,
+      data  : {
+        name       : pkg.name,
+        description: pkg.description
+      }
+    },
+    load: {
+      rename: {
+        'gulp-gh-pages'    : 'deploy',
+        'gulp-util'        : 'gUtil',
+        'gulp-cssnano'     : 'minify',
+        'gulp-autoprefixer': 'prefix'
+      }
     },
     prefix: [
       'last 3 versions',
@@ -28,33 +38,28 @@ module.exports = {
       'Android 3',
       'Android 4'
     ],
-    load: {
-      rename: {
-        'gulp-gh-pages'             : 'deploy',
-        'gulp-util'                 : 'gUtil',
-        'gulp-minify-css'           : 'minify',
-        'gulp-autoprefixer'         : 'prefix'
-      }
-    }
+    rename: {
+      suffix: '.min'
+    },
+    stylint: {
+      reporter: 'stylint-stylish'
+    },
+    wrap: '(function() { <%= contents %> }());'
   },
   paths: {
+    base: env,
     sources: {
-      jade      : 'src/jade/**/*.jade',
-      stylus    : 'src/stylus/**/*.stylus',
-      coreStylus: 'src/stylus/core.stylus',
-      base      : [
-        'src/txt/license.txt',
-        'src/stylus/_configuration.stylus',
-        'src/stylus/core.stylus'
-      ],
-      coffee    : 'src/coffee/**/*.coffee',
-      overwatch : env + '/**/*.*'
+      docs     : 'src/markup/*.pug',
+      markup   : 'src/markup/**/*.pug',
+      overwatch: env + '**/*.{html,js,css}',
+      scripts  : 'src/script/**/*.js',
+      styles   : 'src/style/**/*.styl'
     },
     destinations: {
-      html     : env,
-      js       : env + 'js/',
-      css      : env + 'css/',
-      dist     : 'dist/'
+      dist: './dist',
+      css : env + 'css/',
+      html: env,
+      js  : env + 'js/'
     }
   }
 };

@@ -1,8 +1,0 @@
-color_palette = configuration.color_palette
-for key, value in color_palette
-  .progrecss[data-progrecss].{key},
-  .progrecss[data-progrecss-mock].{key},
-  .progrecss[data-progrecss-timer].{key}
-    &:after,
-    &:before
-      background-color value

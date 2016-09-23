@@ -1,0 +1,61 @@
+/**
+  * Progre(c)ss - 2016
+*/
+$ns = pg
+
+create-el()
+  position   absolute
+  display    block
+  content    ''
+  height     6px
+  top        0
+  left       0
+
+.{$ns}
+  display   block
+  position  relative
+  /**
+  * Our before element acts as the container
+  */
+  &:before
+  /**
+    * Our after element acts as the value
+  */
+    create-el()
+    background black
+    width      100%
+  &:after
+    create-el()
+    transition width .25s ease 0s
+    background red
+    z-index 2
+
+  /**
+    * If paused pause the play state of any animation that may be happening
+  */
+  &--pause
+    &:after
+      animation-play-state paused
+  /**
+    * Reverse it if we wish
+  */
+  &--reverse
+    &:after
+      animation-direction reverse
+  /**
+    * Positional helpers
+  */
+  &--bottom
+    &:before
+    &:after
+      top 100%
+      margin-top -6px
+  &--fixed
+    &:before
+    &:after
+      position fixed
+
+for percent in (0..100)
+  .{$ns}[data-{$ns}={'"' + percent + '"'}]
+    &:after
+      width (percent * 1%)

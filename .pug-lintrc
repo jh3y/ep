@@ -1,0 +1,6 @@
+{
+  "HTMLRootRequiresLang": "warning",
+  "UseConsistentQuotes": "warning",
+  "NoAttributeWhitespace": "warning",
+  "AddValueToSubmit": "warning"
+}
