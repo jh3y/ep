@@ -1,7 +1,7 @@
 class Progrecss {
   constructor(props) {
-
+    console.info('created...');
   }
 };
 
-export default Progrecss;
+window.Progrecss = Progrecss;
