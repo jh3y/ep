@@ -41,6 +41,10 @@ module.exports = {
     rename: {
       suffix: '.min'
     },
+    stylus: {
+      'include css': true,
+      resolveUrl: './node_modules/'
+    },
     stylint: {
       reporter: 'stylint-stylish'
     },

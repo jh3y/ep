@@ -16,7 +16,7 @@ var gulp      = require('gulp'),
   compile = function() {
     return gulp.src(src.styles)
       .pipe(plugins.plumber())
-      .pipe(plugins.stylus())
+      .pipe(plugins.stylus(opts.stylus))
       .pipe(plugins.prefix(opts.prefix))
       .pipe(env.stat ? plugins.size(opts.gSize): plugins.gUtil.noop())
       .pipe(env.deploy ? plugins.gUtil.noop(): gulp.dest(env.dist ? dest.dist: dest.css))

@@ -1,7 +1,7 @@
 /**
   * Progre(c)ss - 2016
 */
-$ns = pg
+$ns = progrecss
 
 create-el()
   position   absolute
@@ -15,16 +15,9 @@ create-el()
   display   block
   position  relative
   /**
-  * Our before element acts as the container
+  * Our before element acts as the progress value indicator
   */
   &:before
-  /**
-    * Our after element acts as the value
-  */
-    create-el()
-    background black
-    width      100%
-  &:after
     create-el()
     transition width .25s ease 0s
     background red
@@ -34,28 +27,26 @@ create-el()
     * If paused pause the play state of any animation that may be happening
   */
   &--pause
-    &:after
+    &:before
       animation-play-state paused
   /**
     * Reverse it if we wish
   */
   &--reverse
-    &:after
+    &:before
       animation-direction reverse
   /**
     * Positional helpers
   */
   &--bottom
     &:before
-    &:after
       top 100%
       margin-top -6px
   &--fixed
     &:before
-    &:after
       position fixed
 
 for percent in (0..100)
   .{$ns}[data-{$ns}={'"' + percent + '"'}]
-    &:after
+    &:before
       width (percent * 1%)
