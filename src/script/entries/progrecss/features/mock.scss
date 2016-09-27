@@ -1,0 +1,22 @@
+@import '../configuration';
+/**
+  * Mock
+  *
+  * Mock progress being made by declaring a time for progress to complete
+*/
+
+@keyframes pg-mock {
+  to { width: 100%; }
+}
+
+#{$progrecss-ns},
+.#{$progrecss-ns} {
+  @for $duration from 0 through $progrecss-mocks {
+    &[mock="#{$duration}"] {
+      &:before {
+        animation-name    : pg-mock;
+        animation-duration: $duration * 1s;
+      }
+    }
+  }
+}

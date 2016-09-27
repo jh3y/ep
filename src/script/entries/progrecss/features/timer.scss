@@ -1,0 +1,23 @@
+@import '../configuration';
+/**
+  * Timer
+  *
+  * Use progress as a timer
+*/
+
+@keyframes pg-timer {
+  to { width: 0; }
+}
+
+#{$progrecss-ns},
+.#{$progrecss-ns} {
+  @for $duration from 0 through $progrecss-timers {
+    &[timer="#{$duration}"] {
+      &:before {
+        width             : 100%;
+        animation-name    : pg-timer;
+        animation-duration: $duration * 1s;
+      }
+    }
+  }
+}

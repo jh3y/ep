@@ -5,7 +5,7 @@ const webpack           = require('webpack');
 const path              = require('path');
 
 const IS_DIST = (process.argv.indexOf('--dist') !== -1) ? true : false;
-const STYLE_LOAD = 'css-loader!postcss-loader!stylus-loader?paths=src/style';
+const STYLE_LOAD = 'css-loader!postcss-loader!sass-loader';
 const STYLE_LOADER = (IS_DIST) ? ExtractTextPlugin.extract('style-loader', STYLE_LOAD) : `style-loader!${STYLE_LOAD}`;
 
 const config = {
@@ -36,7 +36,7 @@ const config = {
         }
       },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         include: /(src\/)/,
         loader: STYLE_LOADER
       }
@@ -57,9 +57,9 @@ const config = {
     }),
     (IS_DIST) ? new ExtractTextPlugin('[name].css') : function () {},
     /* If --dist is present in process opts then minimize bundles */
-    (IS_DIST) ? new webpack.optimize.UglifyJsPlugin({
-      include: /\.min\.js$/
-    }) : function () {}
+    // (IS_DIST) ? new webpack.optimize.UglifyJsPlugin({
+      // include: /\.min\.js$/
+    // }) : function () {}
   ],
   postcss: function () {
     return [ autoprefixer ];

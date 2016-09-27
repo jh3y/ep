@@ -12,7 +12,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         loader: 'babel',
         include: /(src\/script)/,
         query: {
@@ -22,7 +22,7 @@ const config = {
         }
       },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         include: /(src\/)/,
         loader: 'null-loader'
       }
@@ -30,10 +30,9 @@ const config = {
   },
   resolve: {
     root: [
-      path.resolve('./src/script'),
-      path.resolve('./src/style')
+      path.resolve('./src/script')
     ]
-    extensions: [ '', '.js', '.jsx' ]
+    extensions: [ '', '.js' ]
   },
   plugins: [],
 }

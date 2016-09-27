@@ -1,0 +1,68 @@
+@import 'configuration';
+
+@mixin create-pseudo() {
+  position: absolute;
+  display : block;
+  content : '';
+  height  : 6px;
+  top     : 0;
+  left    : 0;
+}
+
+@mixin create-core() {
+  @for $percent from 0 through 100 {
+    &[value="#{$percent}"] {
+      &:before {
+        width: $percent * 1%;
+      }
+    }
+  }
+}
+
+#{$progrecss-ns},
+.#{$progrecss-ns} {
+  display   : block;
+  position  : relative;
+  min-height: $progrecss-height;
+
+  &:before {
+    @include create-pseudo();
+    width     : 0;
+    transition: width $progrecss-transition ease 0s;
+    background: $progrecss-fg;
+    z-index   : 9999;
+    opacity   : $progrecss-opacity;
+  }
+
+  @include create-core();
+}
+
+.#{$progrecss-ns} {
+  &--backdrop {
+    &:after {
+      @include create-pseudo();
+      background: $progrecss-bg;
+      width     : 100%;
+      opacity   : $progrecss-opacity;
+    }
+  }
+  &--pause {
+    &:before {
+      animation-play-state: paused;
+    }
+  }
+  /**
+    * Positional helpers
+  */
+  &--bottom {
+    &:before {
+      top       : 100%;
+      margin-top: -6px;
+    }
+  }
+  &--fixed {
+    &:before {
+      position: fixed;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/**
+  * Generates a loader style progress bar
+*/
+@keyframes pg-loader {
+  from { background-position: 100vw 0; }
+  to   { background-position: 0 0;      }
+}
+
+@mixin pg-loader() {
+  &:before {
+    width: 100%;
+    background: linear-gradient(45deg,
+      transparent 33vw,
+      $progrecss-fg 66vw,
+      transparent
+    );
+    background-size: 100vw;
+    animation: pg-loader 1.25s 0s infinite linear;
+  }
+}
+
+
+#{$progrecss-ns},
+.#{$progrecss-ns} {
+  &[loader] {
+    @include pg-loader;
+  }
+}
+
+.#{$progrecss-ns} {
+  &--loader {
+    @include pg-loader;
+  }
+}
