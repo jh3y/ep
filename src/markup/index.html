@@ -16,7 +16,7 @@
       </div>
       <div class='demo'>
         <section>
-          <h2>Basic progress</h2>
+          <h2>Basic usage</h2>
           <div id='basic' class='progrecss' value='75'></div>
           <div>
             <input id='basic-set' type='number' max='100' min='0' value='75'/>
@@ -24,6 +24,15 @@
           <p>
 
           </p>
+        </section>
+        <section>
+          <h2>Positional helpers</h2>
+          <div id='positional' class='progrecss' value='75'></div>
+          <p>Toggle top fixed bottom (left right?)</p>
+          <input type='radio' name='position' value='' checked/>
+          <input type='radio' name='position' value='progrecss--fixed'/>
+          <input type='radio' name='position' value='progecss--bottom'/>
+          <input type='radio' name='position' value='progrecss--bottom progrecss--fixed'/>
         </section>
         <section>
           <h2>Loader</h2>
@@ -37,17 +46,14 @@
         <section>
           <h2>Staggered mock</h2>
           <div id='staggered-mock' class='progrecss' staggered-mock='10'></div>
-          <input id='staggered-set' for='staggered-set' type='number' max='10' min='1' value='10'/>
+          <input id='staggered-mock-set' for='staggered-mock' type='number' max='10' min='1' value='10'/>
         </section>
         <section>
           <h2>Timer</h2>
           <div class='progrecss' id='timer' timer='10'></div>
           <input id='timer-set' for='timer' type='number' max='10' min='1' value='10'/>
         </section>
-        <section>
-          <h2>Positional helpers</h2>
-          <p>Toggle top fixed bottom (left right?)</p>
-        </section>
+
         <section>
           <h2>Custom element</h2>
           <p>Still want a dedicated progress element with a little more flexibility just use <progecss> as an element</p>

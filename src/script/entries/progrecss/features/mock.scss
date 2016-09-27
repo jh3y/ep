@@ -11,7 +11,7 @@
 
 #{$progrecss-ns},
 .#{$progrecss-ns} {
-  @for $duration from 0 through $progrecss-mocks {
+  @for $duration from 1 through $progrecss-mocks {
     &[mock="#{$duration}"] {
       &:before {
         animation-name    : pg-mock;

@@ -11,7 +11,7 @@
 
 #{$progrecss-ns},
 .#{$progrecss-ns} {
-  @for $duration from 0 through $progrecss-timers {
+  @for $duration from 1 through $progrecss-timers {
     &[timer="#{$duration}"] {
       &:before {
         width             : 100%;
