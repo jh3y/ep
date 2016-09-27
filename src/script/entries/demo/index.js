@@ -1,4 +1,5 @@
 import './demo.scss';
+import 'prismjs';
 
 const generateLookup = (ids) => {
   const result = {};

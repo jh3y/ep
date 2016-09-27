@@ -39,6 +39,7 @@
     "node-sass": "^3.10.0",
     "normalize.css": "^4.2.0",
     "postcss-loader": "^0.11.1",
+    "prismjs": "^1.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
