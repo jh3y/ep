@@ -9,13 +9,11 @@
   to { width: 100%; }
 }
 
-.#{$vade-ns} {
+progress {
   @for $duration from $vade-mocks-min through $vade-mocks-max {
-    &[mock="#{$duration}"] {
-      &:before {
-        animation-name    : vd-mock;
-        animation-duration: $duration * 1s;
-      }
+    &[data-mock="#{$duration}"] {
+      width: 0;
+      animation: vd-mock $duration * 1s;
     }
   }
 }

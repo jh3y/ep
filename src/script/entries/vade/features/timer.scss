@@ -9,15 +9,11 @@
   to { width: 0; }
 }
 
-#{$vade-ns},
-.#{$vade-ns} {
+progress {
   @for $duration from $vade-timers-min through $vade-timers-max {
-    &[data-#{$vade-ns}-timer="#{$duration}"] {
-      &:before {
-        width             : 100%;
-        animation-name    : vd-timer;
-        animation-duration: $duration * 1s;
-      }
+    &[data-timer="#{$duration}"] {
+      width    : 100%;
+      animation: vd-timer $duration * 1s;
     }
   }
 }

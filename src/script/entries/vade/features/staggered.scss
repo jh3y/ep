@@ -19,13 +19,11 @@
   100% { width: 100%; }
 }
 
-.#{$vade-ns} {
+progress {
   @for $duration from $vade-staggered-mocks-min through $vade-staggered-mocks-max {
-    &[staggered-mock="#{$duration}"] {
-      &:before {
-        animation-name    : vd-staggered-mock;
-        animation-duration: $duration * 1s;
-      }
+    &[data-staggered-mock="#{$duration}"] {
+      width: 0;
+      animation: vd-staggered-mock $duration * 1s;
     }
   }
 }

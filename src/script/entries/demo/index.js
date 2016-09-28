@@ -32,17 +32,17 @@ const changeBasic    = () => {
 };
 const changeDuration = (e) => {
   const ID = e.target.getAttribute('for');
-  LOOKUP[ID].setAttribute(ID, e.target.value);
+  LOOKUP[ID].setAttribute(`data-${ID}`, e.target.value);
 };
 const changePosition = (e) => {
   LOOKUP.positional.className = `vade ${e.target.value}`;
 };
 const toggleComplete = (e) => {
-  if (LOOKUP.basic.getAttribute('complete')) {
-    LOOKUP.basic.removeAttribute('complete');
+  if (LOOKUP.basic.getAttribute('data-complete')) {
+    LOOKUP.basic.removeAttribute('data-complete');
     e.target.innerText = 'Complete';
   } else {
-    LOOKUP.basic.setAttribute('complete', true);
+    LOOKUP.basic.setAttribute('data-complete', true);
     e.target.innerText = 'Reset';
   }
 };
@@ -61,9 +61,9 @@ setBasic.addEventListener('input', changeBasic);
 setTimer.addEventListener('input', changeDuration);
 setMock.addEventListener('input', changeDuration);
 setStaggered.addEventListener('input', changeDuration);
-setPosition.forEach((radio) => {
-  radio.addEventListener('change', changePosition);
-});
+for(let i = 0; i < setPosition.length; i++) {
+  setPosition[i].addEventListener('change', changePosition);
+}
 setComplete.addEventListener('click', toggleComplete);
 
 const myVade = new Vade();

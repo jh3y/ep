@@ -10,6 +10,7 @@ $vade-radius          : 0 !default;
 $vade-transition      : .25s !default;
 
 // Feature constraints
+$vade-timeout-threshold  : 30 !default;
 $vade-mocks-min          : 1 !default;
 $vade-mocks-max          : 4 !default;
 $vade-staggered-mocks-min: 1 !default;

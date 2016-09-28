@@ -30,7 +30,7 @@
 }
 
 progress {
-  display   : block;
+  display   : block !important;
   height    : $vade-height;
   opacity   : $vade-opacity;
   appearance: none;
@@ -68,12 +68,22 @@ progress {
 
   @include create-core;
 
-  &[complete] {
+  &[data-complete] {
     width: 100%;
     visibility: hidden;
   }
 
-  &[pause] {
+  @keyframes vd-simulate {
+    from { width: 0; }
+  }
+
+  &[data-simulate] {
+    width: 99%;
+    animation: vd-simulate ($vade-timeout-threshold * 1s);
+    animation-timing-function: steps($vade-timeout-threshold);
+  }
+
+  &[data-pause] {
     animation-play-state: paused;
   }
 

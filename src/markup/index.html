@@ -52,26 +52,26 @@
           <input type='radio' name='position' value='vade--bottom vade--fixed'/>
         </section>
         <section>
+          <h2>Simulate</h2>
+          <progress data-simulate='true'></progress>
+          <button>Restart</button><button>Complete</button>
+        </section>
+        <section>
           <h2>Mock</h2>
-          <div id='mock' class='vade' data-vade-mock='4'></div>
+          <progress id='mock' data-mock='4'></progress>
           <input id='mock-set' for='mock' type='number' max='4' min='1' value='4'/>
         </section>
         <section>
           <h2>Staggered mock</h2>
-          <div id='staggered-mock' class='vade' data-vade-staggered-mock='4'></div>
+          <progress id='staggered-mock' data-staggered-mock='4'></progress>
           <input id='staggered-mock-set' for='staggered-mock' type='number' max='4' min='1' value='4'/>
         </section>
         <section>
           <h2>Timer</h2>
-          <div class='vade' id='timer' data-vade-timer='4'></div>
+          <progress id='timer' data-timer='4'></progress>
           <input id='timer-set' for='timer' type='number' max='4' min='1' value='4'/>
         </section>
 
-        <section>
-          <h2>Custom element</h2>
-          <p>Still want a dedicated progress element with a little more flexibility just use <progecss> as an element</p>
-          <vade value='50'></vade>
-        </section>
         <section>
           Override configuration within SASS. Import just the parts you need.
 
