@@ -17,35 +17,53 @@ const LOOKUP = generateLookup([
   'positional'
 ]);
 
+const updateMarkup = (newVal, oldVal, markupContainer) => {
+  markupContainer.innerHTML = markupContainer.innerHTML.replace(oldVal, newVal);
+}
+
+
 /**
-  * Basic progrecss interaction
+  * Basic vade interaction
 */
-const basicSet       = document.getElementById('basic-set');
 const changeBasic    = () => {
-  LOOKUP.basic.setAttribute('value', basicSet.value);
+  const oldVal = LOOKUP.basic.getAttribute('value');
+  LOOKUP.basic.setAttribute('value', setBasic.value);
+  updateMarkup(setBasic.value, oldVal, document.getElementById('basic-markup'));
 };
 const changeDuration = (e) => {
   const ID = e.target.getAttribute('for');
   LOOKUP[ID].setAttribute(ID, e.target.value);
 };
-const setPosition = (e) => {
-  LOOKUP.positional.className = `progrecss ${e.target.value}`;
-}
+const changePosition = (e) => {
+  LOOKUP.positional.className = `vade ${e.target.value}`;
+};
+const toggleComplete = (e) => {
+  if (LOOKUP.basic.getAttribute('complete')) {
+    LOOKUP.basic.removeAttribute('complete');
+    e.target.innerText = 'Complete';
+  } else {
+    LOOKUP.basic.setAttribute('complete', true);
+    e.target.innerText = 'Reset';
+  }
+};
 
 
-const changeTimer     = document.getElementById('timer-set');
-const changeMock      = document.getElementById('mock-set');
-const changeStaggered = document.getElementById('staggered-mock-set');
-const changePosition  = document.querySelectorAll('[name=position]');
+const setBasic     = document.getElementById('basic-set');
+const setTimer     = document.getElementById('timer-set');
+const setMock      = document.getElementById('mock-set');
+const setStaggered = document.getElementById('staggered-mock-set');
+const setPosition  = document.querySelectorAll('[name=position]');
+const setComplete  = document.getElementById('complete');
 /**
   * Bind events
 */
-basicSet.addEventListener('input', changeBasic);
-changeTimer.addEventListener('input', changeDuration);
-changeMock.addEventListener('input', changeDuration);
-changeStaggered.addEventListener('input', changeDuration);
-changePosition.forEach((radio) => {
-  radio.addEventListener('change', setPosition);
-})
+setBasic.addEventListener('input', changeBasic);
+setTimer.addEventListener('input', changeDuration);
+setMock.addEventListener('input', changeDuration);
+setStaggered.addEventListener('input', changeDuration);
+setPosition.forEach((radio) => {
+  radio.addEventListener('change', changePosition);
+});
+setComplete.addEventListener('click', toggleComplete);
 
-console.info(window.Progrecss);
+const myVade = new Vade();

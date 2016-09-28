@@ -1,0 +1,99 @@
+@import 'configuration';
+
+@mixin create-pseudo() {
+  position: absolute;
+  display : block;
+  content : '';
+  height  : 6px;
+  top     : 0;
+  left    : 0;
+}
+
+@mixin create-core() {
+  @for $percent from 1 through 100 {
+    &[value="#{$percent}"] {
+      width: $percent * 1%;
+    }
+  }
+}
+
+@keyframes vd-indeterminate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: $vade-opacity;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+progress {
+  display   : block;
+  height    : $vade-height;
+  opacity   : $vade-opacity;
+  appearance: none;
+  width     : 0;
+  border    : none;
+  transition: width $vade-transition ease 0s,
+    visibility ($vade-transition * 2) ease 0s;
+  position  : relative;
+
+  // Colors IE progress bar
+  background: $vade-fg;
+
+  &::-moz-progress-bar {
+    background: $vade-fg;
+  }
+
+  &::-webkit-progress-value {
+    background: $vade-fg;
+  }
+
+
+  &:indeterminate {
+    width    : 100%;
+    animation: vd-indeterminate 2s infinite linear;
+
+    &::-moz-progress-bar {
+      background: $vade-indeterminate-fg;
+    }
+
+    &::-webkit-progress-bar {
+      background: $vade-indeterminate-fg;
+    }
+
+  }
+
+  @include create-core;
+
+  &[complete] {
+    width: 100%;
+    visibility: hidden;
+  }
+
+  &[pause] {
+    animation-play-state: paused;
+  }
+
+}
+
+.#{$vade-ns} {
+  /**
+  * Positional helpers
+  */
+  &--top {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &--bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &--fixed {
+    position: fixed;
+  }
+}

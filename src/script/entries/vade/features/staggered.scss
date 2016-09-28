@@ -5,7 +5,7 @@
   * Mock progress with a staggered effect
 */
 
-@keyframes pg-staggered-mock {
+@keyframes vd-staggered-mock {
   0%   { width: 0%;   }
   10%  { width: 10%;  }
   20%  { width: 10%;  }
@@ -19,12 +19,11 @@
   100% { width: 100%; }
 }
 
-#{$progrecss-ns},
-.#{$progrecss-ns} {
-  @for $duration from 1 through $progrecss-staggered-mocks {
+.#{$vade-ns} {
+  @for $duration from $vade-staggered-mocks-min through $vade-staggered-mocks-max {
     &[staggered-mock="#{$duration}"] {
       &:before {
-        animation-name    : pg-staggered-mock;
+        animation-name    : vd-staggered-mock;
         animation-duration: $duration * 1s;
       }
     }

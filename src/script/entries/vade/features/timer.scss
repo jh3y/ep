@@ -5,17 +5,17 @@
   * Use progress as a timer
 */
 
-@keyframes pg-timer {
+@keyframes vd-timer {
   to { width: 0; }
 }
 
-#{$progrecss-ns},
-.#{$progrecss-ns} {
-  @for $duration from 1 through $progrecss-timers {
-    &[timer="#{$duration}"] {
+#{$vade-ns},
+.#{$vade-ns} {
+  @for $duration from $vade-timers-min through $vade-timers-max {
+    &[data-#{$vade-ns}-timer="#{$duration}"] {
       &:before {
         width             : 100%;
-        animation-name    : pg-timer;
+        animation-name    : vd-timer;
         animation-duration: $duration * 1s;
       }
     }

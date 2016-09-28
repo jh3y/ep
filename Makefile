@@ -9,7 +9,7 @@ help:
 bundle: ## bundles source
 	$(WEBPACK) --progress --colors
 
-dist: ## create dist progrecss
+dist: ## create dist vade
 	$(WEBPACK) --progress --colors --optimize-occurence-order --dist
 
 test-bundle: ## bundles test source

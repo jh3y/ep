@@ -13,11 +13,11 @@ const config = {
     port: 1987
   },
   entry: (IS_DIST) ? {
-    progrecss: './src/script/entries/progrecss',
-    'progrecss.min': './src/script/entries/progrecss'
+    vade: './src/script/entries/vade',
+    'vade.min': './src/script/entries/vade'
   } : {
     demo: './src/script/entries/demo',
-    progrecss: './src/script/entries/progrecss'
+    vade: './src/script/entries/vade'
   },
   output: {
     path: `${__dirname}/${(IS_DIST) ? 'dist' : 'public'}`,
@@ -53,7 +53,10 @@ const config = {
     (IS_DIST) ? function () {} : new HtmlWebpackPlugin({
       template: './src/markup/index.html',
       filename: 'index.html',
-      chunks: ['progrecss', 'demo']
+      chunks: ['vade', 'demo'],
+      minify: {
+        collapseWhitespace: true
+      }
     }),
     (IS_DIST) ? new ExtractTextPlugin('[name].css') : function () {},
     /* If --dist is present in process opts then minimize bundles */

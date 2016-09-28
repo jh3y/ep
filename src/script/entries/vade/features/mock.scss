@@ -5,16 +5,15 @@
   * Mock progress being made by declaring a time for progress to complete
 */
 
-@keyframes pg-mock {
+@keyframes vd-mock {
   to { width: 100%; }
 }
 
-#{$progrecss-ns},
-.#{$progrecss-ns} {
-  @for $duration from 1 through $progrecss-mocks {
+.#{$vade-ns} {
+  @for $duration from $vade-mocks-min through $vade-mocks-max {
     &[mock="#{$duration}"] {
       &:before {
-        animation-name    : pg-mock;
+        animation-name    : vd-mock;
         animation-duration: $duration * 1s;
       }
     }

@@ -1,11 +1,17 @@
 @import '~normalize.css';
-@import '~prismjs/themes/prism.css';
+@import '~prismjs/themes/prism-tomorrow.css';
 
 * {
   box-sizing: border-box;
   &:before {
     animation-iteration-count: infinite;
   }
+}
+
+pre {
+  white-space: normal !important;
+  padding: 10px !important;
+  display: inline-block;
 }
 
 body {

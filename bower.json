@@ -1,6 +1,6 @@
 {
-  "name": "progrecss",
-  "main": "dist/progrecss.css",
+  "name": "vade",
+  "main": "dist/vade.css",
   "version": "1.4.0",
   "homepage": "http://jh3y.github.io/progre-c-ss",
   "authors": [
@@ -8,7 +8,7 @@
   ],
   "description": "Pure CSS progress bars with minimal effort!",
   "keywords": [
-    "progrecss",
+    "vade",
     "progress",
     "css",
     "less"
