@@ -54,6 +54,7 @@ progress {
   &:indeterminate {
     width    : 100%;
     animation: vd-indeterminate 2s infinite linear;
+    background: $vade-indeterminate-fg;
 
     &::-moz-progress-bar {
       background: $vade-indeterminate-fg;
@@ -89,6 +90,14 @@ progress {
 }
 
 .#{$vade-ns} {
+  /**
+    * Spread helper
+  */
+  &--spread {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   /**
   * Positional helpers
   */

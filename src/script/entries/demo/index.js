@@ -1,7 +1,9 @@
 import './demo.scss';
 import 'prismjs';
 
-import './sections/basic.js';
+import './sections/standard';
+import './sections/positional';
+import './sections/spread';
 
 // const generateLookup = (ids) => {
 //   const result = {};

@@ -1,0 +1,18 @@
+section.demo.demo--spread
+  h2 Spread CSS helper
+  pre.demo__markup(id="spread-markup")
+    code.language-html.
+      &lt;progress class="vade--spread" value='75'&gt;&lt;/progress&gt;
+    code.language-html.markup--complete.
+      &lt;progress  class="vade--spread" data-complete="true"&gt;
+      &lt;/progress&gt;
+  progress.vade--spread(id="spread-bar", value="75")
+  p.demo__doc.
+    <code>vade</code> provides a CSS helper for changing <code>progress</code> bar style. Instead of from left to right and vice-versa, you can spread a <code>progress</code> bar out from the middle instead.
+  fieldset.demo__controls
+    legend Set progress
+    .demo-control-group
+      label() Value
+      input(id="spread-set", type="number", max="100", min="0", value="75")
+    .demo-control-group
+      button(id="spread-complete", data-for="spread-bar") Complete progress

@@ -1,6 +1,8 @@
 @import '~normalize.css';
 @import '~prismjs/themes/prism-tomorrow.css';
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 * {
   box-sizing: border-box;
   &:before {
@@ -15,7 +17,13 @@ pre {
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   background: #fafafa;
+  padding: 15px;
+}
+
+fieldset {
+  display: inline-block;
 }
 
 .content {
@@ -31,7 +39,89 @@ body {
 }
 
 .demo {
-  display    : inline-block;
-  width      : 60%;
-  margin-left: 40%;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.features {
+
+}
+
+.demo__doc {
+  text-align: justify;
+}
+
+.demo-control-group {
+  margin-bottom: 10px;
+
+  label {
+    margin-right: 8px;
+  }
+}
+
+$btn-color: #7ec699;
+button {
+  color: #fafafa;
+  background: $btn-color;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+
+  &:hover {
+    background: darken($btn-color, 15%);
+  }
+
+  &:active {
+    background: darken($btn-color, 30%);
+  }
+}
+
+code {
+  color: #e2777a;
+}
+
+.demo__markup {
+  max-width: 100%;
+  overflow: auto;
+
+  @media(max-width: 420px) {
+    font-size: .75rem;
+  }
+}
+
+.demo__markup {
+  .markup--complete {
+    display: none;
+  }
+  &--show-complete {
+    .markup--complete {
+      display: block;
+    }
+    code:not(.markup--complete) {
+      display: none;
+    }
+  }
+}
+
+.demo--positional {
+  position: relative;
+}
+
+$indeterminate-fg: #f9bf3b;
+.demo-bar {
+  &--indeterminate {
+    &:indeterminate {
+      background: $indeterminate-fg;
+
+      &::-moz-progress-bar {
+        background: $indeterminate-fg;
+      }
+
+      &::-webkit-progress-bar {
+        background: $indeterminate-fg;
+      }
+    }
+
+  }
 }
