@@ -1,0 +1,14 @@
+section.demo.demo--mock
+  h2 Mocked progress
+  pre.demo__markup(id="mock-markup")
+    code.language-html.
+      &lt;progress data-mock="4"&gt;
+      &lt;/progress&gt;
+  progress(id='mock-bar', data-mock='4')
+  p.demo__doc.
+    Maybe you'd rather just mock <code>progress</code>. Just set a duration(seconds) with the <code>data-mock</code> attribute.
+  fieldset.demo__controls
+    legend Set mock speed
+    .demo-control-group
+      label Value
+      input(id='mock-set', data-for='mock-bar', type='number', max='4', min='1', value='4')

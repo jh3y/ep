@@ -63,6 +63,14 @@ const config = {
         collapseWhitespace: true
       }
     }),
+    (IS_DIST) ? function () {} : new HtmlWebpackPlugin({
+      template: './src/markup/sandbox.pug',
+      filename: 'sandbox.html',
+      chunks: ['vade'],
+      minify: {
+        collapseWhitespace: true
+      }
+    }),
     (IS_DIST) ? new ExtractTextPlugin('[name].css') : function () {},
     /* If --dist is present in process opts then minimize bundles */
     // (IS_DIST) ? new webpack.optimize.UglifyJsPlugin({

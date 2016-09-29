@@ -1,0 +1,39 @@
+@import '../configuration';
+
+progress {
+  &[data-complete] {
+    width: 100%;
+    visibility: hidden;
+    animation: none;
+  }
+
+  &[data-pause] {
+    animation-play-state: paused;
+  }
+}
+
+.#{$vade-ns} {
+  /**
+  * Positional helpers
+  */
+  &--top {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &--bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &--fixed {
+    position: fixed;
+  }
+  /**
+  * Spread helper
+  */
+  &--spread {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

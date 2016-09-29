@@ -1,6 +1,3 @@
-/**
-  * Toggle completeness of a bar
-*/
 const toggleComplete = function(e) {
   const bar = document.getElementById(e.target.getAttribute('data-for'));
   const setButtonText = () => {
@@ -19,7 +16,15 @@ const toggleComplete = function(e) {
 const setBarAndMarkup = function(input, bar, markup) {
   const oldVal = bar.getAttribute('value');
   bar.value = input.value;
-  markup.innerHTML = markup.innerHTML.replace(oldVal, input.value);
-}
+  markup.innerHTML = markup.innerHTML.replace(new RegExp(oldVal, 'g'), input.value);
+};
 
-export { toggleComplete, setBarAndMarkup };
+const updateAndSet = function(el, attr, markup) {
+  const newVal = el.value;
+  const bar = document.getElementById(el.getAttribute('data-for'));
+  const oldVal = bar.getAttribute(attr);
+  bar.setAttribute(attr, newVal);
+  markup.innerHTML = markup.innerHTML.replace(new RegExp(oldVal, 'g'), newVal);
+};
+
+export { toggleComplete, setBarAndMarkup, updateAndSet };
