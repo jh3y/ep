@@ -128,6 +128,8 @@ $indeterminate-fg: #f9bf3b;
   }
 }
 
-progress {
+#timer-bar,
+#staggered-bar,
+#mock-bar {
   animation-iteration-count: infinite !important;
 }

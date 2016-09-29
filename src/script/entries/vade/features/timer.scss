@@ -6,13 +6,13 @@
 */
 
 @keyframes vd-timer {
-  to { width: 0; }
+  from { width: 100%; }
+  to   { width: 0; }
 }
 
 progress {
   @for $duration from $vade-timers-min through $vade-timers-max {
     &[data-timer="#{$duration}"] {
-      width    : 100%;
       animation: vd-timer $duration * 1s;
     }
   }
