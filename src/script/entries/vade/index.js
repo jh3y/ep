@@ -1,5 +1,3 @@
-import './vade.scss';
-
 const sanitizeValue = (val, min = 0, max = 100) => {
   if (val > max) val = max;
   if (val < min)   val = min;
@@ -13,9 +11,7 @@ class Vade {
     if (!el || el.tagName !== 'PROGRESS')
       throw Error('vade: you must pass a <progress> element instance');
     if (spread) el.classList.add('vade--spread');
-    if (position && position.length) {
-      position.forEach((pos) => el.classList.add(`vade--${pos}`));
-    }
+    this.setPosition(position);
     this.el    = el;
     this.value = parseInt(el.getAttribute('value'), 10) || 0;
   }
@@ -33,6 +29,12 @@ class Vade {
       }
       this.el.setAttribute('value', percent);
       this.value = percent;
+    }
+  }
+
+  setPosition(posArr) {
+    if (posArr && posArr.length) {
+      posArr.forEach((pos) => this.el.classList.add(`vade--${pos}`));
     }
   }
 

@@ -9,8 +9,8 @@ help:
 bundle: ## bundles source
 	$(WEBPACK) --progress --colors
 
-dist: ## create dist vade
-	$(WEBPACK) --progress --colors --optimize-occurence-order --dist
+deploy: ## create deployment bundle
+	rm -rf public && $(WEBPACK) --progress --colors -p --deploy
 
 test-bundle: ## bundles test source
 	$(WEBPACK) --config webpack.config.test.babel.js --progress --colors

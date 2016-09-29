@@ -5,23 +5,20 @@ const webpack           = require('webpack');
 const path              = require('path');
 
 const IS_DIST = (process.argv.indexOf('--dist') !== -1) ? true : false;
+const IS_DEPLOY = (process.argv.indexOf('--deploy') !== -1) ? true : false;
 const STYLE_LOAD = 'css-loader!postcss-loader!sass-loader';
-const STYLE_LOADER = (IS_DIST) ? ExtractTextPlugin.extract('style-loader', STYLE_LOAD) : `style-loader!${STYLE_LOAD}`;
+const STYLE_LOADER = (IS_DIST || IS_DEPLOY) ? ExtractTextPlugin.extract('style-loader', STYLE_LOAD) : `style-loader!${STYLE_LOAD}`;
 
 const config = {
   devServer: {
     port: 1987
   },
-  entry: (IS_DIST) ? {
-    vade: './src/script/entries/vade',
-    'vade.min': './src/script/entries/vade'
-  } : {
-    demo: './src/script/entries/demo',
-    vade: './src/script/entries/vade'
+  entry: {
+    demo: './src/script/entries/demo'
   },
   output: {
-    path: `${__dirname}/${(IS_DIST) ? 'dist' : 'public'}`,
-    filename: '[name].js'
+    path: `${__dirname}/public`,
+    filename: '[name][hash].js'
   },
   module: {
     loaders: [
@@ -55,27 +52,24 @@ const config = {
     extensions: [ '', '.js', '.styl' ]
   },
   plugins: [
-    (IS_DIST) ? function () {} : new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './src/markup/index.pug',
       filename: 'index.html',
-      chunks: ['vade', 'demo'],
+      chunks: [ 'demo' ],
       minify: {
         collapseWhitespace: true
       }
     }),
-    (IS_DIST) ? function () {} : new HtmlWebpackPlugin({
+    (IS_DEPLOY) ? function () {} : new HtmlWebpackPlugin({
       template: './src/markup/sandbox.pug',
       filename: 'sandbox.html',
-      chunks: ['vade'],
+      chunks: [ 'demo' ],
       minify: {
         collapseWhitespace: true
       }
     }),
-    (IS_DIST) ? new ExtractTextPlugin('[name].css') : function () {},
-    /* If --dist is present in process opts then minimize bundles */
-    // (IS_DIST) ? new webpack.optimize.UglifyJsPlugin({
-      // include: /\.min\.js$/
-    // }) : function () {}
+    (IS_DEPLOY) ? new ExtractTextPlugin('[name][hash].css') : function () {},
+    (IS_DEPLOY) ? new webpack.optimize.UglifyJsPlugin() : function () {}
   ],
   postcss: function () {
     return [ autoprefixer ];

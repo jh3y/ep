@@ -1,0 +1,24 @@
+section.demo.demo--js
+  h2 JS helper
+  p.demo__doc.
+    <code>Vade</code> comes with an optional JS helper. This allows you to do things like set the value, increase/decrease progress and hook into changes.
+  pre.demo__markup(id="standard-markup")
+    code.language-js.
+      const el = document.getElementById('js-bar');
+      const myVade = new Vade(el);
+
+      const afterSet = (e) => {
+        console.info('All set');
+      };
+
+      myVade.set(62, afterSet);
+
+      myVade.complete();
+
+      myVade.reset();
+
+      myVade.increase();
+
+  progress.demo-bar(id="js-bar", value="75")
+  p.demo__doc.
+    Standard usage is no different to that when using the progress element as you would normally.
