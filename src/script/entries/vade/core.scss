@@ -47,6 +47,10 @@ progress {
     background: $vade-fg;
   }
 
+  &::-webkit-progress-bar {
+    background: $vade-fg;
+  }
+
   &::-webkit-progress-value {
     background: $vade-fg;
   }
