@@ -1,0 +1,9 @@
+section.demo.demo--standard
+  h2 Standard usage
+  progress(id="standard-bar", value="75")
+  .demo__controls
+    input(id="standard-set", type="number", max="100", min="0", value="75")
+    button(id="standard-complete", data-for="standard-bar") Complete
+  pre.demo__markup
+    code.language-html(id="standard-markup").
+      &lt;progress value='75'&gt;&lt;/progress&gt;

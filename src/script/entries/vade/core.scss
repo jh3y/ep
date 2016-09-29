@@ -38,7 +38,6 @@ progress {
   border    : none;
   transition: width $vade-transition ease 0s,
     visibility ($vade-transition * 2) ease 0s;
-  position  : relative;
 
   // Colors IE progress bar
   background: $vade-fg;

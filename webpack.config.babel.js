@@ -39,6 +39,11 @@ const config = {
         test: /\.scss$/,
         include: /(src\/)/,
         loader: STYLE_LOADER
+      },
+      {
+        test: /\.pug$/,
+        include: /(src\/markup)/,
+        loader: 'pug'
       }
     ]
   },
@@ -51,7 +56,7 @@ const config = {
   },
   plugins: [
     (IS_DIST) ? function () {} : new HtmlWebpackPlugin({
-      template: './src/markup/index.html',
+      template: './src/markup/index.pug',
       filename: 'index.html',
       chunks: ['vade', 'demo'],
       minify: {
