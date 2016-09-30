@@ -1,5 +1,5 @@
 import './demo.scss';
-import '../vade/vade.scss';
+import '../ep/ep.scss';
 import 'prismjs';
 
 import './sections/standard';

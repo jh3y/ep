@@ -1,25 +1,23 @@
 {
-  "name": "vade",
-  "main": "dist/vade.css",
+  "name": "ep",
+  "main": "dist/ep.css",
   "version": "1.4.0",
-  "homepage": "http://jh3y.github.io/progre-c-ss",
+  "homepage": "http://jh3y.github.io/ep",
   "authors": [
     "jh3y"
   ],
-  "description": "Pure CSS progress bars with minimal effort!",
+  "description": "enhance your progress bars with minimal effort!",
   "keywords": [
-    "vade",
+    "ep",
     "progress",
     "css",
-    "less"
+    "sass"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "src/vendor",
-    "test",
-    "tests"
+    "test"
   ]
 }

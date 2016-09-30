@@ -4,14 +4,14 @@ const sanitizeValue = (val, min = 0, max = 100) => {
   return val;
 }
 
-class Vade {
+class Ep {
 
   constructor(el, opts) {
     const { position, spread } = opts || {};
     if (!el || el.tagName !== 'PROGRESS')
-      throw Error('vade: you must pass a <progress> element instance');
+      throw Error('ep: you must pass a <progress> element instance');
     this.el    = el;
-    if (spread) el.classList.add('vade--spread');
+    if (spread) el.classList.add('ep--spread');
     this.setPosition(position);
     this.value = parseInt(el.getAttribute('value'), 10) || 0;
   }
@@ -33,20 +33,26 @@ class Vade {
   }
 
   setSpread(spread = false) {
-    (spread) ? this.el.classList.add('vade--spread') : this.el.classList.remove('vade--spread');
+    (spread) ? this.el.classList.add('ep--spread') : this.el.classList.remove('ep--spread');
+  }
+
+  setIndeterminate(indeterminate = false) {
+    (indeterminate) ? this.el.classList.add('ep--indeterminate') : this.el.classList.remove('ep--indeterminate');
   }
 
   resetPosition() {
-    for (let pos of ['top', 'fixed', 'bottom']) {
-      for (let cl of this.el.classList) {
-        if (cl === `vade--${pos}`) this.el.classList.remove(`vade--${pos}`);
+    const positions = ['top', 'fixed', 'bottom'];
+    for (let p = 0; p < positions.length; p++) {
+      for (let cl = 0; cl < this.el.classList.length; cl++) {
+        if (this.el.classList[cl] === `ep--${positions[p]}`)
+          this.el.classList.remove(`ep--${positions[p]}`);
       }
     }
   }
 
   setPosition(posArr) {
     if (posArr && posArr.length) {
-      posArr.forEach((pos) => this.el.classList.add(`vade--${pos}`));
+      posArr.forEach((pos) => this.el.classList.add(`ep--${pos}`));
     }
   }
 
@@ -118,4 +124,4 @@ class Vade {
 
 };
 
-window.Vade = Vade;
+window.Ep = Ep;

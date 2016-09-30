@@ -12,7 +12,7 @@ progress {
   }
 }
 
-.#{$vade-ns} {
+progress.#{$ep-ns} {
   /**
   * Positional helpers
   */
@@ -35,5 +35,9 @@ progress {
   &--spread {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  &--indeterminate {
+    @include indeterminate;
   }
 }

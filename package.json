@@ -1,5 +1,5 @@
 {
-  "name": "progre-c-ss",
+  "name": "ep",
   "version": "2.0.0",
   "description": "pure CSS progress bars with minimal effort",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "progress",
-    "vade",
+    "ep",
     "css",
     "ui",
     "ux",
@@ -49,5 +49,16 @@
     "stylus-loader": "^2.3.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "html-loader": "^0.4.4",
+    "node-sass": "^3.10.0",
+    "prismjs": "^1.5.1",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^4.0.2"
   }
 }

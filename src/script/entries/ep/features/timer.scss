@@ -11,7 +11,7 @@
 }
 
 progress {
-  @for $duration from $vade-timers-min through $vade-timers-max {
+  @for $duration from $ep-timers-min through $ep-timers-max {
     &[data-timer="#{$duration}"] {
       animation: vd-timer $duration * 1s;
     }

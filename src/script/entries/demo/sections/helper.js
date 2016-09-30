@@ -1,25 +1,25 @@
-import '../../vade/';
+import '../../ep/';
 
 const el = document.getElementById('js-bar');
-const myVade = new Vade(el);
+const myEp = new Ep(el);
 
 const FUNC = {
   afterSet: () => {
     let afterSet = () => alert('All set!');
-    myVade.set(23, afterSet);
+    myEp.set(23, afterSet);
   },
   complete: () => {
     let onComplete = () => alert('Completed!');
-    myVade.complete(onComplete);
+    myEp.complete(onComplete);
   },
-  reset: () => myVade.reset(),
-  set: () => myVade.set(75),
-  increase: () => myVade.increase(),
-  decrease: () => myVade.decrease(25),
-  position: () => myVade.setPosition(['top', 'fixed']),
-  resetPosition: () => myVade.resetPosition(),
-  spreadTrue: () => myVade.setSpread(true),
-  spreadFalse: () => myVade.setSpread(false)
+  reset: () => myEp.reset(),
+  set: () => myEp.set(75),
+  increase: () => myEp.increase(),
+  decrease: () => myEp.decrease(25),
+  position: () => myEp.setPosition(['top', 'fixed']),
+  resetPosition: () => myEp.resetPosition(),
+  spreadTrue: () => myEp.setSpread(true),
+  spreadFalse: () => myEp.setSpread(false)
 };
 
 const jsDemo = document.querySelector('.demo--js');
@@ -30,4 +30,4 @@ jsDemo.addEventListener('click', (e) => {
 })
 
 
-window.myVade = myVade;
+window.myEp = myEp;

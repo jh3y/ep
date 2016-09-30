@@ -1,0 +1,14 @@
+section.demo.demo--sass
+  h2 SASS integration
+  p.demo__doc.
+    <code>ep</code> is written with <code>sass</code> using <code>!default</code> variables for configuration.
+  p.demo__doc.
+    This allows you to import just the pieces of <code>ep</code> you want whilst being able to override the defaults from within your own <code>sass</code> code.
+  p.demo__doc.
+    For example; how about overriding the color and opacity?
+  pre.demo__markup
+    code.language-css.
+      $ep-fg: #e74c3c;
+      $ep-opacity: .8;
+      // import with variable configuration overridden
+      @import '~ep/core';

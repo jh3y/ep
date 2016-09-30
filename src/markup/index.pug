@@ -1,17 +1,43 @@
+mixin githubStats(userName, repoName)
+  .stats
+    .stats__stars
+      iframe(src = `http://ghbtns.com/github-btn.html?user=${userName}&repo=${repoName}&type=watch&count=true`, allowtransparency="true", frameborder="0", scrolling="0", width="90px", height="20")
+    .stats__forks
+      iframe(src = `http://ghbtns.com/github-btn.html?user=${userName}&repo=${repoName}&type=fork&count=true`, allowtransparency="true", frameborder="0", scrolling="0", width="90px", height="20")
+    .stats__follow
+      iframe(src = `http://ghbtns.com/github-btn.html?user=${userName}&repo=${repoName}&type=follow&count=true`, allowtransparency="true", frameborder="0", scrolling="0", width="120px", height="20")
 html(lang="en-us")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE-edge")
-    title vade | enchance your progress bars with minimal effort!
+    title ep | enhance your progress bars with minimal effort!
     meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0")
     meta(name="description", content="html5 progress enhancement with minimal effort!")
   body
+    progress.ep--top.ep--fixed(value="0", max="100", data-mock="2")
     .content
-      header
-        h1 vade
-        p.
-          vade is a CSS aid for resetting/enhancing the HTML5 progress element.
-          There's also an optional ES6 helper.
+      header.header
+        .header__title
+          h1 ep
+          //- h2 enhance your progress<br/> bars with minimal effort!
+        .header__content
+          p.
+            Enhance your HTML5 progress bars with minimal effort!
+          +githubStats('jh3y', 'ep')
+          pre.install(style="margin: 20px 0")
+            code.language-css(style="color: #7bff7b").
+              npm install @jh3y/ep
+          hr
+          p.
+            The <code>progress</code> element sometimes doesn't play nice. It never appears consistently across browsers out of the box and different browsers throw up different limitations. Because of this, the <code>progress</code> element is often overlooked in favor of styled <code>div</code> combos.
+          p.
+            <code>ep</code> tackles this;
+          ul
+            li cross browser reset and styling of HTML5 <code>progress</code> elements
+            li optional CSS helper attributes and classes
+            li optional JS helper for better control and interaction with <code>progress</code> elements
+            li plays nice in major browsers (<i>IE10+</i>)
+      hr
       .features
         include features/standard
         include features/indeterminate
@@ -21,5 +47,6 @@ html(lang="en-us")
         include features/mock
         include features/staggered
         include features/timer
+        include features/sass
         include features/js
-    footer &lt;Made real by <a href="https://jh3y.github.io/" target="_blank">jh3y</a> | MIT Licensed &copy;2016 /&gt;
+      footer &lt;Made real by <a href="https://jh3y.github.io/" target="_blank">jh3y</a> | MIT Licensed &copy;2016 /&gt;

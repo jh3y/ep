@@ -10,7 +10,7 @@
 }
 
 progress {
-  @for $duration from $vade-mocks-min through $vade-mocks-max {
+  @for $duration from $ep-mocks-min through $ep-mocks-max {
     &[data-mock="#{$duration}"] {
       width: 0;
       animation: vd-mock $duration * 1s;

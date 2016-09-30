@@ -3,9 +3,9 @@ section.demo.demo--js
   pre.demo__markup
     code.language-js.
       const el = document.getElementById('js-bar');
-      const myVade = new Vade(el);
+      const myEp = new ep(el);
   p.demo__doc.
-    For better control over <code>progress</code> behavior, <code>vade</code> comes with a JS helper. This allows you to do various things such as hook into value changes etc.
+    For better control over <code>progress</code> behavior, <code>ep</code> comes with a JS helper. This allows you to do various things such as hook into value changes etc.
   progress.demo-bar(id="js-bar", value="75", max="100")
   p.demo__doc.
     Have a play with some of the following examples;
@@ -15,7 +15,7 @@ section.demo.demo--js
         const afterSet = (e) => {
           alert('All set!');
         };
-        myVade.set(23, afterSet);
+        myEp.set(23, afterSet);
     button(class="afterSet") Run
   .demo-control-group
     pre.demo__markup
@@ -23,45 +23,45 @@ section.demo.demo--js
         const onComplete = (e) => {
           alert('Completed!');
         };
-        myVade.complete(onComplete);
+        myEp.complete(onComplete);
     button(class="complete") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.reset();
+        myEp.reset();
     button(class="reset") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.set(75);
+        myEp.set(75);
     button(class="set") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.increase();
+        myEp.increase();
     button(class="increase") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.decrease(25);
+        myEp.decrease(25);
     button(class="decrease") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.setPosition(['top', 'fixed']);
+        myEp.setPosition(['top', 'fixed']);
     button(class="position") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.resetPosition();
+        myEp.resetPosition();
     button(class="resetPosition") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.setSpread(true);
+        myEp.setSpread(true);
     button(class="spreadTrue") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myVade.setSpread(false);
+        myEp.setSpread(false);
     button(class="spreadFalse") Run

@@ -1,4 +1,5 @@
 @import 'configuration';
+@import 'mixins';
 
 @mixin create-pseudo() {
   position: absolute;
@@ -9,6 +10,23 @@
   left    : 0;
 }
 
+@mixin indeterminate() {
+  width    : 100%;
+  animation: ep-indeterminate 2s infinite linear;
+  background: $ep-indeterminate-fg;
+
+  /* hides the indeterminate blocks animation in IE */
+  color: transparent;
+
+  &::-moz-progress-bar {
+    background: $ep-indeterminate-fg;
+  }
+
+  &::-webkit-progress-bar {
+    background: $ep-indeterminate-fg;
+  }
+}
+
 @mixin create-core() {
   @for $percent from 1 through 100 {
     &[value="#{$percent}"] {
@@ -17,12 +35,12 @@
   }
 }
 
-@keyframes vd-indeterminate {
+@keyframes ep-indeterminate {
   0% {
     opacity: 0;
   }
   50% {
-    opacity: $vade-opacity;
+    opacity: $ep-opacity;
   }
   100% {
     opacity: 0;
@@ -31,53 +49,37 @@
 
 progress {
   display   : block !important;
-  height    : $vade-height;
-  opacity   : $vade-opacity;
+  height    : $ep-height;
+  opacity   : $ep-opacity;
   appearance: none;
   width     : 0;
   border    : 0;
   position  : relative;
-  transition: width $vade-transition ease 0s,
-    visibility ($vade-transition * 2) ease 0s;
+  transition: width $ep-transition ease 0s,
+    visibility ($ep-transition * 2) ease 0s;
 
   // Colors IE progress bar
-  background: $vade-fg;
+  background: $ep-fg;
 
   // Remove annoying marker border in IE
-
   &::-ms-fill {
     border: 0;
   }
 
   &::-moz-progress-bar {
-    background: $vade-fg;
+    background: $ep-fg;
   }
 
   &::-webkit-progress-bar {
-    background: $vade-fg;
+    background: $ep-fg;
   }
 
   &::-webkit-progress-value {
-    background: $vade-fg;
+    background: $ep-fg;
   }
 
-
   &:indeterminate {
-    width    : 100%;
-    animation: vd-indeterminate 2s infinite linear;
-    background: $vade-indeterminate-fg;
-
-    /* hides the indeterminate blocks animation in IE */
-    color: transparent;
-
-    &::-moz-progress-bar {
-      background: $vade-indeterminate-fg;
-    }
-
-    &::-webkit-progress-bar {
-      background: $vade-indeterminate-fg;
-    }
-
+    @include indeterminate;
   }
 
   @include create-core;
