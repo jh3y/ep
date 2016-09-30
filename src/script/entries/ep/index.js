@@ -1,22 +1,27 @@
-const sanitizeValue = (val, min = 0, max = 100) => {
-  if (val > max) val = max;
-  if (val < min)   val = min;
-  return val;
-}
+/*!
+  * ep - enhance your progress bars with minimal effort
+  *
+  * https://jh3y.github.io/ep
+  * @author jh3y 2016
+  * @license MIT
+*/
 
 class Ep {
 
-  constructor(el, opts) {
-    const { position, spread } = opts || {};
+  constructor(el) {
     if (!el || el.tagName !== 'PROGRESS')
       throw Error('ep: you must pass a <progress> element instance');
     this.el    = el;
-    if (spread) el.classList.add('ep--spread');
-    this.setPosition(position);
     this.value = parseInt(el.getAttribute('value'), 10) || 0;
   }
 
   set(percent, cb) {
+    const sanitizeValue = (val, min = 0, max = 100) => {
+      if (val > max) val = max;
+      if (val < min) val = min;
+      return val;
+    };
+    percent = sanitizeValue(percent);
     if (typeof percent === 'number' && percent >= 0 && percent <= 100) {
       const hasCb = cb && typeof cb === 'function';
       /* Add transition end event here */
@@ -57,11 +62,11 @@ class Ep {
   }
 
   increase(amount = 5, max, cb) {
-    this.set(sanitizeValue(this.value + amount, undefined, max), cb);
+    this.set(this.value + amount, cb);
   }
 
   decrease(amount = 5, min, cb) {
-    this.set(sanitizeValue(this.value - amount, min, undefined), cb);
+    this.set(this.value - amount, cb);
   }
 
   reset() {

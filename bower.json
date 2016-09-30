@@ -1,17 +1,18 @@
 {
   "name": "ep",
   "main": "dist/ep.css",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "homepage": "http://jh3y.github.io/ep",
   "authors": [
-    "jh3y"
+    "jh3y <jh3y@users.noreply.github.com>"
   ],
   "description": "enhance your progress bars with minimal effort!",
   "keywords": [
     "ep",
     "progress",
     "css",
-    "sass"
+    "css3",
+    "es6"
   ],
   "license": "MIT",
   "ignore": [

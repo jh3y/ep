@@ -5,11 +5,6 @@
 
 @import 'base';
 
-
-header {
-
-}
-
 $brand-color: rgba(123, 123, 432, .5);
 
 .header {
@@ -65,21 +60,9 @@ $brand-color: rgba(123, 123, 432, .5);
   margin: 20px;
 }
 
-.blurb {
-  display : inline-block;
-  float   : left;
-  width   : 30%;
-  position: fixed;
-}
-
 .demo {
   padding: 10px 0;
   margin-bottom: 40px;
-}
-
-
-p {
-  text-align: justify;
 }
 
 .demo-control-group {
@@ -89,8 +72,6 @@ p {
     margin-right: 8px;
   }
 }
-
-
 
 .demo__markup {
   .markup--complete {
