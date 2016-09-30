@@ -1,5 +1,5 @@
 {
-  "name": "ep",
+  "name": "@jh3y/ep",
   "version": "2.0.0",
   "description": "enhance your progress bars with minimal effort!",
   "main": "dist/ep.js",
