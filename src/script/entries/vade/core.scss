@@ -35,13 +35,19 @@ progress {
   opacity   : $vade-opacity;
   appearance: none;
   width     : 0;
-  border    : none;
+  border    : 0;
   position  : relative;
   transition: width $vade-transition ease 0s,
     visibility ($vade-transition * 2) ease 0s;
 
   // Colors IE progress bar
   background: $vade-fg;
+
+  // Remove annoying marker border in IE
+
+  &::-ms-fill {
+    border: 0;
+  }
 
   &::-moz-progress-bar {
     background: $vade-fg;
