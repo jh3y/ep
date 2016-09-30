@@ -1,7 +1,6 @@
 @import '~normalize.css';
 @import '~prismjs/themes/prism-tomorrow.css';
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
 
 @import 'base';
 
@@ -9,27 +8,11 @@ $brand-color: rgba(123, 123, 432, .5);
 
 .header {
   text-align: justify;
-  &__title {
-    font-family: 'Baloo Bhai', cursive;
 
-    h1 {
-      float: left;
-      display: inline-block;
-      border-radius: 100%;
-      border: 2px solid #000;
-      padding: 10px;
-      margin: 0;
-      background: linear-gradient(45deg, $brand-color, transparent);
-      margin-bottom: 20px;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    h2 {
-      margin: 0;
-      line-height: 60px;
-      font-size: 20px;
-    }
+  img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__content {
     clear: both;
@@ -146,6 +129,8 @@ $indeterminate-fg: #ff7b7b;
   @include colorBar(repeating-linear-gradient(-45deg, #7bff7b, #7bff7b 10px, black 10px, black 20px));
 }
 
+#mock-bar,
+#top-bar,
 #simulate-bar {
   @include colorBar(repeating-linear-gradient(45deg, #7b7bff, #7b7bff 10px, black 10px, black 20px));
 }

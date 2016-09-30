@@ -78,6 +78,17 @@ class Ep {
     (indeterminate) ? this._EL.classList.add('ep--indeterminate') : this._EL.classList.remove('ep--indeterminate');
   }
   /**
+    * Toggles pause attribute helper. This will pause any animations taking
+    * place such as those for timers and mocks.
+  */
+  togglePause() {
+    if (this._EL.getAttribute('data-pause')) {
+      this._EL.removeAttribute('data-pause');
+    } else {
+      this._EL.setAttribute('data-pause', true);
+    }
+  }
+  /**
     * Sets positional helper classes on <progress> element from given Array
     *
     * @param {Array} posArr - array of positions to be set from top, fixed,
@@ -133,7 +144,21 @@ class Ep {
     this._EL.removeAttribute('data-pause');
     setTimeout(() => this._EL.removeAttribute('style'), 0);
   }
-
+  /**
+    * Provides a way to quickly mock a <progress> bar progress.
+    * Duration is restricted by whatever has been generated on the CSS side.
+    *
+    * For instance, if I set a duration of 1000. Nothing would happen as the CSS
+    * has no rule for [data-mock="1000"].
+    *
+    * As with setting you can hook into the ending with a callback parameter.
+    *
+    * @param {number} duration - duration of mock in seconds
+    * @param {bool} staggered - whether mock is staggered (determined by
+    * keyframes animation)
+    * @param {function} cb - optional callback function for when mock animation
+    * is complete
+  */
   mock(duration = 4, staggered, cb) {
     const attr = (staggered) ? 'data-staggered-mock' : 'data-mock';
     const onMockEnd = () => {
@@ -144,7 +169,15 @@ class Ep {
     this._EL.setAttribute(attr, duration);
     this._EL.addEventListener('animationend', onMockEnd);
   }
-
+  /**
+    * Display <progress> element as a timer decreasing from full value to 0
+    *
+    * Much like mocking, restrained by what CSS rules have been generated.
+    *
+    * @param {number} duration - time in seconds for timer to complete
+    * @param {function} cb - optional callback to be invoked when timer
+    * completes
+  */
   time(duration = 4, cb) {
     const onTimerEnd = () => {
       this._EL.removeAttribute('data-timer');
@@ -154,27 +187,36 @@ class Ep {
     this._EL.setAttribute('data-timer', duration);
     this._EL.addEventListener('animationend', onTimerEnd);
   }
-
-  simulate(step = 1000) {
-    const MAX = 99;
+  /**
+    * Simulate a <progress> elements progress by having it increase in small
+    * increments at a given interval until a value is reached.
+    *
+    * Handy when you want to simulate progress for something that doesn't have
+    * good transparency. For example; you can hook into the success callback
+    * of an AJAX request and set the <progress> element as complete whilst it
+    * is simulating
+    *
+    * @param {number} step - ms interval for value increments to be applied
+    * @param {number} max - max value to be reached before increments cease
+  */
+  simulate(step = 1000, max = 99) {
     this._SIMULATING = setInterval(() => {
-      const increaseVal = (MAX % this._VALUE > 5 || MAX % this._VALUE === 0) ? 5 : MAX % this._VALUE;
-      if (this._VALUE !== MAX) {
+      const increaseVal = (max % this._VALUE > 5 || max % this._VALUE === 0) ? 5 : max % this._VALUE;
+      if (this._VALUE !== max) {
         this.increase(increaseVal);
       } else {
         clearInterval(this._SIMULATING);
       }
     }, step);
   }
-
-  togglePause() {
-    if (this._EL.getAttribute('data-pause')) {
-      this._EL.removeAttribute('data-pause');
-    } else {
-      this._EL.setAttribute('data-pause', true);
-    }
-  }
-
+  /**
+    * Completes progress by setting a <progress> value to 100 and then resetting
+    * it back to 0
+    *
+    * Users can hook into this on complete by passing a callback
+    *
+    * @param {function} cb - optional callback for progress completion
+  */
   complete(cb) {
     const onComplete = () => {
       this._EL.style.transitionDuration = '0s';
@@ -186,7 +228,5 @@ class Ep {
     this._EL.setAttribute('data-complete', true);
     this._EL.addEventListener('transitionend', onComplete);
   }
-
-};
-
+}
 window.Ep = Ep;

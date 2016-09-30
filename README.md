@@ -1,9 +1,47 @@
-#progre(c)ss
+![alt tag](https://github.com/jh3y/pics/blob/master/ep/ep.png)
+## enhance your HTML5 `<progress>` bars with minimal effort!
+
+![alt tag](https://github.com/jh3y/pics/blob/master/ep/ep.gif)
+
+The `<progress>` element doesn't always play nice.
+
+It doesn't have a consistent appearance across the popular browsers. In addition, different browsers impose different limitations on the `<progress>` element.
+
+Because of this, it's often overlooked in favor of styled `<div>` combos.
+
+`ep` tackles this;
+
+* Cross browser reset and styling to pull `<progress>` element in line with modern slim-style bars
+* CSS helpers that provide classes and attributes to deal with things like positioning, growth style, simulation etc.
+* Optional JS helper for better control and interaction with `<progress>` elements.
+* Plays nice wherever the `<progress>` element is supported!
 
 
-###Pure CSS progress bars with minimal effort
+## Browser support
 
-![alt tag](https://raw.github.com/jh3y/pics/master/ep/ep.gif)
+| Chrome  | Firefox | Safari | Opera | Edge | IE(_10+_)           |
+| ------------- |:-------------:| -----:| -----|-----|-----|----|
+| :smile:   | :smile:  | :smile:  | :smile: | :smile: | :smile: |
+
+### Caveats
+* iOS Safari doesn't like indeterminate `<progress>` elements. Get round this by not setting your `<progress>` element to be indeterminate but instead using the helper class `ep--indeterminate` which will mock the indeterminate state.
+* In IE, ensure that the `max` attribute is set when using specific values. If no `max` is set, the value won't go higher than `1` :cry:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Usage
 1. Include the [stylesheet](https://raw2.github.com/jh3y/ep/master/build/ep.css) (_available through Bower_).
