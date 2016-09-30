@@ -1,24 +1,67 @@
 section.demo.demo--js
   h2 JS helper
-  p.demo__doc.
-    <code>Vade</code> comes with an optional JS helper. This allows you to do things like set the value, increase/decrease progress and hook into changes.
-  pre.demo__markup(id="standard-markup")
+  pre.demo__markup
     code.language-js.
       const el = document.getElementById('js-bar');
       const myVade = new Vade(el);
-
-      const afterSet = (e) => {
-        console.info('All set');
-      };
-
-      myVade.set(62, afterSet);
-
-      myVade.complete();
-
-      myVade.reset();
-
-      myVade.increase();
-
+  p.demo__doc.
+    For better control over <code>progress</code> behavior, <code>vade</code> comes with a JS helper. This allows you to do various things such as hook into value changes etc.
   progress.demo-bar(id="js-bar", value="75")
   p.demo__doc.
-    Standard usage is no different to that when using the progress element as you would normally.
+    Have a play with some of the following examples;
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        const afterSet = (e) => {
+          alert('All set!');
+        };
+        myVade.set(23, afterSet);
+    button(class="afterSet") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        const onComplete = (e) => {
+          alert('Completed!');
+        };
+        myVade.complete(onComplete);
+    button(class="complete") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.reset();
+    button(class="reset") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.set(75);
+    button(class="set") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.increase();
+    button(class="increase") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.decrease(25);
+    button(class="decrease") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.setPosition(['top', 'fixed']);
+    button(class="position") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.resetPosition();
+    button(class="resetPosition") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.setSpread(true);
+    button(class="spreadTrue") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myVade.setSpread(false);
+    button(class="spreadFalse") Run

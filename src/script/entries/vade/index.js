@@ -10,9 +10,9 @@ class Vade {
     const { position, spread } = opts || {};
     if (!el || el.tagName !== 'PROGRESS')
       throw Error('vade: you must pass a <progress> element instance');
+    this.el    = el;
     if (spread) el.classList.add('vade--spread');
     this.setPosition(position);
-    this.el    = el;
     this.value = parseInt(el.getAttribute('value'), 10) || 0;
   }
 
@@ -29,6 +29,18 @@ class Vade {
       }
       this.el.setAttribute('value', percent);
       this.value = percent;
+    }
+  }
+
+  setSpread(spread = false) {
+    (spread) ? this.el.classList.add('vade--spread') : this.el.classList.remove('vade--spread');
+  }
+
+  resetPosition() {
+    for (let pos of ['top', 'fixed', 'bottom']) {
+      for (let cl of this.el.classList) {
+        if (cl === `vade--${pos}`) this.el.classList.remove(`vade--${pos}`);
+      }
     }
   }
 
