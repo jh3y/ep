@@ -1,0 +1,20 @@
+// ep configruation variables
+$ep-ns: ep !default;
+
+// Aesthetics
+$ep-height: 6px !default;
+$ep-fg: #3498db !default;
+$ep-indeterminate-fg: $ep-fg !default;
+$ep-opacity: .6 !default;
+$ep-radius: 0 !default;
+$ep-transition: .25s !default;
+
+// Feature constraints
+$ep-timeout-threshold: 30 !default;
+$ep-mocks-min: 1 !default;
+$ep-mocks-max: 4 !default;
+$ep-staggered-mocks-min: 1 !default;
+$ep-staggered-mocks-max: 4 !default;
+$ep-timers-min: 1 !default;
+$ep-timers-max: 4 !default;
+$ep-simulate-max: 99 !default;

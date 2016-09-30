@@ -1,0 +1,72 @@
+section.demo.demo--js
+  h2 JS helper
+  pre.demo__markup
+    code.language-js.
+      const el = document.getElementById('js-bar');
+      const myEp = new ep(el);
+  p.demo__doc.
+    For better control over <code>progress</code> behavior, <code>ep</code> comes with a JS helper. This allows you to do various things such as hook into value changes etc.
+  progress.demo-bar(id="js-bar", value="75", max="100")
+  p.demo__doc.
+    Have a play with some of the following examples;
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        const afterSet = (e) => {
+          alert('All set!');
+        };
+        myEp.set(23, afterSet);
+    button(class="afterSet") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        const onComplete = (e) => {
+          alert('Completed!');
+        };
+        myEp.complete(onComplete);
+    button(class="complete") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.reset();
+    button(class="reset") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.simulate();
+    button(class="simulate") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.set(75);
+    button(class="set") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.increase();
+    button(class="increase") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.decrease(25);
+    button(class="decrease") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.setPosition(['top', 'fixed']);
+    button(class="position") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.resetPosition();
+    button(class="resetPosition") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.setSpread(true);
+    button(class="spreadTrue") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.setSpread(false);
+    button(class="spreadFalse") Run

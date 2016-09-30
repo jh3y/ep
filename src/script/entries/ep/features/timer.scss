@@ -1,0 +1,19 @@
+@import '../configuration';
+
+@keyframes ep-timer {
+  from { width: 100%; }
+  to   { width: 0; }
+}
+
+progress {
+  @for $duration from $ep-timers-min through $ep-timers-max {
+
+    &[data-timer] {
+      animation-name: ep-timer;
+    }
+
+    &[data-timer='#{$duration}'] {
+      animation-duration: $duration * 1s;
+    }
+  }
+}

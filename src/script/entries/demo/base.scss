@@ -1,0 +1,84 @@
+/**
+  * base styling
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+pre {
+  padding: 10px !important;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #fafafa;
+  padding: 15px;
+}
+
+fieldset {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ff7b7b;
+}
+
+$btn-color: rgba(123, 123, 432, 1);
+button {
+  color: #fafafa;
+  background: $btn-color;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin: 4px;
+
+  &:hover {
+    background: darken($btn-color, 15%);
+  }
+
+  &:active {
+    background: darken($btn-color, 30%);
+  }
+}
+
+code {
+  color: $btn-color;
+}
+
+footer {
+  text-align: center;
+  font-size: .75rem;
+
+  @media(min-width: 960px) {
+    position: fixed;
+    width: 270px;
+    bottom: 50px;
+    float: left;
+  }
+}
+
+hr {
+  margin: 4rem 0;
+  @media(min-width: 960px) {
+    display: none;
+  }
+}
+
+pre {
+  max-width: 100%;
+  overflow: auto;
+
+  @media(max-width: 420px) {
+    font-size: .75rem;
+  }
+}
+
+p {
+  text-align: justify;
+}

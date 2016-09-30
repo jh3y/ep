@@ -1,0 +1,19 @@
+@import '../configuration';
+
+@keyframes ep-mock {
+  to { width: 100%; }
+}
+
+progress {
+  @for $duration from $ep-mocks-min through $ep-mocks-max {
+
+    &[data-mock] {
+      animation-name: ep-mock;
+    }
+
+    &[data-mock='#{$duration}'] {
+      animation-duration: $duration * 1s;
+      width: 0;
+    }
+  }
+}

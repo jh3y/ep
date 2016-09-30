@@ -1,0 +1,15 @@
+section.demo.demo--simulate
+  h2 Simulate progress
+  pre.demo__markup(id="simulate-markup")
+    code.language-html.
+      &lt;progress data-simulate="true"&gt;
+      &lt;/progress&gt;
+    code.language-html.markup--complete.
+      &lt;progress data-complete="true"&gt;
+      &lt;/progress&gt;
+  progress(id='simulate-bar', data-simulate='true')
+  p.demo__doc.
+    How about ways to simulate <code>progress</code> whilst background processes are taking place? We can set a simulation with a given time and animation steps. We can make it so that it never reaches 100% until we are ready. When we are ready, set the <code>progress</code> element to complete.
+  p.demo__doc.
+    More power over this behavior can be had by using the JavaScript helpers <code>simulate</code> method.
+  button(id='complete-simulate', data-for='simulate-bar') Complete progress

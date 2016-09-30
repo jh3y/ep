@@ -1,0 +1,42 @@
+@import '../configuration';
+
+progress {
+  &[data-complete] {
+    animation: none;
+    visibility: hidden;
+    width: 100%;
+  }
+
+  &[data-pause] {
+    animation-play-state: paused;
+  }
+
+  &.#{$ep-ns} {
+
+    &--top {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    &--bottom {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    &--fixed {
+      position: fixed;
+    }
+
+    &--spread {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--indeterminate {
+      @include indeterminate;
+    }
+
+  }
+}

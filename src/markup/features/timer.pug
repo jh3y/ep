@@ -1,0 +1,19 @@
+section.demo.demo--timer
+  h2 Timer
+  pre.demo__markup(id="timer-markup")
+    code.language-html.
+      &lt;progress data-timer="4"&gt;
+      &lt;/progress&gt;
+    code.language-html.markup--complete.
+      &lt;progress data-timer="4" data-pause="true"&gt;
+      &lt;/progress&gt;
+  progress(id='timer-bar', data-timer='4')
+  p.demo__doc.
+    Flip <code>progress</code> usage and use it as a timer instead. If you need to pause it any stage, use a <code>pause</code> attribute.
+  fieldset.demo__controls
+    legend Set timer speed
+    .demo-control-group
+      label Value
+      input(id='timer-set', data-for='timer-bar', type='number', max='4', min='1', value='4')
+  .demo-control-group
+    button(id="pause-timer") Toggle pause

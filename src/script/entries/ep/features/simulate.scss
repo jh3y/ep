@@ -1,0 +1,11 @@
+@keyframes ep-simulate {
+  from { width: 0; }
+}
+
+progress {
+  &[data-simulate] {
+    animation: ep-simulate ($ep-timeout-threshold * 1s);
+    animation-timing-function: steps($ep-timeout-threshold);
+    width: $ep-simulate-max * 1%;
+  }
+}

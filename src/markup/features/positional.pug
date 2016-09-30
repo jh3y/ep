@@ -1,0 +1,25 @@
+section.demo.demo--positional
+  h2 Positional CSS helpers
+  pre.demo__markup(id="positional-markup")
+    code.language-html.
+      &lt;progress class="ep--top"&gt;&lt;/progress&gt;
+  progress.ep--top(id="positional-bar", value="75", max="100")
+  p.demo__doc.
+    <code>ep</code> provides some quick use CSS helpers for positioning your <code>progress</code> bars. For example, you may decide to have some of your progress bars fixed top as commonly seen in some web apps.
+  fieldset.demo__controls
+    legend Set position
+    .demo-control-group
+      label None
+      input(type="radio", name="position", value="")
+    .demo-control-group
+      label Top
+      input(type="radio", name="position", value="ep--top", checked)
+    .demo-control-group
+      label Fixed top
+      input(type="radio", name="position", value="ep--top ep--fixed")
+    .demo-control-group
+      label Bottom
+      input(type="radio", name="position", value="ep--bottom")
+    .demo-control-group
+      label Fixed bottom
+      input(type="radio", name="position", value="ep--bottom ep--fixed")

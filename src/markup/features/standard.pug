@@ -1,0 +1,20 @@
+section.demo.demo--standard
+  h2 Standard usage
+  pre.demo__markup(id="standard-markup")
+    code.language-html.
+      &lt;progress value='75'&gt;&lt;/progress&gt;
+    code.language-html.markup--complete.
+      &lt;progress data-complete="true"&gt;
+      &lt;/progress&gt;
+  progress.demo-bar(id="standard-bar", value="75", max="100")
+  p.demo__doc.
+    Standard usage is no different to that when using the progress element as you would normally.
+  p.demo__doc.
+    However, if you want to complete progress at any stage, you swap out the <code>value</code> attribute for a <code>data-complete</code> attribute.
+  fieldset.demo__controls
+    legend Set progress
+    .demo-control-group
+      label() Value
+      input(id="standard-set", type="number", max="100", min="0", value="75")
+  .demo-control-group
+    button(id="standard-complete", data-for="standard-bar") Complete progress

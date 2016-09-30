@@ -1,0 +1,141 @@
+@import '~normalize.css';
+@import '~prismjs/themes/prism-tomorrow.css';
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@import 'base';
+
+$brand-color: rgba(123, 123, 432, .5);
+
+.header {
+  text-align: justify;
+
+  img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__content {
+    clear: both;
+  }
+
+  @media(min-width: 960px) {
+    position: fixed;
+    width: 270px;
+  }
+}
+
+.content {
+  max-width: 960px;
+  margin   : 0 auto;
+}
+
+.features {
+  @media(min-width: 960px) {
+    width: 500px;
+    float: right;
+  }
+}
+
+.install {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 20px;
+}
+
+.demo {
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.demo-control-group {
+  margin-bottom: 10px;
+
+  label {
+    margin-right: 8px;
+  }
+}
+
+.demo__markup {
+  .markup--complete {
+    display: none;
+  }
+  &--show-complete {
+    .markup--complete {
+      display: block;
+    }
+    code:not(.markup--complete) {
+      display: none;
+    }
+  }
+}
+
+.demo--positional {
+  position: relative;
+}
+
+$indeterminate-fg: #ff7b7b;
+.demo-bar {
+  &--indeterminate {
+    &:indeterminate {
+      background: $indeterminate-fg;
+
+      &::-moz-progress-bar {
+        background: $indeterminate-fg;
+      }
+
+      &::-webkit-progress-bar {
+        background: $indeterminate-fg;
+      }
+    }
+
+  }
+}
+
+.demo--js .demo-control-group {
+  clear: both;
+
+  pre {
+    float: left;
+  }
+
+  button {
+    margin-top: .5em;
+  }
+}
+
+#timer-bar,
+#staggered-bar,
+#mock-bar,
+#simulate-bar {
+  animation-iteration-count: infinite !important;
+}
+
+@import '../ep/mixins';
+#standard-bar,
+#js-bar {
+  @include color-bar(#7bff7b);
+}
+
+#positional-bar {
+  @include color-bar(linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red, red, red, red, red));
+}
+
+#mock-bar {
+  @include color-bar(repeating-linear-gradient(45deg, #ff7b7b, #ff7b7b 10px, black 10px, black 20px));
+}
+
+#staggered-bar {
+  @include color-bar(repeating-linear-gradient(-45deg, #7bff7b, #7bff7b 10px, black 10px, black 20px));
+}
+
+#mock-bar,
+#top-bar,
+#simulate-bar {
+  @include color-bar(repeating-linear-gradient(45deg, #7b7bff, #7b7bff 10px, black 10px, black 20px));
+}
+
+#spread-bar,
+#timer-bar {
+  @include color-bar(#7b7bff);
+}
