@@ -1,7 +1,22 @@
-MODULES = ./node_modules/.bin
-WEBPACK = $(MODULES)/webpack
-SERVER  = $(MODULES)/webpack-dev-server
-MOCHA   = $(MODULES)/mocha
+MODULES  = ./node_modules/.bin
+WEBPACK  = $(MODULES)/webpack
+SERVER   = $(MODULES)/webpack-dev-server
+MOCHA    = $(MODULES)/mocha
+BABEL    = $(MODULES)/babel
+UGLIFY   = $(MODULES)/uglifyjs
+SASS     = $(MODULES)/node-sass
+POSTCSS  = $(MODULES)/postcss
+CLEANCSS = $(MODULES)/cleancss
+ESLINT   = $(MODULES)/eslint
+
+DEST = dist
+FILE_NAME = ep
+SCRIPT_SRC = src/script/entries/ep/index.js
+STYLE_SRC = src/script/entries/ep/ep.scss
+
+UGLIFY_OPTS = --compress --comments --mangle -o $(DEST)/$(FILE_NAME).min.js $(DEST)/$(FILE_NAME).js
+CLEANCSS_OPTS = --s1 -o $(DEST)/$(FILE_NAME).min.css $(DEST)/$(FILE_NAME).css
+POSTCSS_OPTS = --use autoprefixer -d $(DEST)/ $(DEST)/*.css
 
 help:
 	@grep -E '^[a-zA-Z\._-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -23,3 +38,14 @@ develop: ## develop source
 
 setup: ## sets up project
 	npm install
+
+dist-styles: ## compiles styles for dist
+	$(SASS) $(STYLE_SRC) $(DEST)/$(FILE_NAME).css && $(POSTCSS) $(POSTCSS_OPTS) && $(CLEANCSS) $(CLEANCSS_OPTS)
+	# $(SASS) $(STYLE_SRC) -o $(STYLE_DEST) && $(POSTCSS) $(POSTCSS_OPTS)
+
+
+dist-script: ## compiles script for dist
+	mkdir -pv $(DEST) && $(BABEL) $(SCRIPT_SRC) -o $(DEST)/$(FILE_NAME).js && $(UGLIFY) $(UGLIFY_OPTS)
+
+lint-scripts: ## lints ep script
+	$(ESLINT) $(SCRIPT_SRC)
