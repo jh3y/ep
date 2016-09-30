@@ -1,5 +1,6 @@
-@mixin colorBar($color) {
+@mixin color-bar($color) {
   background: $color;
+
   &::-moz-progress-bar {
     background: $color;
   }

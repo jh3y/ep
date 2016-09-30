@@ -1,22 +1,21 @@
 @import 'configuration';
 @import 'mixins';
 
-@mixin create-pseudo() {
+@mixin create-pseudo {
+  content: '';
+  display: block;
+  height: 6px;
+  left: 0;
   position: absolute;
-  display : block;
-  content : '';
-  height  : 6px;
-  top     : 0;
-  left    : 0;
+  top: 0;
 }
 
-@mixin indeterminate() {
-  width    : 100%;
+@mixin indeterminate {
   animation: ep-indeterminate 2s infinite linear;
   background: $ep-indeterminate-fg;
-
-  /* hides the indeterminate blocks animation in IE */
+  // hides the indeterminate blocks animation in IE
   color: transparent;
+  width: 100%;
 
   &::-moz-progress-bar {
     background: $ep-indeterminate-fg;
@@ -27,39 +26,32 @@
   }
 }
 
-@mixin create-core() {
+@mixin create-core {
   @for $percent from 1 through 100 {
-    &[value="#{$percent}"] {
+    &[value='#{$percent}'] {
       width: $percent * 1%;
     }
   }
 }
 
 @keyframes ep-indeterminate {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: $ep-opacity;
-  }
-  100% {
-    opacity: 0;
-  }
+  0%   { opacity: 0; }
+  50%  { opacity: $ep-opacity; }
+  100% { opacity: 0; }
 }
 
 progress {
-  display   : block !important;
-  height    : $ep-height;
-  opacity   : $ep-opacity;
   appearance: none;
-  width     : 0;
-  border    : 0;
-  position  : relative;
-  transition: width $ep-transition ease 0s,
-    visibility ($ep-transition * 2) ease 0s;
-
   // Colors IE progress bar
   background: $ep-fg;
+  border: 0;
+  display: block !important;
+  height: $ep-height;
+  opacity: $ep-opacity;
+  position: relative;
+  transition: width $ep-transition ease 0s, visibility ($ep-transition * 2) ease 0s;
+  width: 0;
+
 
   // Remove annoying marker border in IE
   &::-ms-fill {

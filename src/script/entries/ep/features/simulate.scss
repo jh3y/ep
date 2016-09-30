@@ -4,8 +4,8 @@
 
 progress {
   &[data-simulate] {
-    width: 99%;
     animation: vd-simulate ($ep-timeout-threshold * 1s);
     animation-timing-function: steps($ep-timeout-threshold);
+    width: 99%;
   }
 }

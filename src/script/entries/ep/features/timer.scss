@@ -1,9 +1,4 @@
 @import '../configuration';
-/**
-  * Timer
-  *
-  * Use progress as a timer
-*/
 
 @keyframes vd-timer {
   from { width: 100%; }
@@ -12,7 +7,7 @@
 
 progress {
   @for $duration from $ep-timers-min through $ep-timers-max {
-    &[data-timer="#{$duration}"] {
+    &[data-timer='#{$duration}'] {
       animation: vd-timer $duration * 1s;
     }
   }

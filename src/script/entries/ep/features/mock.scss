@@ -1,9 +1,4 @@
 @import '../configuration';
-/**
-  * Mock
-  *
-  * Mock progress being made by declaring a time for progress to complete
-*/
 
 @keyframes vd-mock {
   to { width: 100%; }
@@ -11,9 +6,9 @@
 
 progress {
   @for $duration from $ep-mocks-min through $ep-mocks-max {
-    &[data-mock="#{$duration}"] {
-      width: 0;
+    &[data-mock='#{$duration}'] {
       animation: vd-mock $duration * 1s;
+      width: 0;
     }
   }
 }

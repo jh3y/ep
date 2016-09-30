@@ -1,9 +1,4 @@
 @import '../configuration';
-/**
-  * Staggered mock
-  *
-  * Mock progress with a staggered effect
-*/
 
 @keyframes vd-staggered-mock {
   0%   { width: 0%;   }
@@ -21,9 +16,9 @@
 
 progress {
   @for $duration from $ep-staggered-mocks-min through $ep-staggered-mocks-max {
-    &[data-staggered-mock="#{$duration}"] {
-      width: 0;
+    &[data-staggered-mock='#{$duration}'] {
       animation: vd-staggered-mock $duration * 1s;
+      width: 0;
     }
   }
 }
