@@ -8,6 +8,7 @@ SASS     = $(MODULES)/node-sass
 POSTCSS  = $(MODULES)/postcss
 CLEANCSS = $(MODULES)/cleancss
 ESLINT   = $(MODULES)/eslint
+SASSLINT = $(MODULES)/sass-lint
 
 DEST = dist
 FILE_NAME = ep
@@ -49,3 +50,6 @@ dist-script: ## compiles script for dist
 
 lint-scripts: ## lints ep script
 	$(ESLINT) $(SCRIPT_SRC)
+
+lint-styles: ## lints ep stylesheet
+	$(SASSLINT) --verbose
