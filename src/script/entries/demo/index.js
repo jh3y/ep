@@ -1,5 +1,5 @@
-import './demo.scss';
 import '../ep/ep.scss';
+import './demo.scss';
 import 'prismjs';
 
 import './sections/standard';

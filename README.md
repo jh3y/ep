@@ -27,84 +27,85 @@ Because of this, it's often overlooked in favor of styled `<div>` combos.
 * iOS Safari doesn't like indeterminate `<progress>` elements. Get round this by not setting your `<progress>` element to be indeterminate but instead using the helper class `ep--indeterminate` which will mock the indeterminate state.
 * In IE, ensure that the `max` attribute is set when using specific values. If no `max` is set, the value won't go higher than `1` :cry:
 
+## Usage
+You have various options with how to use `ep`;
 
+* Use the stylesheet by adding [`ep.css`](https://github.com/jh3y/ep/blob/master/dist/ep.css) to your app.
+* Include the optional JS helper [`ep.js`](https://github.com/jh3y/ep/blob/master/ep.js) for some more control.
+* Integrate the `ep` styles with your own SASS by importing the parts you need.
 
+### Install
+You can grab a copy of `ep` through `bower` or `npm`;
 
+```shell
+  bower install ep
 
-
-
-
-
-
-
-
-
-
-
-
-
-#### Usage
-1. Include the [stylesheet](https://raw2.github.com/jh3y/ep/master/build/ep.css) (_available through Bower_).
-2. Add the class `ep` to your element (any existing element)
-3. Add a data attribute `data-ep` defining the completion percentage (1 to 100) and any optional helper data attributes and classes for your desired behaviour/position/appearance[* see helpers](#helpers)
-4. Update ep value if necessary using simple vanilla js or whatever suits you best!
-
-That's it!
-
-```html
-    <div class="ep" data-ep="77">
-		My first ep!
-	</div>
+  npm install @jh3y/ep
 ```
 
-##### Browser Support
+### Just using the stylesheet
+If you're just using the stylesheet, you just need to include it. No alterations need to be made to your current `<progress>` elements unless you want to make use of some of the helper classes and attributes.
 
-From what I can gather having a look at _caniuse_, ep should be fully supported from IE10 up. This is purely because of the __transition__ property.
+```html
+  <progress value="75" max="100"></progress>
 
-##### Mocking ep
+  <progress class="ep--fixed ep--top" value="75" max="100"></progress>
 
-You can easily mock progress by using the helper attributes and classes. Refer [here](#helpers).
+  <progress data-simulate="true" value="75" max="100"></progress>
+```
 
-##### Helpers
+### Including the optional JS helper
+If you choose to use the optional JS helper. You'll have access to the `Ep` constructor class. Refer to the JS API for further info.
 
-There are some helper classes and attributes you can add to help you out!
+```js
+  const el   = document.querySleect
+  const myEp = new Ep()
+```
 
-######Positioning classes
-* `top`(default)
-	The default positioning for a ep bar is at the top of an element.
-* `bottom`
-	Positions the ep bar at the bottom of the element.
-* `fixed`
-	Gives a fixed position of `0,0` relative to the container of the element.
+### Integrating with your own SASS files
+Say you want to pick and choose pieces of `ep`. Simple. This is actually the easiest way to override `ep`s configuration variables. `ep` makes use of the `!default` flag in `sass` to make this possible. For example; let's say we only want the core styles but we don't want any opacity and we want the primary color to be be purple.
 
-######Color classes
-* `blue`(default)
-* `green`
-* `red`
-* `purple`
-* `orange`
-* `yellow`
+```sass
+  $ep-fg: purple;
+  $ep-opacity: 1;
+  @import '~ep/core'
+```
 
-######Behavioural classes
-* `reverse` - will reverse the direction of a keyframe based ep bar (mock/timer).
-* `pause` - will pause a keyframe based ep bar (mock/timer).
+### CSS Helpers API
+Without the use of JS, `ep` provides some CSS helpers in the form of attributes and classes you can apply to `<progress>` elements to define behaviors.
 
-######Mocking attribute
-* `data-ep-mock` - takes a number value that defines duration of how long the mocked progress should take in seconds (up to 120).
+#### Aesthetic helpers
+Aesthetic helpers come in the form of classes;
 
-######Mocking classes
-* `mock` - required in order to initiate a mock.
-* `staggered` - will stagger the mock halting at different percentages (can be customised by altering source files).
+* `ep--top` - position absolute top
+* `ep--bottom` - position absolute bottom
+* `ep--fixed` - position fixed
+* `ep--spread` - change style of `<progress>` bar to spread
+* `ep--indeterminate` - show indeterminate state
 
-######Timer attribute
-* `data-ep-timer` - takes a number value that defines duration of how long the timer should take in seconds (up to 120).
+#### Behavioural helpers
+Behavioural helpers come in the form of attributes that must be applied to your `<progress>` elements;
 
-######Timer classes
-* `timer` - required in order to initiate a timer.
+* `data-complete` - complete progress(_set to 100 and hide, more control with JS helper_)
+* `data-simulate` - slowly simulate progress in steps up to `99%`over 30 seconds(_request timeout_), can be configured/overrode
+* `data-mock="value"` - mock progress for given number of seconds
+* `data-staggered-mock="value"` - mock progress but with staggered style
+* `data-timer="value"` - use progress element as timer for given seconds
+* `data-pause` - pauses any animation in place such as timer, mock etc.
 
-######Duration attribute
-* `data-ep-duration` - takes a number value that defines the duration of ep transitions. For example, setting this attribute to 5 would mean that all transitions of ep values will take 5s.
+_NOTE::_ The `mock`, `staggered-mock`, `timer` and `simulate` behaviors have duration defaults set in the source. For example; the max duration is set at `4`. This is to keep the size down. But these can easily be altered by building your own version of `ep` or adding rules for the durations you require. For example; I want the simulation to only take `10s` and a timer that will take `15s`.
 
+```css
+progress[data-simulate] {
+  animation-duration: 10s;
+  animation-timing-function: steps(28);
+}
+
+progress[data-timer="15"] {
+  animation-duration: 15s;
+}
+
+```
 ######Javascript helper
 At the request of some people I have added a small javascript helper to the repo.
 

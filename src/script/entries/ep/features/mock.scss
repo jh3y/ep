@@ -1,13 +1,18 @@
 @import '../configuration';
 
-@keyframes vd-mock {
+@keyframes ep-mock {
   to { width: 100%; }
 }
 
 progress {
   @for $duration from $ep-mocks-min through $ep-mocks-max {
+
+    &[data-mock] {
+      animation-name: ep-mock;
+    }
+
     &[data-mock='#{$duration}'] {
-      animation: vd-mock $duration * 1s;
+      animation-duration: $duration * 1s;
       width: 0;
     }
   }

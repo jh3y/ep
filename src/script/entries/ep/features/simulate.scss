@@ -1,10 +1,10 @@
-@keyframes vd-simulate {
+@keyframes ep-simulate {
   from { width: 0; }
 }
 
 progress {
   &[data-simulate] {
-    animation: vd-simulate ($ep-timeout-threshold * 1s);
+    animation: ep-simulate ($ep-timeout-threshold * 1s);
     animation-timing-function: steps($ep-timeout-threshold);
     width: 99%;
   }
