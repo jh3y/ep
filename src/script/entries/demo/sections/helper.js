@@ -16,6 +16,7 @@ const FUNC = {
   set: () => myEp.set(75),
   increase: () => myEp.increase(),
   decrease: () => myEp.decrease(25),
+  simulate: () => myEp.simulate(),
   position: () => myEp.setPosition(['top', 'fixed']),
   resetPosition: () => myEp.resetPosition(),
   spreadTrue: () => myEp.setSpread(true),

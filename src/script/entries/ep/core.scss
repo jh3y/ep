@@ -1,15 +1,6 @@
 @import 'configuration';
 @import 'mixins';
 
-@mixin create-pseudo {
-  content: '';
-  display: block;
-  height: 6px;
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
 @mixin indeterminate {
   animation: ep-indeterminate 2s infinite linear;
   background: $ep-indeterminate-fg;

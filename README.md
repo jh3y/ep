@@ -54,6 +54,24 @@ If you're just using the stylesheet, you just need to include it. No alterations
   <progress data-simulate="true" value="75" max="100"></progress>
 ```
 
+Need to change the color of a `<progress>` element or something else? Override the rule. For example, change the color to `purple`;
+```css
+  progress {
+    background: purple;
+  }
+
+  progress::-moz-progress-bar {
+    background: purple;
+  }
+
+  progress::-webkit-progress-bar {
+    background: purple;
+  }
+
+  progress::-webkit-progress-value {
+    background: purple;
+  }
+```
 ### Including the optional JS helper
 If you choose to use the optional JS helper. You'll have access to the `Ep` constructor class. Refer to the JS API for further info.
 
@@ -106,79 +124,112 @@ progress[data-timer="15"] {
 }
 
 ```
-######Javascript helper
-At the request of some people I have added a small javascript helper to the repo.
 
-It's real simple to use. Here is an example piece of code for using it.
+#### Sass variables
+`ep` leverages the `!default` flag in Sass so it's easier to override `ep` configuration variables. Simply set any of the following variables before importing `ep`.
 
-```javascript
-var myep = new ep (document.body, {
-	color: 'red',
-	percent: 0,
-	position: 'fixed',
-  reverse: true,
-	mock: {
-		staggered: true,
-		startMockOnCreate: false,
-		mockDuration: 5
-	}
-})
+* `$ep-ns: ep` - set the class helper prefix
+* `$ep-height: 6px` - set the height of `<progress>` elements
+* `$ep-fg: #3498db` - set the primary color of `<progress>` elements
+* `$ep-indeterminate-fg: $ep-fg` - set the primary color when in indeterminate state
+* `$ep-opacity: .6` - set the opacity of `<progress>` elements
+* `$ep-transition: .25s` - set the duration for `<progress>` elements to transition value
+* `$ep-timeout-threshold: 30` - the time it takes for simulation to complete in seconds
+* `$ep-simulate-max: 99` - at which value should simulation stop
+* `$ep-mocks-min: 1` - minimum mocking duration in seconds
+* `$ep-mocks-max: 4` - maximum mocking duration in seconds
+* `$ep-staggered-mocks-min: 1` - minimum staggered mock duration in seconds
+* `$ep-staggered-mocks-max: 4` - maximum staggered mock duration in seconds
+* `$ep-timers-min: 1` - minimum timer duration in seconds
+* `$ep-timers-max: 4` - maximum timer duration in seconds
+
+### Javascript helper/API
+`ep` also provides an optional Javascript helper/api. This can be used for convenience and also gives a little more control and power when interacting with `<progress>` elements. It doesn't create any extra elements, but you must pass a `HTMLProgressElement` into the constructor.
+
+```js
+const bar = document.querySelector('progress');
+const myEp = new Ep(bar);
+```
+It's main purpose is that it saves you the burden of having to set/remove attributes/classes. But it also provides some nice to haves such as being able to hook into when progress is complete or set.
+
+The source is quite heavily documented and written with `babel` so be sure to check that out [here](https://github.com/jh3y/ep/blob/master/src/script/entries/ep/index.js).
+
+As for the methods available(`?` denotes an optional parameter);
+
+* `set({number} val, ? {function} cb)` - Sets `<progress>` value with optional callback.
+* `setSpread(? {bool} spread)` - Set whether `<progress>` element should be spred style. By default will set to false.
+* `setIndeterminate(? {bool} indeterminate)` - Set whether `<progress>` element is using `indeterminate` helper class. By default, will remove helper class.
+* `togglePause` - Toggles pause attribute for play/pause animation.
+* `setPosition({Array string} positions)` - Takes an array of positions that will be applied to the element. For example, `['top', 'fixed']` will set `ep--top ep--fixed` class to the `<progress>` element.
+* `resetPosition` - Resets position by removing all classes.
+* `increase(? {number} value, ? {function} cb)` - Increase progress value by optional increment with an optional callback. By default, increment is 5.
+* `decrease(? {number} value, ? {function} cb)` - Decrease progress value by optional decrement with an optional callback. By default, decrement is 5.
+* `reset` - Resets `<progress>` value to 0.
+* `mock(? {number} duration, ? {bool} staggered, ? {function} cb)` - Mocks progress with a mocking animation. Optional duration in seconds. Optional staggered attribute defines which mock style use. Optional callback can be invoked when mock is complete. By default, duration is 4.
+* `time(? {number} duration, ? {function} cb)` - Timing mock for using element as timer. Optional duration in seconds. Optional callback can be invoked when timer is complete. By default, duration is 4.
+* `simulate(? {number} step, ? {number} increment, ? {number} max)` - Simulation on the Javascript side is an example where we have more control than we do with CSS. Set a simulation by declaring a step duration in `ms`, an `increment` and a `max` value for the simulation to reach. The default simulation will increment by 5 every second until the `<progress>` element has a value of 99.
+* `complete(? {function} cb)` - Complete a progress bar by setting value to 100 and then resetting it. Provide optional callback for when complete.
+
+
+## What happened to progre(c)ss?
+For some time, I'd intended to revisit `progre(c)ss` with some ideas I had. When I finally got round to it, I went back over the issues and something struck me. Someone had pointed out why not use the `<progress>` element?
+
+I'd previously struck this off because I liked being able to add `:pseudo` element progress bars to any element with relative ease where the `:pseudo` elements were available.
+
+However, using `:pseudo` elements to display progress isn't ideal and not very semantic.
+
+It makes more sense to create something that can be integrated without big changes.
+
+`progre(c)ss` is still available under the release tab if you really want it but realistically the code for `progre(c)ss` is as simple as;
+
+```sass
+.progrecss {
+  &:before {
+    color: green;
+    content: '';
+    height: 6px;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+  }
+  @for $percent from 1 through 100 {
+    &[data-progrecss-value='#{$percent}'] {
+      &:before {
+        width: $percent * 1%;
+      }
+    }
+  }
+}
 ```
 
-The following options are available;
+## Development
+`ep` is developed using `webpack`, `webpack-dev-server`, `babel` and `sass`.
 
-* `color` - _string_ - 'green', 'red', 'blue', 'purple', 'orange', 'yellow'.
-* `percent` - _number_ - 0 to 100.
-* `position` - _string_ - 'fixed', 'top', 'bottom'.
-* `mock` - _object consisting of mock, mockDuration, and staggered_
-* `staggered` - _string_ - defines whether the mock will stagger.
-* `mockDuration` - _number_ - defines how long the mock will take in seconds.
-* `startMockOnCreate` - _bool_ - defines whether the ep bar will mock straight away.
-* `reverse` - will reverse the direction of keyframe based ep bars.
+It uses a self-documented `Makefile` for development.
 
-And the following methods;
+### See available tasks
+```shell
+  make
+```
 
-* `setep(number percent)` - sets percentage that ep is complete.
-* `startMock()` - will initiate a ep bar mock based on the options passed in.
-* `togglePause()` - will toggle the play state of a keyframe based ep bar.
-* `pause()` - will pause a keyframe based ep bar.
-* `play()` - will play a keyframe based ep bar.
+### Setup
+```shell
+  make setup
+```
 
-#### How does this work?
-ep takes advantage of CSS pseudo elements and preprocessing tools such as __less__ and __sass__.
+### Start developing
+```shell
+  make develop
+```
 
-making use of pseudo elements means that we can add ep bars to any existing element on our page without being intrusive just by adding some attributes and classes as long as the elements pseudo elements aren't currently in use.
 
-preprocessing tools such as __less__ and __sass__ mean we can write minimal code making use of looping in order to sit back and reap the benefits and drink a coffee!
+## Contributing
+Don't hesitate to post and issue, PR or suggestion. Alternatively, get in touch via email or by tweeting me [@_jh3y](https://twitter.com/_jh3y)! :smile:
 
-#### Development/Customisation
-##### Generating custom builds
-You might not need all the features implemented for ep. You can customise the build being generated by modifying __ep-config.json__ and setting features to _true_ or _false_. Doing this can save some filesize.
-##### Editing the source
-__ep__ is developed with __less__/__sass__ /__scss__ making the actual amount of code written minimal in order to generate the stylesheet by making use of looping.
-
-When using the __less__/__sass__/__scss__ file there are already some variables in place so you can roll out a new theme easily.
-
-Those variables are:
-
-* color
-* height
-* box-shadow
-* opacity
-* border-radius
-* transition(-webkit-transition)
-* iterations - this defines the number of iterations the mocking and duration loops will be invoked. By default this is 120. This means that for say a _mock_, you can define durations up to 120 seconds. You can trim down some filesize by lowering the amount of iterations.
-
-Also to edit things like the way in which a staggered mock progress behaves you can modify the existing keyframes in place.
-
-#### Contributing
-
-Any suggestions, improvements or issues are welcome. :)
-
-@jh3y
-
-#### License
-
+## License
 MIT
 
-Copyright 2014 [@jh3y](https://github.com/jh3y)
+-----------------
+
+Made @jh3y 2016

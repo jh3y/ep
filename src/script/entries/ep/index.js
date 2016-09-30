@@ -18,7 +18,7 @@
     */
     constructor(el) {
       /* If not a <progress> element, throw an error */
-      if (!el || el.tagName !== 'PROGRESS')
+      if (!el || Object.getPrototypeOf(el) !== HTMLProgressElement.prototype)
         throw Error('ep: you must pass a <progress> element instance');
       /* Set internal reference and starting value */
       this._EL    = el;
@@ -212,11 +212,11 @@
     * @param {number} max - max value to be reached before increments cease
     * @returns {undefined}
     */
-    simulate(step = 1000, max = 99) {
+    simulate(step = 1000, increment = 5, max = 99) {
       this._SIMULATING = setInterval(() => {
         const modMax = max % this._VALUE;
-        const checkMod = !this._VALUE || modMax > 5 || modMax === 0;
-        const increaseVal = (checkMod) ? 5 : modMax;
+        const checkMod = !this._VALUE || modMax > increment || modMax === 0;
+        const increaseVal = (checkMod) ? increment : modMax;
         if (this._VALUE !== max)
           this.increase(increaseVal);
         else

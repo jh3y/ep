@@ -9,6 +9,7 @@ POSTCSS  = $(MODULES)/postcss
 CLEANCSS = $(MODULES)/cleancss
 ESLINT   = $(MODULES)/eslint
 SASSLINT = $(MODULES)/sass-lint
+GHPAGES  = $(MODULES)/gh-pages
 
 DEST = dist
 FILE_NAME = ep
@@ -26,7 +27,7 @@ bundle: ## bundles source
 	$(WEBPACK) --progress --colors
 
 deploy: ## create deployment bundle
-	rm -rf public && $(WEBPACK) --progress --colors -p --deploy
+	rm -rf public && $(WEBPACK) --progress --colors -p --deploy && $(GHPAGES) -d public
 
 test-bundle: ## bundles test source
 	$(WEBPACK) --config webpack.config.test.babel.js --progress --colors
@@ -43,7 +44,6 @@ setup: ## sets up project
 dist-styles: ## compiles styles for dist
 	$(SASS) $(STYLE_SRC) $(DEST)/$(FILE_NAME).css && $(POSTCSS) $(POSTCSS_OPTS) && $(CLEANCSS) $(CLEANCSS_OPTS)
 	# $(SASS) $(STYLE_SRC) -o $(STYLE_DEST) && $(POSTCSS) $(POSTCSS_OPTS)
-
 
 dist-script: ## compiles script for dist
 	mkdir -pv $(DEST) && $(BABEL) $(SCRIPT_SRC) -o $(DEST)/$(FILE_NAME).js && $(UGLIFY) $(UGLIFY_OPTS)

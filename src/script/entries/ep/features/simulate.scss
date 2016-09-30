@@ -6,6 +6,6 @@ progress {
   &[data-simulate] {
     animation: ep-simulate ($ep-timeout-threshold * 1s);
     animation-timing-function: steps($ep-timeout-threshold);
-    width: 99%;
+    width: $ep-simulate-max * 1%;
   }
 }
