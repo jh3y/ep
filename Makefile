@@ -41,15 +41,23 @@ develop: ## develop source
 setup: ## sets up project
 	npm install
 
-dist-styles: ## compiles styles for dist
-	$(SASS) $(STYLE_SRC) $(DEST)/$(FILE_NAME).css && $(POSTCSS) $(POSTCSS_OPTS) && $(CLEANCSS) $(CLEANCSS_OPTS)
-	# $(SASS) $(STYLE_SRC) -o $(STYLE_DEST) && $(POSTCSS) $(POSTCSS_OPTS)
+dist-style: ## compiles styles for dist
+	mkdir -pv $(DEST) && $(SASS) $(STYLE_SRC) $(DEST)/$(FILE_NAME).css && $(POSTCSS) $(POSTCSS_OPTS) && $(CLEANCSS) $(CLEANCSS_OPTS)
 
 dist-script: ## compiles script for dist
 	mkdir -pv $(DEST) && $(BABEL) $(SCRIPT_SRC) -o $(DEST)/$(FILE_NAME).js && $(UGLIFY) $(UGLIFY_OPTS)
+
+clean: ## removes directories
+	rm -rf $(DEST) public
+
+dist: clean ## create dist scripts
+	rm -rf $(DEST) && mkdir -pv $(DEST) && make dist-script && make dist-style
 
 lint-scripts: ## lints ep script
 	$(ESLINT) $(SCRIPT_SRC)
 
 lint-styles: ## lints ep stylesheet
 	$(SASSLINT) --verbose
+
+lint: ## lints source
+	make lint-styles && make lint-scripts

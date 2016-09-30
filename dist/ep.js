@@ -10,6 +10,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * https://jh3y.github.io/ep
   * @license MIT
   * @author jh3y
+  * @version 2.0.0
   * (c) 2016
 */
 (function () {
@@ -25,7 +26,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, Ep);
 
       /* If not a <progress> element, throw an error */
-      if (!el || el.tagName !== 'PROGRESS') throw Error('ep: you must pass a <progress> element instance');
+      if (!el || Object.getPrototypeOf(el) !== HTMLProgressElement.prototype) throw Error('ep: you must pass a <progress> element instance');
       /* Set internal reference and starting value */
       this._EL = el;
       this._VALUE = parseInt(el.getAttribute('value'), 10) || 0;
@@ -38,6 +39,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     * @param {number} val - the new value to be set
     * @param {function} cb - an optional callback that will be invoked on
     * transitionend
+    * @returns {undefined}
     */
 
 
@@ -51,12 +53,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var min = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
           var max = arguments.length <= 2 || arguments[2] === undefined ? 100 : arguments[2];
 
-          if (val > max) val = max;
-          if (val < min) val = min;
-          return val;
+          var sanitized = val;
+          if (sanitized > max) sanitized = max;
+          if (sanitized < min) sanitized = min;
+          return sanitized;
         };
-        val = sanitizeValue(val);
-        if (typeof val === 'number' && val >= 0 && val <= 100) {
+        var sVal = sanitizeValue(val);
+        if (typeof sVal === 'number' && sVal >= 0 && sVal <= 100) {
           var hasCb = cb && typeof cb === 'function';
           /* If a callback has been defined then hook into transitionend event */
           if (hasCb) {
@@ -69,16 +72,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             })();
           }
           /* Set the new value and update the internal reference */
-          this._EL.setAttribute('value', val);
-          this._VALUE = val;
+          this._EL.setAttribute('value', sVal);
+          this._VALUE = sVal;
         }
       }
-
       /**
       * Sets the spread class on the <progress> element. The default is to remove
       * it if present
       *
       * @param {bool} spread - whether to set spread class or not
+      * @returns {undefined}
       */
 
     }, {
@@ -86,7 +89,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function setSpread() {
         var spread = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
-        spread ? this._EL.classList.add('ep--spread') : this._EL.classList.remove('ep--spread');
+        var cl = this._EL.classList;
+        spread ? cl.add('ep--spread') : cl.remove('ep--spread');
       }
       /**
       * Sets the indeterminate class on the <progress> element.
@@ -97,6 +101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * class
       *
       * @param {bool} indeterminate - whether to set indeterminate class or not
+      * @returns {undefined}
       */
 
     }, {
@@ -104,27 +109,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function setIndeterminate() {
         var indeterminate = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
-        indeterminate ? this._EL.classList.add('ep--indeterminate') : this._EL.classList.remove('ep--indeterminate');
+        var cl = this._EL.classList;
+        var indeterminateCL = 'ep--indeterminate';
+        indeterminate ? cl.add(indeterminateCL) : cl.remove(indeterminateCL);
       }
       /**
       * Toggles pause attribute helper. This will pause any animations taking
       * place such as those for timers and mocks.
+      * @returns {undefined}
       */
 
     }, {
       key: 'togglePause',
       value: function togglePause() {
-        if (this._EL.getAttribute('data-pause')) {
-          this._EL.removeAttribute('data-pause');
-        } else {
-          this._EL.setAttribute('data-pause', true);
-        }
+        if (this._EL.getAttribute('data-pause')) this._EL.removeAttribute('data-pause');else this._EL.setAttribute('data-pause', true);
       }
       /**
       * Sets positional helper classes on <progress> element from given Array
       *
       * @param {Array} posArr - array of positions to be set from top, fixed,
       * bottom
+      * @returns {undefined}
       */
 
     }, {
@@ -132,14 +137,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function setPosition(posArr) {
         var _this2 = this;
 
-        if (posArr && posArr.length) {
-          posArr.forEach(function (pos) {
-            return _this2._EL.classList.add('ep--' + pos);
-          });
-        }
+        if (posArr && posArr.length) posArr.forEach(function (pos) {
+          return _this2._EL.classList.add('ep--' + pos);
+        });
       }
       /**
       * Resets <progress> element position by removing all ep positional helpers
+      * @returns {undefined}
       */
 
     }, {
@@ -159,6 +163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       *
       * @param {number} amount - amount to increase value by
       * @param {function} cb - optional callback function to be fired on complete
+      * @returns {undefined}
       */
 
     }, {
@@ -176,6 +181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       *
       * @param {number} amount - amount to decrease value by
       * @param {function} cb - optional callback function to be fired on complete
+      * @returns {undefined}
       */
 
     }, {
@@ -189,6 +195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /**
       * Resets <progress> element setting value to 0, removing any attributes and
       * simulations
+      * @returns {undefined}
       */
 
     }, {
@@ -218,6 +225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * keyframes animation)
       * @param {function} cb - optional callback function for when mock animation
       * is complete
+      * @returns {undefined}
       */
 
     }, {
@@ -247,6 +255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @param {number} duration - time in seconds for timer to complete
       * @param {function} cb - optional callback to be invoked when timer
       * completes
+      * @returns {undefined}
       */
 
     }, {
@@ -275,24 +284,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * is simulating
       *
       * @param {number} step - ms interval for value increments to be applied
+      * @param {number} increment - increment value to be increased at step
       * @param {number} max - max value to be reached before increments cease
+      * @returns {undefined}
       */
 
     }, {
       key: 'simulate',
       value: function simulate() {
+        var step = arguments.length <= 0 || arguments[0] === undefined ? 1000 : arguments[0];
+
         var _this6 = this;
 
-        var step = arguments.length <= 0 || arguments[0] === undefined ? 1000 : arguments[0];
-        var max = arguments.length <= 1 || arguments[1] === undefined ? 99 : arguments[1];
+        var increment = arguments.length <= 1 || arguments[1] === undefined ? 5 : arguments[1];
+        var max = arguments.length <= 2 || arguments[2] === undefined ? 99 : arguments[2];
 
         this._SIMULATING = setInterval(function () {
-          var increaseVal = max % _this6._VALUE > 5 || max % _this6._VALUE === 0 ? 5 : max % _this6._VALUE;
-          if (_this6._VALUE !== max) {
-            _this6.increase(increaseVal);
-          } else {
-            clearInterval(_this6._SIMULATING);
-          }
+          var modMax = max % _this6._VALUE;
+          var checkMod = !_this6._VALUE || modMax > increment || modMax === 0;
+          var increaseVal = checkMod ? increment : modMax;
+          if (_this6._VALUE !== max) _this6.increase(increaseVal);else clearInterval(_this6._SIMULATING);
         }, step);
       }
       /**
@@ -302,6 +313,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * Users can hook into this on complete by passing a callback
       *
       * @param {function} cb - optional callback for progress completion
+      * @returns {undefined}
       */
 
     }, {

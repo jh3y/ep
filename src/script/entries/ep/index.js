@@ -209,6 +209,7 @@
     * is simulating
     *
     * @param {number} step - ms interval for value increments to be applied
+    * @param {number} increment - increment value to be increased at step
     * @param {number} max - max value to be reached before increments cease
     * @returns {undefined}
     */
