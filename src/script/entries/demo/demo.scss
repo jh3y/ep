@@ -114,28 +114,28 @@ $indeterminate-fg: #ff7b7b;
 @import '../ep/mixins';
 #standard-bar,
 #js-bar {
-  @include colorBar(#7bff7b);
+  @include color-bar(#7bff7b);
 }
 
 #positional-bar {
-  @include colorBar(linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red, red, red, red, red));
+  @include color-bar(linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red, red, red, red, red));
 }
 
 #mock-bar {
-  @include colorBar(repeating-linear-gradient(45deg, #ff7b7b, #ff7b7b 10px, black 10px, black 20px));
+  @include color-bar(repeating-linear-gradient(45deg, #ff7b7b, #ff7b7b 10px, black 10px, black 20px));
 }
 
 #staggered-bar {
-  @include colorBar(repeating-linear-gradient(-45deg, #7bff7b, #7bff7b 10px, black 10px, black 20px));
+  @include color-bar(repeating-linear-gradient(-45deg, #7bff7b, #7bff7b 10px, black 10px, black 20px));
 }
 
 #mock-bar,
 #top-bar,
 #simulate-bar {
-  @include colorBar(repeating-linear-gradient(45deg, #7b7bff, #7b7bff 10px, black 10px, black 20px));
+  @include color-bar(repeating-linear-gradient(45deg, #7b7bff, #7b7bff 10px, black 10px, black 20px));
 }
 
 #spread-bar,
 #timer-bar {
-  @include colorBar(#7b7bff);
+  @include color-bar(#7b7bff);
 }

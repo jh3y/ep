@@ -11,7 +11,7 @@ progress {
     animation-play-state: paused;
   }
 
-  &#{$ep-ns} {
+  &.#{$ep-ns} {
 
     &--top {
       left: 0;
