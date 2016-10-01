@@ -104,19 +104,14 @@
     * @returns {undefined}
     */
     setPosition(posArr) {
-      if (posArr && posArr.length)
-        posArr.forEach((pos) => this._EL.classList.add(`ep--${pos}`));
-    }
-    /**
-    * Resets <progress> element position by removing all ep positional helpers
-    * @returns {undefined}
-    */
-    resetPosition() {
       const positions = ['top', 'fixed', 'bottom'];
       for (let p = 0; p < positions.length; p++)
         for (let cl = 0; cl < this._EL.classList.length; cl++)
           if (this._EL.classList[cl] === `ep--${positions[p]}`)
             this._EL.classList.remove(`ep--${positions[p]}`);
+      if (posArr && posArr.length)
+        posArr.forEach((pos) => this._EL.classList.add(`ep--${pos}`));
+
     }
     /**
     * Helper function to increase <progress> value by a value

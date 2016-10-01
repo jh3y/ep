@@ -12,6 +12,19 @@ section.demo.demo--js
   .demo-control-group
     pre.demo__markup
       code.language-js.
+        myEp.simulate();
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            myEp.complete();
+          }
+        };
+        xhttp.open('GET', '/index.html', true);
+        xhttp.send();
+    button(class="ajax") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
         const afterSet = (e) => {
           alert('All set!');
         };
@@ -58,7 +71,7 @@ section.demo.demo--js
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myEp.resetPosition();
+        myEp.setPosition();
     button(class="resetPosition") Run
   .demo-control-group
     pre.demo__markup

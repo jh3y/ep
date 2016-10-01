@@ -18,9 +18,20 @@ const FUNC = {
   decrease: () => myEp.decrease(25),
   simulate: () => myEp.simulate(),
   position: () => myEp.setPosition(['top', 'fixed']),
-  resetPosition: () => myEp.resetPosition(),
+  resetPosition: () => myEp.setPosition(),
   spreadTrue: () => myEp.setSpread(true),
-  spreadFalse: () => myEp.setSpread(false)
+  spreadFalse: () => myEp.setSpread(false),
+  ajax: () => {
+    myEp.simulate();
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myEp.complete();
+      }
+    };
+    xhttp.open('GET', '/index.html', true);
+    xhttp.send();
+  }
 };
 
 const jsDemo = document.querySelector('.demo--js');
