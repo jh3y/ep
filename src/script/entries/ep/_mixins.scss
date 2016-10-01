@@ -13,3 +13,19 @@
     background: $color;
   }
 }
+
+@mixin indeterminate {
+  animation: ep-indeterminate 2s infinite linear;
+  background: $ep-indeterminate-fg;
+  // hides the indeterminate blocks animation in IE
+  color: transparent;
+  width: 100%;
+
+  &::-moz-progress-bar {
+    background: $ep-indeterminate-fg;
+  }
+
+  &::-webkit-progress-bar {
+    background: $ep-indeterminate-fg;
+  }
+}

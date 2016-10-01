@@ -1,22 +1,6 @@
 @import 'configuration';
 @import 'mixins';
 
-@mixin indeterminate {
-  animation: ep-indeterminate 2s infinite linear;
-  background: $ep-indeterminate-fg;
-  // hides the indeterminate blocks animation in IE
-  color: transparent;
-  width: 100%;
-
-  &::-moz-progress-bar {
-    background: $ep-indeterminate-fg;
-  }
-
-  &::-webkit-progress-bar {
-    background: $ep-indeterminate-fg;
-  }
-}
-
 @mixin create-core {
   @for $percent from 1 through 100 {
     &[value='#{$percent}'] {
@@ -33,8 +17,6 @@
 
 progress {
   appearance: none;
-  // Colors IE progress bar
-  background: $ep-fg;
   border: 0;
   display: block !important;
   height: $ep-height;
@@ -43,23 +25,12 @@ progress {
   transition: width $ep-transition ease 0s, visibility ($ep-transition * 2) ease 0s;
   width: 0;
 
-
   // Remove annoying marker border in IE
   &::-ms-fill {
     border: 0;
   }
 
-  &::-moz-progress-bar {
-    background: $ep-fg;
-  }
-
-  &::-webkit-progress-bar {
-    background: $ep-fg;
-  }
-
-  &::-webkit-progress-value {
-    background: $ep-fg;
-  }
+  @include color-bar($ep-fg);
 
   &:indeterminate {
     @include indeterminate;

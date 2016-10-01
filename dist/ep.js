@@ -50,8 +50,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         /* Santize values so that value can't be set out of 0-100 range */
         var sanitizeValue = function sanitizeValue(val) {
-          var min = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
-          var max = arguments.length <= 2 || arguments[2] === undefined ? 100 : arguments[2];
+          var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+          var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
 
           var sanitized = val;
           if (sanitized > max) sanitized = max;
@@ -87,7 +87,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'setSpread',
       value: function setSpread() {
-        var spread = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+        var spread = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
         var cl = this._EL.classList;
         spread ? cl.add('ep--spread') : cl.remove('ep--spread');
@@ -107,7 +107,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'setIndeterminate',
       value: function setIndeterminate() {
-        var indeterminate = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+        var indeterminate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
         var cl = this._EL.classList;
         var indeterminateCL = 'ep--indeterminate';
@@ -137,24 +137,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function setPosition(posArr) {
         var _this2 = this;
 
-        if (posArr && posArr.length) posArr.forEach(function (pos) {
-          return _this2._EL.classList.add('ep--' + pos);
-        });
-      }
-      /**
-      * Resets <progress> element position by removing all ep positional helpers
-      * @returns {undefined}
-      */
-
-    }, {
-      key: 'resetPosition',
-      value: function resetPosition() {
         var positions = ['top', 'fixed', 'bottom'];
         for (var p = 0; p < positions.length; p++) {
           for (var cl = 0; cl < this._EL.classList.length; cl++) {
             if (this._EL.classList[cl] === 'ep--' + positions[p]) this._EL.classList.remove('ep--' + positions[p]);
           }
-        }
+        }if (posArr && posArr.length) posArr.forEach(function (pos) {
+          return _this2._EL.classList.add('ep--' + pos);
+        });
       }
       /**
       * Helper function to increase <progress> value by a value
@@ -169,7 +159,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'increase',
       value: function increase() {
-        var amount = arguments.length <= 0 || arguments[0] === undefined ? 5 : arguments[0];
+        var amount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
         var cb = arguments[1];
 
         this.set(this._VALUE + amount, cb);
@@ -187,7 +177,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'decrease',
       value: function decrease() {
-        var amount = arguments.length <= 0 || arguments[0] === undefined ? 5 : arguments[0];
+        var amount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
         var cb = arguments[1];
 
         this.set(this._VALUE - amount, cb);
@@ -231,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'mock',
       value: function mock() {
-        var duration = arguments.length <= 0 || arguments[0] === undefined ? 4 : arguments[0];
+        var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
 
         var _this4 = this;
 
@@ -263,7 +253,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function time() {
         var _this5 = this;
 
-        var duration = arguments.length <= 0 || arguments[0] === undefined ? 4 : arguments[0];
+        var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
         var cb = arguments[1];
 
         var onTimerEnd = function onTimerEnd() {
@@ -292,12 +282,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'simulate',
       value: function simulate() {
-        var step = arguments.length <= 0 || arguments[0] === undefined ? 1000 : arguments[0];
+        var step = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000;
 
         var _this6 = this;
 
-        var increment = arguments.length <= 1 || arguments[1] === undefined ? 5 : arguments[1];
-        var max = arguments.length <= 2 || arguments[2] === undefined ? 99 : arguments[2];
+        var increment = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
+        var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 99;
 
         this._SIMULATING = setInterval(function () {
           var modMax = max % _this6._VALUE;

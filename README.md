@@ -13,8 +13,41 @@ Because of this, it's often overlooked in favor of styled `<div>` combos.
 
 * Cross browser reset and styling to pull `<progress>` element in line with modern slim-style bars
 * CSS helpers that provide classes and attributes to deal with things like positioning, growth style, simulation etc.
-* Optional JS helper for better control and interaction with `<progress>` elements.
+* Optional JS helper for better control and interaction with `<progress>` elements. For example; being able to hook into network request status and display this to the end user.
 * Plays nice wherever the `<progress>` element is supported!
+
+```js
+  const myEp = new Ep(document.querySelector('progress'));
+  myEp.simulate();
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myEp.complete();
+    }
+  };
+  xhttp.open('GET', '/index.html', true);
+  xhttp.send();
+```
+
+## Index
+
+* [Browser support](https://github.com/jh3y/ep#browser-support)
+  * [Caveats](https://github.com/jh3y/ep#caveats)
+* [Usage](https://github.com/jh3y/ep#usage)
+  * [Install](https://github.com/jh3y/ep#install)
+  * [Just using the stylesheet](https://github.com/jh3y/ep#just-using-the-stylesheet)
+  * [Including the optional JS helper](https://github.com/jh3y/ep#including-the-optional-js-helper)
+  * [Integrating with your own SASS files](https://github.com/jh3y/ep#integrating-with-your-own-sass-files)
+  * [CSS Helpers Api](https://github.com/jh3y/ep#css-helpers-api)
+    * [Aesthetic helpers](https://github.com/jh3y/ep#aesthetic-helpers)
+    * [Behavioural helpers](https://github.com/jh3y/ep#behavioural-helpers)
+    * [Sass variables](https://github.com/jh3y/ep#sass-variables)
+  * [Javascript Helper Api](https://github.com/jh3y/ep#javascript-helper-api)
+    * [Hooking into network requests](https://github.com/jh3y/ep#hooking-into-network-requests)
+* [What happened to progrecss?](https://github.com/jh3y/ep#what-happened-to-progrecss)
+* [Development](https://github.com/jh3y/ep#development)
+* [Contributing](https://github.com/jh3y/ep#contributing)
+* [License](https://github.com/jh3y/ep#license)
 
 
 ## Browser support
@@ -160,8 +193,7 @@ As for the methods available(`?` denotes an optional parameter);
 * `setSpread(? {bool} spread)` - Set whether `<progress>` element should be spred style. By default will set to false.
 * `setIndeterminate(? {bool} indeterminate)` - Set whether `<progress>` element is using `indeterminate` helper class. By default, will remove helper class.
 * `togglePause` - Toggles pause attribute for play/pause animation.
-* `setPosition({Array string} positions)` - Takes an array of positions that will be applied to the element. For example, `['top', 'fixed']` will set `ep--top ep--fixed` class to the `<progress>` element.
-* `resetPosition` - Resets position by removing all classes.
+* `setPosition(? {Array string} positions)` - Takes an optional array of positions that will be applied to the element. For example, `['top', 'fixed']` will set `ep--top ep--fixed` class to the `<progress>` element. If no positions are declared, all currently applied will be wiped.
 * `increase(? {number} value, ? {function} cb)` - Increase progress value by optional increment with an optional callback. By default, increment is 5.
 * `decrease(? {number} value, ? {function} cb)` - Decrease progress value by optional decrement with an optional callback. By default, decrement is 5.
 * `reset` - Resets `<progress>` value to 0.
@@ -170,8 +202,24 @@ As for the methods available(`?` denotes an optional parameter);
 * `simulate(? {number} step, ? {number} increment, ? {number} max)` - Simulation on the Javascript side is an example where we have more control than we do with CSS. Set a simulation by declaring a step duration in `ms`, an `increment` and a `max` value for the simulation to reach. The default simulation will increment by 5 every second until the `<progress>` element has a value of 99.
 * `complete(? {function} cb)` - Complete a progress bar by setting value to 100 and then resetting it. Provide optional callback for when complete.
 
+#### Hooking into network requests
+Yep. You can easily integrate `ep` to communicate network request status to the end user. The most basic example being something like the following;
+```js
+  const myEp = new Ep(document.querySelector('progress'));
+  myEp.reset();
+  myEp.simulate();
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myEp.complete();
+    }
+  };
+  xhttp.open('GET', '/index.html', true);
+  xhttp.send();
+```
+We start with a simple `progress` element. Reset it to make sure it starts at `0` and start a simulation. When we get the `OK` from our network request, set our element to complete :tada:
 
-## What happened to progre(c)ss?
+## What happened to progrecss?
 For some time, I'd intended to revisit `progre(c)ss` with some ideas I had. When I finally got round to it, I went back over the issues and something struck me. Someone had pointed out why not use the `<progress>` element?
 
 I'd previously struck this off because I liked being able to add `:pseudo` element progress bars to any element with relative ease where the `:pseudo` elements were available.
