@@ -22,15 +22,18 @@ const FUNC = {
   spreadTrue: () => myEp.setSpread(true),
   spreadFalse: () => myEp.setSpread(false),
   ajax: () => {
-    myEp.simulate();
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        myEp.complete();
-      }
-    };
-    xhttp.open('GET', '/index.html', true);
-    xhttp.send();
+    const makeRequest = () => {
+      myEp.simulate();
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          myEp.complete();
+        }
+      };
+      xhttp.open('GET', '/index.html', true);
+      xhttp.send();
+    }
+    (myEp._VALUE) ? myEp.set(0, makeRequest) : makeRequest();
   }
 };
 

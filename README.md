@@ -18,15 +18,18 @@ Because of this, it's often overlooked in favor of styled `<div>` combos.
 
 ```js
   const myEp = new Ep(document.querySelector('progress'));
-  myEp.simulate();
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myEp.complete();
-    }
+  const makeRequest = () => {
+    myEp.simulate();
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myEp.complete();
+      }
+    };
+    xhttp.open('GET', '/index.html', true);
+    xhttp.send();
   };
-  xhttp.open('GET', '/index.html', true);
-  xhttp.send();
+  (myEp._VALUE) ? myEp.set(0, makeRequest) : makeRequest();
 ```
 
 ## Index
@@ -206,16 +209,18 @@ As for the methods available(`?` denotes an optional parameter);
 Yep. You can easily integrate `ep` to communicate network request status to the end user. The most basic example being something like the following;
 ```js
   const myEp = new Ep(document.querySelector('progress'));
-  myEp.reset();
-  myEp.simulate();
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myEp.complete();
-    }
-  };
-  xhttp.open('GET', '/index.html', true);
-  xhttp.send();
+  const makeRequest = () => {
+    myEp.simulate();
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myEp.complete();
+      }
+    };
+    xhttp.open('GET', '/index.html', true);
+    xhttp.send();
+  }
+  (myEp._VALUE) ? myEp.set(0, makeRequest) : makeRequest();
 ```
 We start with a simple `progress` element. Reset it to make sure it starts at `0` and start a simulation. When we get the `OK` from our network request, set our element to complete :tada:
 
