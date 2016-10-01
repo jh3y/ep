@@ -111,7 +111,6 @@
             this._EL.classList.remove(`ep--${positions[p]}`);
       if (posArr && posArr.length)
         posArr.forEach((pos) => this._EL.classList.add(`ep--${pos}`));
-
     }
     /**
     * Helper function to increase <progress> value by a value
