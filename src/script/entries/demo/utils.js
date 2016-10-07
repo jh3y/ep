@@ -21,6 +21,7 @@ const setBarAndMarkup = function(input, bar, markup) {
 
 const updateAndSet = function(el, attr, markup) {
   const newVal = el.value;
+  if (newVal.trim() === '') return;
   const bar = document.getElementById(el.getAttribute('data-for'));
   const oldVal = bar.getAttribute(attr);
   bar.setAttribute(attr, newVal);
