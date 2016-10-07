@@ -33,7 +33,8 @@ progress {
   -webkit-transition: width 0.25s ease 0s, visibility 0.5s ease 0s;
   transition: width 0.25s ease 0s, visibility 0.5s ease 0s;
   width: 0;
-  background: #3498db; }
+  background: #3498db;
+  color: #3498db; }
   progress::-ms-fill {
     border: 0; }
   progress::-moz-progress-bar {

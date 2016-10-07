@@ -1,9 +1,10 @@
 section.demo.demo--mock
   h2 Mocked progress
-  pre.demo__markup(id="mock-markup")
-    code.language-html.
-      &lt;progress data-mock="4"&gt;
-      &lt;/progress&gt;
+  .wrap
+    pre.demo__markup(id="mock-markup")
+      code.language-html.
+        &lt;progress data-mock="4"&gt;
+        &lt;/progress&gt;
   progress(id='mock-bar', data-mock='4')
   p.demo__doc.
     Maybe you'd rather just mock <code>progress</code>. Just set a duration(seconds) with the <code>data-mock</code> attribute. Using the <code>ep</code> JS helper, we can hook into when our mock is complete using a callback. Check the API in the <a href="https://github.com/jh3y/ep/blob/master/README.md" target="_blank">docs</a>!

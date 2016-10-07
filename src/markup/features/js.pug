@@ -25,11 +25,6 @@ section.demo.demo--js
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myEp.setPosition(['top', 'fixed']);
-    button(class="position") Run
-  .demo-control-group
-    pre.demo__markup
-      code.language-js.
         const afterSet = (e) => {
           alert('All set!');
         };
@@ -46,8 +41,8 @@ section.demo.demo--js
   .demo-control-group
     pre.demo__markup
       code.language-js.
-        myEp.reset();
-    button(class="reset") Run
+        myEp.setPosition(['top', 'fixed']);
+    button(class="position") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
@@ -58,6 +53,11 @@ section.demo.demo--js
       code.language-js.
         myEp.set(75);
     button(class="set") Run
+  .demo-control-group
+    pre.demo__markup
+      code.language-js.
+        myEp.reset();
+    button(class="reset") Run
   .demo-control-group
     pre.demo__markup
       code.language-js.
