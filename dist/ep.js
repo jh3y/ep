@@ -10,7 +10,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * https://jh3y.github.io/ep
   * @license MIT
   * @author jh3y
-  * @version 2.0.0
+  * @version 2.0.3
   * (c) 2016
 */
 (function () {
