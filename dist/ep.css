@@ -27,7 +27,6 @@ progress {
      -moz-appearance: none;
           appearance: none;
   border: 0;
-  display: block !important;
   height: 6px;
   opacity: 0.6;
   position: relative;
@@ -347,8 +346,8 @@ progress[data-mock='4'] {
     width: 100%; } }
 
 progress[data-staggered-mock] {
-  -webkit-animation: ep-staggered-mock;
-          animation: ep-staggered-mock; }
+  -webkit-animation-name: ep-staggered-mock;
+          animation-name: ep-staggered-mock; }
 
 progress[data-staggered-mock='1'] {
   -webkit-animation-duration: 1s;
@@ -356,8 +355,8 @@ progress[data-staggered-mock='1'] {
   width: 0; }
 
 progress[data-staggered-mock] {
-  -webkit-animation: ep-staggered-mock;
-          animation: ep-staggered-mock; }
+  -webkit-animation-name: ep-staggered-mock;
+          animation-name: ep-staggered-mock; }
 
 progress[data-staggered-mock='2'] {
   -webkit-animation-duration: 2s;
@@ -365,8 +364,8 @@ progress[data-staggered-mock='2'] {
   width: 0; }
 
 progress[data-staggered-mock] {
-  -webkit-animation: ep-staggered-mock;
-          animation: ep-staggered-mock; }
+  -webkit-animation-name: ep-staggered-mock;
+          animation-name: ep-staggered-mock; }
 
 progress[data-staggered-mock='3'] {
   -webkit-animation-duration: 3s;
@@ -374,8 +373,8 @@ progress[data-staggered-mock='3'] {
   width: 0; }
 
 progress[data-staggered-mock] {
-  -webkit-animation: ep-staggered-mock;
-          animation: ep-staggered-mock; }
+  -webkit-animation-name: ep-staggered-mock;
+          animation-name: ep-staggered-mock; }
 
 progress[data-staggered-mock='4'] {
   -webkit-animation-duration: 4s;
