@@ -14,6 +14,7 @@ const toggleComplete = function(e) {
 }
 
 const setBarAndMarkup = function(input, bar, markup) {
+  if (input.value.trim() === '') return;
   const oldVal = bar.getAttribute('value');
   bar.value = input.value;
   markup.innerHTML = markup.innerHTML.replace(new RegExp(oldVal, 'g'), input.value);
