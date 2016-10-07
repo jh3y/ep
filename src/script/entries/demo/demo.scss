@@ -21,6 +21,10 @@ $brand-color: rgba(123, 123, 432, .5);
   @media(min-width: 960px) {
     position: fixed;
     width: 270px;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0;
+    overflow: auto;
   }
 }
 
