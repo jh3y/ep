@@ -18,7 +18,7 @@ progress {
   @for $duration from $ep-staggered-mocks-min through $ep-staggered-mocks-max {
 
     &[data-staggered-mock] {
-      animation: ep-staggered-mock;
+      animation-name: ep-staggered-mock;
     }
 
     &[data-staggered-mock='#{$duration}'] {
