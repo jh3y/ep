@@ -1,12 +1,13 @@
 section.demo.demo--timer
   h2 Timer
-  pre.demo__markup(id="timer-markup")
-    code.language-html.
-      &lt;progress data-timer="4"&gt;
-      &lt;/progress&gt;
-    code.language-html.markup--complete.
-      &lt;progress data-timer="4" data-pause="true"&gt;
-      &lt;/progress&gt;
+  .wrap
+    pre.demo__markup(id="timer-markup")
+      code.language-html.
+        &lt;progress data-timer="4"&gt;
+        &lt;/progress&gt;
+      code.language-html.markup--complete.
+        &lt;progress data-timer="4" data-pause="true"&gt;
+        &lt;/progress&gt;
   progress(id='timer-bar', data-timer='4')
   p.demo__doc.
     Flip <code>progress</code> usage and use it as a timer instead. If you need to pause it any stage, use a <code>pause</code> attribute.
