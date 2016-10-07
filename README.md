@@ -45,6 +45,7 @@ Because of this, it's often overlooked in favor of styled `<div>` combos.
     * [Aesthetic helpers](https://github.com/jh3y/ep#aesthetic-helpers)
     * [Behavioural helpers](https://github.com/jh3y/ep#behavioural-helpers)
     * [Sass variables](https://github.com/jh3y/ep#sass-variables)
+    * [Sass mixin](https://github.com/jh3y/ep#sass-mixin)
   * [Javascript Helper Api](https://github.com/jh3y/ep#javascript-helper-api)
     * [Hooking into network requests](https://github.com/jh3y/ep#hooking-into-network-requests)
 * [What happened to progrecss?](https://github.com/jh3y/ep#what-happened-to-progrecss)
@@ -178,6 +179,23 @@ progress[data-timer="15"] {
 * `$ep-staggered-mocks-max: 4` - maximum staggered mock duration in seconds
 * `$ep-timers-min: 1` - minimum timer duration in seconds
 * `$ep-timers-max: 4` - maximum timer duration in seconds
+
+```sass
+$ep-fg: #e74c3c3;
+$ep-opacity: .8;
+// import with default variables override
+@import '~ep/core';
+```
+
+#### Sass mixin
+`ep` also has a mixin available for coloring `progress` elements. Simply pass a color to `color-bar`. You may use this without even importing the `ep` reset if you just want to color some `progress` elements.
+
+```sass
+@import '~ep/mixins';
+
+.my-progress-element { @include color-bar(#7bff7b); }
+
+```
 
 ### Javascript helper/API
 `ep` also provides an optional Javascript helper/api. This can be used for convenience and also gives a little more control and power when interacting with `<progress>` elements. It doesn't create any extra elements, but you must pass a `HTMLProgressElement` into the constructor.
