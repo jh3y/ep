@@ -7,24 +7,28 @@
 $brand-color: rgba(123, 123, 432, .5);
 
 .header {
-  text-align: justify;
+  text-align: center;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
-  img {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+
   &__content {
     clear: both;
   }
 
   @media(min-width: 960px) {
     position: fixed;
-    width: 270px;
+    width: 320px;
     top: 0;
     bottom: 0;
-    padding: 20px 0;
+    padding: 20px;
     overflow: auto;
+  }
+
+  ul {
+    text-align: center;
+    li {
+      margin: 10px 0;
+    }
   }
 }
 
@@ -41,10 +45,7 @@ $brand-color: rgba(123, 123, 432, .5);
 }
 
 .install {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  margin: 20px;
+  text-align: center;
 }
 
 .demo {
