@@ -109,6 +109,13 @@ Need to change the color of a `<progress>` element or something else? Override t
     background: purple;
   }
 ```
+There is also a `SASS` mixin included to as a shorthand to do this;
+```sass
+@import '~ep/mixins';
+.progress {
+  @include color-bar(purple);
+}
+```
 ### Including the optional JS helper
 If you choose to use the optional JS helper. You'll have access to the `Ep` constructor class. Refer to the JS API for further info.
 
