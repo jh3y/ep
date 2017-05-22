@@ -56,8 +56,8 @@ Because of this, it's often overlooked in favor of styled `<div>` combos.
 
 ## Browser support
 
-| Chrome  | Firefox | Safari | Opera | Edge | IE(_10+_)           |
-| ------------- |:-------------:| -----:| -----|-----|-----|----|
+| Chrome  | Firefox | Safari | Opera | Edge | IE(_10+_)|
+| ------------- |-------------| -----| -----|-----|-----|
 | :smile:   | :smile:  | :smile:  | :smile: | :smile: | :smile: |
 
 ### Caveats
