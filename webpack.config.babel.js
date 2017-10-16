@@ -49,6 +49,10 @@ const config = {
       path.resolve('./src/script'),
       path.resolve('./src/style')
     ],
+    alias: {
+      ep: path.resolve(__dirname, 'src/script/entries/ep/scripts'),
+      'ep-styles': path.resolve(__dirname, 'src/script/entries/ep/styles')
+    },
     extensions: [ '', '.js', '.styl' ]
   },
   plugins: [

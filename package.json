@@ -4,6 +4,7 @@
   "description": "enhance your progress bars with minimal effort!",
   "main": "dist/ep.js",
   "scripts": {
+    "prepublish": "make dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,4 +1,4 @@
-import '../../ep/';
+import 'ep';
 
 const el = document.getElementById('js-bar');
 const myEp = new Ep(el);
