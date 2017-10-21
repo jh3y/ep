@@ -14,7 +14,7 @@ const config = {
     port: 1987
   },
   entry: {
-    demo: './src/script/entries/demo'
+    demo: './src/script/demo'
   },
   output: {
     path: `${__dirname}/public`,
@@ -47,11 +47,11 @@ const config = {
   resolve: {
     root: [
       path.resolve('./src/script'),
-      path.resolve('./src/style')
+      path.resolve('./src/styles')
     ],
     alias: {
-      ep: path.resolve(__dirname, 'src/script/entries/ep/scripts'),
-      'ep-styles': path.resolve(__dirname, 'src/script/entries/ep/styles')
+      ep: path.resolve(__dirname, 'src/script'),
+      'ep-styles': path.resolve(__dirname, 'src/styles')
     },
     extensions: [ '', '.js', '.styl' ]
   },
