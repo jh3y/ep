@@ -1,9 +1,10 @@
 {
   "name": "@jh3y/ep",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "enhance your progress bars with minimal effort!",
   "main": "dist/ep.js",
   "scripts": {
+    "prepublish": "make dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

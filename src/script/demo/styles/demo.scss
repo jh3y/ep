@@ -116,7 +116,7 @@ $indeterminate-fg: #ff7b7b;
   animation-iteration-count: infinite !important;
 }
 
-@import '../ep/mixins';
+@import '~ep-styles/mixins';
 #standard-bar,
 #js-bar {
   @include color-bar(#7bff7b);

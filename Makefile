@@ -13,8 +13,8 @@ GHPAGES  = $(MODULES)/gh-pages
 
 DEST = dist
 FILE_NAME = ep
-SCRIPT_SRC = src/script/entries/ep/index.js
-STYLE_SRC = src/script/entries/ep/ep.scss
+SCRIPT_SRC = src/script/index.js
+STYLE_SRC = src/styles/ep.scss
 
 UGLIFY_OPTS = --compress --comments --mangle -o $(DEST)/$(FILE_NAME).min.js $(DEST)/$(FILE_NAME).js
 CLEANCSS_OPTS = --s1 -o $(DEST)/$(FILE_NAME).min.css $(DEST)/$(FILE_NAME).css
