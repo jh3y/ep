@@ -7,8 +7,7 @@ Changes include;
 
 Checks
 - [ ] Passes linting
-- [ ] Updated documentation
-- [ ] Updated versioning
-- [ ] Updated dist files
+- [ ] Updated documentation (_if necessary_)
+- [ ] Updated versioning across __both__ source and package files
 
 @jh3y
