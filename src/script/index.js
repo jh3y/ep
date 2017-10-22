@@ -4,7 +4,7 @@
   * https://jh3y.github.io/ep
   * @license MIT
   * @author jh3y
-  * @version 2.0.5
+  * @version 2.0.6
   * (c) 2017
 */
 (function() {

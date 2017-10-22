@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jh3y/ep.svg?branch=master)](https://travis-ci.org/jh3y/ep)
+
 ![alt tag](https://github.com/jh3y/pics/blob/master/ep/ep.png)
 ## enhance your HTML5 `<progress>` bars with minimal effort!
 
