@@ -29,11 +29,15 @@ bundle: ## bundles source
 deploy: ## create deployment bundle
 	rm -rf public && $(WEBPACK) --progress --colors -p --deploy && $(GHPAGES) -d public
 
-test-bundle: ## bundles test source
-	$(WEBPACK) --config webpack.config.test.babel.js --progress --colors
+# NOTE:: Introduce when tests are created
+# test-bundle: ## bundles test source
+# 	$(WEBPACK) --config webpack.config.test.babel.js --progress --colors
 
-test: test-bundle ## runs tests
-	$(MOCHA) test/test.js
+# test: test-bundle ## runs tests
+# 	$(MOCHA) test/test.js
+
+test: ## runs tests, linting
+	make lint
 
 develop: ## develop source
 	$(SERVER) --progress --colors -d --hot --inline
